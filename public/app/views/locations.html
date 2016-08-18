@@ -1,0 +1,17 @@
+<section class="locations-main">
+
+  <!-- this div will be hardcoded -->
+  <div class="location-container">
+
+  </div>
+
+  <!-- this div will update with administrator input -->
+  <div class="markets-container" ng-repeat="market in markets">
+    <h1> {{ market.name }} </h1>
+    <h2> {{ market.address }} </h2>
+    <h2> {{ market.times }} </h2>
+    <h3> {{ market.notes }} </h3>
+  </div>
+
+
+</section>

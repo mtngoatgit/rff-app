@@ -1,0 +1,598 @@
+@import "fonts-and-colors";
+
+.route-container {
+
+}
+.landing {
+  background-color: $dark-green;
+  height: 100vh;
+  width: 100vw;
+  display: inline-block;
+}
+.ham {
+  width: 65vw;
+  height: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vh;
+  text-align: center;
+  padding-top: 1vh;
+  }
+.cherry {
+  background-image: url("../../assets/photos/cherry.jpeg");
+  background-size: cover;
+  width: 88%;
+  height: 92%;
+  margin: auto;
+  display: flex;
+}
+.mobile-logo {
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mobile-nav {
+  background-color:$dark-green;
+  opacity: 0.8;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  line-height: 39px;
+  display: none;
+  padding-top: 1vh;
+  padding-bottom: 1vh
+}
+.mobile-nav a{
+  text-decoration: none;
+  font-size: 22px;
+  color: $yellow;
+  font-family: $head;
+}
+.mobile-go-login-button {
+  text-decoration: none;
+  color: $yellow;
+  margin-top: 1vh;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+}
+.mobile-go-login-button :hover {
+  color: $blue;
+}
+.mobile-go-login-button > a {
+  color: $yellow;
+  text-decoration: none;
+  &:hover {color: $blue}
+}
+.desktop-nav {
+  display: none;
+}
+.desktop-nav a {
+  text-decoration: none;
+  font-size: 19px;
+  color: $yellow;
+  font-family: $head;
+  &:hover {color: $blue}
+}
+.desktop-logo{
+  display: none;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cherry h1{
+  visibility: hidden;
+}
+#delivery-link {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  font-family: $head;
+  position: absolute;
+  left: -1.4em;
+  align-self: center;
+  font-size: 19px;
+  a {
+    text-decoration: none;
+    color: $yellow;
+  }
+}
+#contact-link {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  font-family: $head;
+  position: absolute;
+  right: 2px;
+  align-self: center;
+  font-size: 19px;
+  a {
+    text-decoration: none;
+    color: $yellow;
+  }
+}
+#about-link {
+  font-family: $head;
+  color: $yellow;
+  position: absolute;
+  bottom: 10px;
+  margin-left: 45%;
+  font-size: 19px;
+  a {
+    text-decoration: none;
+    color: $yellow;
+  }
+}
+#locations-link {
+  font-family: $head;
+  color: $yellow;
+  position: absolute;
+  top: 8px;
+  margin-left: 43%;
+  justify-content: center;
+  font-size: 19px;
+  a {
+    text-decoration: none;
+    color: $yellow;
+  }
+}
+.desktop-go-login-button{
+  margin-top: .5vh;
+  text-align: right;
+  font-size: 20px;
+  float: right;
+  margin-right: 2vw;
+  visibility: hidden;
+}
+.desktop-go-login-button > a {
+  color: $blue;
+  text-decoration: none;
+  &:hover {color: $red};
+}
+.desktop-partial-to-home{
+  position: fixed;
+  right: -15px;
+  top: 50vh;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: $blue;
+  text-align: center;
+  .fa-home{-webkit-filter: invert(1);}
+
+}
+
+//  ABOUT PARTIAL
+.about-main {
+  height: 100vh;
+  background-color: black;
+  width: 100vw;
+}
+.about-header {
+  height: 100vh;
+  background-image: url("../../assets/photos/barn-wood.jpg");
+  background-size: cover;
+}
+.about-title {
+  width: 30vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25vh;
+  padding-bottom: 3vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0 0 15px 15px;
+  h1 {
+    font-family: $head;
+    color: $red;
+    font-size: 120px;
+    margin-bottom: 90px;
+  }
+  h2 {
+    font-family: $body;
+    font-size: 50px;
+    color: $blue;
+  }
+}
+
+.jordan {
+  background: url("../../assets/photos/opaque/jrValicoffOP.png");
+  background-size: cover;
+  height: 80vh;
+  // margin-left: 15px;
+  font-family: $body;
+}
+#jordan-text {
+  width: 40vw;
+  margin-top: 5vh;
+  margin-right: 2vw;
+  float: right;
+}
+.solid-section {
+  height: 60vh;
+  background-color: $dark-green;
+}
+.green-house-video {
+  background-color: black;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100vw;
+}
+.alan {
+  background: url("../../assets/photos/conference.jpg");
+  background-size: cover;
+  height: 80vh;
+}
+
+//  LOCATIONS PARTIAL
+.locations-main {
+  height: 100%;
+  background-image: url("../../assets/photos/market.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+.markets-container {
+  width:90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3vh 0;
+  background-color: $pale;
+  font-family: $body;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: .85;
+  align-content: center;
+  border-radius: 8px;
+  h1 {
+    font-family: $head;
+    margin-bottom: 10px;
+  }
+}
+
+//  ADMINISTRATOR PARTIAL
+.admin-main {
+  padding-top: 20px;
+}
+.admin-header {
+  height: 10vh;
+  // width: 40vw;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: $head;
+  padding-top: 50px;
+}
+.market-form {
+  width:90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3vh 0;
+  background-color: $blue;
+  font-family: $body;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: .85;
+  align-content: center;
+  border-radius: 8px;
+  h1 {
+    font-family: $head;
+    margin-bottom: 20px;
+    color: white;
+  }
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  input {
+    width: 90%;
+  }
+}
+.product-form {
+  width:90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3vh 0;
+  background-color: $dark-green;
+  font-family: $body;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: .85;
+  align-content: center;
+  border-radius: 8px;
+  h1 {
+    font-family: $head;
+    margin-bottom: 20px;
+    color: white;
+  }
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  input {
+    width: 90%;
+  }
+}
+.watch-container {
+  // display: flex;
+  font-family: $body;
+}
+.admin-market-watch{
+    @extend .product-form;
+    background-color: $red;
+    text-align: left;
+    padding-left: 10px;
+    h1  {
+      text-align: center;
+    }
+}
+.admin-markets {
+  width: 90vw;
+  color: white;
+  li {
+    list-style: none;
+    display: inline;
+    line-height: 35px;
+  }
+}
+.admin-product-watch{
+    @extend .admin-market-watch;
+}
+.admin-products {
+  @extend .admin-markets;
+}
+.admin-orders-watch{
+  @extend .admin-market-watch;
+}
+.admin-orders {
+  @extend .admin-markets;
+}
+
+//  OFFICE DELIVERY PARTIAL
+.delivery-main {
+  background-image: url("../../assets/photos/baskets.jpeg");
+  background-size: cover;
+  height: 100vh;
+}
+.delivery-header {
+  background-color: black;
+  height: 4vh;
+}
+.delivery-content {
+
+}
+
+//  CONTACT PARTIAL
+.contact-main{
+  // background-color: #3D5D3C;
+  background-image: url("../../assets/photos/blueberries.jpg");
+
+  height: 100vh;
+  overflow: scroll;
+}
+.mobile-contact-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  align-items: center;
+}
+.fa-home {
+  color: $dark-green;
+  /*text-decoration: none;*/
+  font-size: 23px;
+}
+.fa-bars {
+  color: $dark-green;
+  font-size: 23px;
+}
+#contact-title {
+  font-family: $head;
+  color: $pale;
+  font-size: 27px;
+}
+.social-media {
+  margin-top: 45px;
+  display: flex;
+  width: 250px;
+  margin-left: 38%;
+  margin-right: auto;
+  text-align: center;
+  justify-content: space-between;
+  a {text-decoration: none; color: $pale}
+}
+.contact-container {
+  width: 100%;
+  text-align: center;
+  font-family: $body;
+  font-size: 20px;
+  padding-bottom: 45px;
+  div {
+    margin-top: 45px;
+    background-color: $pale;
+    opacity: 0.85;
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 7px;
+  }
+  h2 {
+    color: $red;
+    line-height: 32px;
+  }
+  p {
+    color: $red;
+  }
+}
+
+// ADMIN AND WHOLESALE PARTIALS
+.desktop-login-main {
+  background-image: url("../../assets/photos/apples-lot-of-leaves.jpeg");
+  background-size: cover;
+  height: 100vh;
+  display: none;
+}
+.mobile-login-main {
+  background-image: url("../../assets/photos/peppers.jpg");
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+}
+.desktop-login-container {
+  width: 500px;
+  height: 42vh;
+  background-color: white;
+  margin-top: 12vh;
+  margin-left: 10vw;
+  border-radius: 10%;
+  text-align: center;
+}
+.mobile-login-container {
+  background-color: white;
+  width: 350px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+  text-align: center;
+  border-radius: 10%;
+}
+.login-title {
+  font-family: $head;
+  color: $blue;
+  font-size: 18px;
+  margin-top: 7%;
+}
+.input-container {
+  /*background-color: black;*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12%;
+  height: 60%;
+  width: 60%;
+  font-family: $body;
+}
+#user-name {
+  /*margin-top: 100px;*/
+  margin-bottom: 8%;
+  border: 1px solid $blue;
+  font-size: 15px;
+  width: 218px;
+  height: 27px;
+  border-radius: 4px;
+  padding-left: 4px;
+}
+#password {
+  margin-bottom: 12%;
+  border: 1px solid $blue;
+  font-size: 15px;
+  width: 218px;
+  height: 27px;
+  border-radius: 4px;
+  padding-left: 4px;
+}
+#login-button {
+  background-color: $blue;
+  border: none;
+  height: 27px;
+  width: 60px;
+  font-size: 15px;
+  border-radius: 4px;
+  color: white;
+  &:hover {background-color: $red}
+}
+.footer-home-nav {
+  background-color: $blue;
+  width: 35px;
+  height: 35px;
+  /*justify-content: center;*/
+  text-align: center;
+  border-radius: 50%;
+  margin-top: -80px;
+  margin-left: auto;
+  margin-right: auto;
+  &:hover {background-color: $red}
+}
+.footer-home-nav > a {
+  font-size: 30px;
+  text-decoration: none;
+  -webkit-filter: invert(1);
+}
+
+.wholesale-main {
+  background: white;
+  height: 100vh;
+}
+.mobile-wholesale-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  align-items: center;
+}
+.header-home-nav {
+  float: right;
+}
+#wholesale-title {
+  font-family: $head;
+  color: $red;
+  font-size: 27px;
+}
+
+
+
+
+
+
+
+
+
+
+/*media queries*/
+@media (min-width: 415px){
+
+}
+@media (min-width: 780px){
+  .cherry {
+    width: 93%;
+    height: 93%;
+  }
+  .desktop-nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -.9em;
+  }
+  .ham {
+    visibility: hidden;;
+  }
+  .mobile-go-login-button {
+    visibility: hidden;
+  }
+  .desktop-go-login-button {
+    visibility: visible;
+  }
+  .desktop-login-main {
+    display: flex;
+  }
+  .mobile-login-main {
+    display: none;
+  }
+  .login-title {
+    font-size: 24px;
+  }
+  .input-container {
+    margin-top: 19%;
+  }
+  .cherry h1{
+    visibility: visible;
+  }
+}
+@media (min-width: 1224px){
+  .desktop-logo {
+    display: block;
+  }
+  .mobile-logo {
+    display: none;
+  }
+}

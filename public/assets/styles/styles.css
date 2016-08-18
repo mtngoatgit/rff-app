@@ -1,0 +1,521 @@
+.landing {
+  background-color: #1E211F;
+  height: 100vh;
+  width: 100vw;
+  display: inline-block; }
+
+.ham {
+  width: 65vw;
+  height: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vh;
+  text-align: center;
+  padding-top: 1vh; }
+
+.cherry {
+  background-image: url("../../assets/photos/cherry.jpeg");
+  background-size: cover;
+  width: 88%;
+  height: 92%;
+  margin: auto;
+  display: flex; }
+
+.mobile-logo {
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto; }
+
+.mobile-nav {
+  background-color: #1E211F;
+  opacity: 0.8;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  line-height: 39px;
+  display: none;
+  padding-top: 1vh;
+  padding-bottom: 1vh; }
+
+.mobile-nav a {
+  text-decoration: none;
+  font-size: 22px;
+  color: #E4BD3A;
+  font-family: "Lobster", cursive; }
+
+.mobile-go-login-button {
+  text-decoration: none;
+  color: #E4BD3A;
+  margin-top: 1vh;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px; }
+
+.mobile-go-login-button :hover {
+  color: #276998; }
+
+.mobile-go-login-button > a {
+  color: #E4BD3A;
+  text-decoration: none; }
+  .mobile-go-login-button > a:hover {
+    color: #276998; }
+
+.desktop-nav {
+  display: none; }
+
+.desktop-nav a {
+  text-decoration: none;
+  font-size: 19px;
+  color: #E4BD3A;
+  font-family: "Lobster", cursive; }
+  .desktop-nav a:hover {
+    color: #276998; }
+
+.desktop-logo {
+  display: none;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto; }
+
+.cherry h1 {
+  visibility: hidden; }
+
+#delivery-link {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  font-family: "Lobster", cursive;
+  position: absolute;
+  left: -1.4em;
+  align-self: center;
+  font-size: 19px; }
+  #delivery-link a {
+    text-decoration: none;
+    color: #E4BD3A; }
+
+#contact-link {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  font-family: "Lobster", cursive;
+  position: absolute;
+  right: 2px;
+  align-self: center;
+  font-size: 19px; }
+  #contact-link a {
+    text-decoration: none;
+    color: #E4BD3A; }
+
+#about-link {
+  font-family: "Lobster", cursive;
+  color: #E4BD3A;
+  position: absolute;
+  bottom: 10px;
+  margin-left: 45%;
+  font-size: 19px; }
+  #about-link a {
+    text-decoration: none;
+    color: #E4BD3A; }
+
+#locations-link {
+  font-family: "Lobster", cursive;
+  color: #E4BD3A;
+  position: absolute;
+  top: 8px;
+  margin-left: 43%;
+  justify-content: center;
+  font-size: 19px; }
+  #locations-link a {
+    text-decoration: none;
+    color: #E4BD3A; }
+
+.desktop-go-login-button {
+  margin-top: .5vh;
+  text-align: right;
+  font-size: 20px;
+  float: right;
+  margin-right: 2vw;
+  visibility: hidden; }
+
+.desktop-go-login-button > a {
+  color: #276998;
+  text-decoration: none; }
+  .desktop-go-login-button > a:hover {
+    color: #BD573F; }
+
+.desktop-partial-to-home {
+  position: fixed;
+  right: -15px;
+  top: 50vh;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #276998;
+  text-align: center; }
+  .desktop-partial-to-home .fa-home {
+    -webkit-filter: invert(1); }
+
+.about-main {
+  height: 100vh;
+  background-color: black;
+  width: 100vw; }
+
+.about-header {
+  height: 100vh;
+  background-image: url("../../assets/photos/barn-wood.jpg");
+  background-size: cover; }
+
+.about-title {
+  width: 30vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25vh;
+  padding-bottom: 3vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0 0 15px 15px; }
+  .about-title h1 {
+    font-family: "Lobster", cursive;
+    color: #BD573F;
+    font-size: 120px;
+    margin-bottom: 90px; }
+  .about-title h2 {
+    font-family: "Asap", sans-serif;
+    font-size: 50px;
+    color: #276998; }
+
+.jordan {
+  background: url("../../assets/photos/opaque/jrValicoffOP.png");
+  background-size: cover;
+  height: 80vh;
+  font-family: "Asap", sans-serif; }
+
+#jordan-text {
+  width: 40vw;
+  margin-top: 5vh;
+  margin-right: 2vw;
+  float: right; }
+
+.solid-section {
+  height: 60vh;
+  background-color: #1E211F; }
+
+.green-house-video {
+  background-color: black;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100vw; }
+
+.alan {
+  background: url("../../assets/photos/conference.jpg");
+  background-size: cover;
+  height: 80vh; }
+
+.locations-main {
+  height: 100%;
+  background-image: url("../../assets/photos/market.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 100px; }
+
+.markets-container {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3vh 0;
+  background-color: #FEF7DA;
+  font-family: "Asap", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: .85;
+  align-content: center;
+  border-radius: 8px; }
+  .markets-container h1 {
+    font-family: "Lobster", cursive;
+    margin-bottom: 10px; }
+
+.admin-main {
+  padding-top: 20px; }
+
+.admin-header {
+  height: 10vh;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "Lobster", cursive;
+  padding-top: 50px; }
+
+.market-form {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3vh 0;
+  background-color: #276998;
+  font-family: "Asap", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: .85;
+  align-content: center;
+  border-radius: 8px; }
+  .market-form h1 {
+    font-family: "Lobster", cursive;
+    margin-bottom: 20px;
+    color: white; }
+  .market-form li {
+    list-style: none;
+    margin-bottom: 10px; }
+  .market-form input {
+    width: 90%; }
+
+.product-form, .admin-market-watch, .admin-product-watch, .admin-orders-watch {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3vh 0;
+  background-color: #1E211F;
+  font-family: "Asap", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: .85;
+  align-content: center;
+  border-radius: 8px; }
+  .product-form h1, .admin-market-watch h1, .admin-product-watch h1, .admin-orders-watch h1 {
+    font-family: "Lobster", cursive;
+    margin-bottom: 20px;
+    color: white; }
+  .product-form li, .admin-market-watch li, .admin-product-watch li, .admin-orders-watch li {
+    list-style: none;
+    margin-bottom: 10px; }
+  .product-form input, .admin-market-watch input, .admin-product-watch input, .admin-orders-watch input {
+    width: 90%; }
+
+.watch-container {
+  font-family: "Asap", sans-serif; }
+
+.admin-market-watch, .admin-product-watch, .admin-orders-watch {
+  background-color: #BD573F;
+  text-align: left;
+  padding-left: 10px; }
+  .admin-market-watch h1, .admin-product-watch h1, .admin-orders-watch h1 {
+    text-align: center; }
+
+.admin-markets, .admin-products, .admin-orders {
+  width: 90vw;
+  color: white; }
+  .admin-markets li, .admin-products li, .admin-orders li {
+    list-style: none;
+    display: inline;
+    line-height: 35px; }
+
+.delivery-main {
+  background-image: url("../../assets/photos/baskets.jpeg");
+  background-size: cover;
+  height: 100vh; }
+
+.delivery-header {
+  background-color: black;
+  height: 4vh; }
+
+.contact-main {
+  background-image: url("../../assets/photos/blueberries.jpg");
+  height: 100vh;
+  overflow: scroll; }
+
+.mobile-contact-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  align-items: center; }
+
+.fa-home {
+  color: #1E211F;
+  /*text-decoration: none;*/
+  font-size: 23px; }
+
+.fa-bars {
+  color: #1E211F;
+  font-size: 23px; }
+
+#contact-title {
+  font-family: "Lobster", cursive;
+  color: #FEF7DA;
+  font-size: 27px; }
+
+.social-media {
+  margin-top: 45px;
+  display: flex;
+  width: 250px;
+  margin-left: 38%;
+  margin-right: auto;
+  text-align: center;
+  justify-content: space-between; }
+  .social-media a {
+    text-decoration: none;
+    color: #FEF7DA; }
+
+.contact-container {
+  width: 100%;
+  text-align: center;
+  font-family: "Asap", sans-serif;
+  font-size: 20px;
+  padding-bottom: 45px; }
+  .contact-container div {
+    margin-top: 45px;
+    background-color: #FEF7DA;
+    opacity: 0.85;
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 7px; }
+  .contact-container h2 {
+    color: #BD573F;
+    line-height: 32px; }
+  .contact-container p {
+    color: #BD573F; }
+
+.desktop-login-main {
+  background-image: url("../../assets/photos/apples-lot-of-leaves.jpeg");
+  background-size: cover;
+  height: 100vh;
+  display: none; }
+
+.mobile-login-main {
+  background-image: url("../../assets/photos/peppers.jpg");
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  display: flex; }
+
+.desktop-login-container {
+  width: 500px;
+  height: 42vh;
+  background-color: white;
+  margin-top: 12vh;
+  margin-left: 10vw;
+  border-radius: 10%;
+  text-align: center; }
+
+.mobile-login-container {
+  background-color: white;
+  width: 350px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+  text-align: center;
+  border-radius: 10%; }
+
+.login-title {
+  font-family: "Lobster", cursive;
+  color: #276998;
+  font-size: 18px;
+  margin-top: 7%; }
+
+.input-container {
+  /*background-color: black;*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12%;
+  height: 60%;
+  width: 60%;
+  font-family: "Asap", sans-serif; }
+
+#user-name {
+  /*margin-top: 100px;*/
+  margin-bottom: 8%;
+  border: 1px solid #276998;
+  font-size: 15px;
+  width: 218px;
+  height: 27px;
+  border-radius: 4px;
+  padding-left: 4px; }
+
+#password {
+  margin-bottom: 12%;
+  border: 1px solid #276998;
+  font-size: 15px;
+  width: 218px;
+  height: 27px;
+  border-radius: 4px;
+  padding-left: 4px; }
+
+#login-button {
+  background-color: #276998;
+  border: none;
+  height: 27px;
+  width: 60px;
+  font-size: 15px;
+  border-radius: 4px;
+  color: white; }
+  #login-button:hover {
+    background-color: #BD573F; }
+
+.footer-home-nav {
+  background-color: #276998;
+  width: 35px;
+  height: 35px;
+  /*justify-content: center;*/
+  text-align: center;
+  border-radius: 50%;
+  margin-top: -80px;
+  margin-left: auto;
+  margin-right: auto; }
+  .footer-home-nav:hover {
+    background-color: #BD573F; }
+
+.footer-home-nav > a {
+  font-size: 30px;
+  text-decoration: none;
+  -webkit-filter: invert(1); }
+
+.wholesale-main {
+  background: white;
+  height: 100vh; }
+
+.mobile-wholesale-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  align-items: center; }
+
+.header-home-nav {
+  float: right; }
+
+#wholesale-title {
+  font-family: "Lobster", cursive;
+  color: #BD573F;
+  font-size: 27px; }
+
+/*media queries*/
+@media (min-width: 780px) {
+  .cherry {
+    width: 93%;
+    height: 93%; }
+  .desktop-nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -.9em; }
+  .ham {
+    visibility: hidden; }
+  .mobile-go-login-button {
+    visibility: hidden; }
+  .desktop-go-login-button {
+    visibility: visible; }
+  .desktop-login-main {
+    display: flex; }
+  .mobile-login-main {
+    display: none; }
+  .login-title {
+    font-size: 24px; }
+  .input-container {
+    margin-top: 19%; }
+  .cherry h1 {
+    visibility: visible; } }
+
+@media (min-width: 1224px) {
+  .desktop-logo {
+    display: block; }
+  .mobile-logo {
+    display: none; } }

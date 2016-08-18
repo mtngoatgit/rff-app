@@ -1,0 +1,72 @@
+<section class="admin-main">
+
+  <div class="admin-header">
+    <img src="http://test-nodep.s3-us-west-2.amazonaws.com/styles/xlarge/s3/images/main_image/article/neilyoungwsj.jpg"/>
+    <h1>Hi Jordan!</h1>
+    <h2>Welcome to your administrator page</h2>
+  </div>
+
+  <section class="product-form">
+    <h1> Product Form </h1>
+    <li class="product-form-item"><input id="prd-name" placeholder="Product Name" ng-model="product.name" required></li>
+    <li class="product-form-item"><input id="prd-price" placeholder="Price" ng-model="product.price" required></li>
+    <li class="product-form-item"><input id="prd-container" placeholder="Measure (e.g. 'bushel')" ng-model="product.container" required></li>
+    <li class="product-form-item"><input id="prd-notes" placeholder="Additional Notes (e.g. 'slightly blemished, fault of hail')" ng-model="product.notes"></li>
+    <input class="product-form-button" type="button" value="Create Product" ng-click="postProduct(product)">
+  </section>
+
+  <section class="market-form">
+    <h1> Market Form </h1>
+    <li class="market-form-item"><input id="mkt-name" placeholder="Market Name:" ng-model="market.name" required></li>
+    <li class="market-form-item"><input id="mkt-address" placeholder="Address" ng-model="market.address" required></li>
+    <li class="market-form-item"><input id="mkt-times" placeholder="Dates and Times" ng-model="market.times" required></li>
+    <li class="market-form-item"><input id="mkt-notes" placeholder="Additional Notes (e.g. 'We/'ll have cider!')" ng-model="market.notes"></li>
+    <input class="market-form-button" type="button" value="Create Market" ng-click="postMarket(market)">
+  </section>
+</section>
+
+<section class="watch-container">
+
+<section class="admin-market-watch">
+    <h1>Current Markets</h1>
+    <div class="admin-markets" ng-repeat="market in markets">
+        <li> id: {{ market.id }} </li>
+        <li> market name: {{ market.name }} </li>
+        <li> address: {{ market.address }} </li>
+        <li> dates and times: {{ market.times }} </li>
+        <li> notes: {{ market.notes }} </li>
+        DELETE BUTTON
+    </div>
+</section>
+
+<section class="admin-product-watch">
+    <h1>Current Product Offerings</h1>
+    <div class="admin-products" ng-repeat="product in products">
+        <li> id: {{ product.idea }} </li>
+        <li> product: {{ product.name }} </li>
+        <li> price per unit: {{ product.price }} </li>
+        <li> unit: {{ product.container }} </li>
+        <li> notes: {{ product.notes }} </li>
+        DELETE BUTTON
+    </div>
+</section>
+
+<section class="admin-orders-watch">
+    <h1>Open Wholesale Orders</h1>
+    <div class="admin-orders" ng-repeat="order in orders">
+        <li> {{ }} </li>
+        <li> {{ }} </li>
+        <li> {{ }} </li>
+        <li> {{ }} </li>
+        <li> {{ }} </li>
+        DELETE BUTTON
+    </div>
+</section>
+
+<div class="desktop-partial-to-home">
+  <i class="fa fa-home fa-5x" aria-hidden="true"></i>
+</div>
+<div class="desktop-partial-nav">
+
+</div>
+</section>
