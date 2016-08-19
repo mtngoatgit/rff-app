@@ -32,4 +32,17 @@ angular
       })
     }
 
+    this.deleteProduct = function(product){
+      console.log(product);
+      return $http.delete('/products/' + product).then(function(response){
+        return response.data
+      })
+    }
+
+    this.deleteMarket = function(market){
+      return $http.delete('/markets/' + market).then(function(response){
+        return response.data
+      })
+    }
+
   })//end of service

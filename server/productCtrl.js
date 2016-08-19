@@ -36,8 +36,19 @@ addMarket: function(req, res, next){
   db.add_market(items, function (err, response){
   res.status(200).send(req.body);
   })
+},
+deleteProduct: function(req, res, next){
+  console.log(req.params);
+  db.delete_product(req.params.id, function(err, response){
+  res.status(200).send(response);
+  })
+},
+deleteMarket: function(req, res, next){
+  console.log(req.params);
+  db.delete_market(req.params.id, function(err, response){
+  res.status(200).send(response);
+  })
 }
-
 
 
 }

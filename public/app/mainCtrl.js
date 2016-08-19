@@ -33,5 +33,21 @@ angular
       })
     }
 
+    $scope.deleteProduct = function(product){
+      console.log(product)
+      farmSrvc.deleteProduct(product).then(function(res){
+        alert('item deleted!');
+        location.reload();
+      })
+    }
+
+    $scope.deleteMarket = function(market){
+      console.log(market)
+      farmSrvc.deleteMarket(market).then(function(res){
+        alert('item deleted!');
+        location.reload();
+      })
+    }
+
 
   })

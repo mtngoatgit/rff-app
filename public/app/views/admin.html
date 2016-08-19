@@ -1,9 +1,19 @@
 <section class="admin-main">
 
-  <div class="admin-header">
+  <div class="mobile-admin-header">
     <img src="http://test-nodep.s3-us-west-2.amazonaws.com/styles/xlarge/s3/images/main_image/article/neilyoungwsj.jpg"/>
-    <h1>Hi Jordan!</h1>
-    <h2>Welcome to your administrator page</h2>
+    <div class="mobile-admin-header-text">
+      <h1>Hi Jordan!</h1>
+      <h2>Welcome to your administrator page</h2>
+    </div>
+  </div>
+
+  <div class="desktop-admin-header">
+    <img src="http://test-nodep.s3-us-west-2.amazonaws.com/styles/xlarge/s3/images/main_image/article/neilyoungwsj.jpg"/>
+    <div class="desktop-admin-header-text">
+      <h1>Hi Jordan!</h1>
+      <h2>Welcome to your administrator page</h2>
+    </div>
   </div>
 
   <section class="product-form">
@@ -28,27 +38,51 @@
 <section class="watch-container">
 
 <section class="admin-market-watch">
-    <h1>Current Markets</h1>
-    <div class="admin-markets" ng-repeat="market in markets">
-        <li> id: {{ market.id }} </li>
-        <li> market name: {{ market.name }} </li>
-        <li> address: {{ market.address }} </li>
-        <li> dates and times: {{ market.times }} </li>
-        <li> notes: {{ market.notes }} </li>
-        DELETE BUTTON
-    </div>
+  <h1>Current Markets</h1>
+
+  <div class="admin-markets">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Dates and Times</th>
+        <th>Notes</th>
+        <th>Remove</th>
+      </tr>
+      <tr ng-repeat="market in markets">
+        <td>{{ market.name }}</td>
+        <td>{{ market.address }}</td>
+        <td>{{ market.times }}</td>
+        <td>{{ market.notes }} </td>
+        <td><input class="delete-button" type="button"  ng-click="deleteMarket(market.id)" value="x"></td>
+      </tr>
+    </table>
+  </div>
+
 </section>
 
 <section class="admin-product-watch">
     <h1>Current Product Offerings</h1>
-    <div class="admin-products" ng-repeat="product in products">
-        <li> id: {{ product.idea }} </li>
-        <li> product: {{ product.name }} </li>
-        <li> price per unit: {{ product.price }} </li>
-        <li> unit: {{ product.container }} </li>
-        <li> notes: {{ product.notes }} </li>
-        DELETE BUTTON
-    </div>
+
+    <div class="admin-products">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Unit</th>
+            <th>Notes</th>
+            <th>Remove</th>
+          </tr>
+          <tr ng-repeat="product in products">
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.container }}</td>
+            <td>{{ product.notes }} </td>
+            <td><input class="delete-button" type="button"  ng-click="deleteProduct(product.id)" value="x"></td>
+          </tr>
+        </table>
+      </div>
+
 </section>
 
 <section class="admin-orders-watch">
@@ -59,14 +93,37 @@
         <li> {{ }} </li>
         <li> {{ }} </li>
         <li> {{ }} </li>
-        DELETE BUTTON
+        <input class="delete-button" type="button"  ng-click="deleteOrder(order.id)" value="x">
     </div>
 </section>
 
-<div class="desktop-partial-to-home">
+<div class="partial-nav-to-home">
+  <a ui-sref="home"
   <i class="fa fa-home fa-5x" aria-hidden="true"></i>
+  </a>
 </div>
-<div class="desktop-partial-nav">
+
+<div animations-dir class="partial-nav">
+  <i class="fa fa-bars fa-5x" aria-hidden="true"></i>
+</div>
+
+<div animations-dir class="partial-menu">
+  <div><a ui-sref="about">about</a></div>
+  <div><a ui-sref="office-delivery">office delivery</a></div>
+  <div><a ui-sref="locations">markets and locations</a></div>
+  <div><a ui-sref="contact">contact</a></div>
+</div>
+
+<div class="mobile-partial-nav-to-home">
+  <a ui-sref="home"
+  <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+  </a>
+</div>
+
+<div animations-dir class="mobile-partial-nav">
+  <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+</div>
+
 
 </div>
 </section>

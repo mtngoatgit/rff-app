@@ -17,10 +17,15 @@ var db = app.get('db');
 
 
 var controller = require('./productCtrl.js');
+
 app.get('/markets', controller.getMarkets);
 app.post('/markets', controller.addMarket);
+app.delete('/markets/:id', controller.deleteMarket);
+
 app.get('/products', controller.getProducts);
 app.post('/products', controller.addProduct);
+app.delete('/products/:id', controller.deleteProduct);
+
 
 
 
