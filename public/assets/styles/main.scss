@@ -94,7 +94,7 @@
   &:hover {color: $blue}
 }
 .desktop-nav-container {
-  position: relative;;
+  position: relative;
   top: 8px;
   right: 28vw;
 }
@@ -197,6 +197,7 @@
   background-color: $blue;
   text-align: center;
   .fa-home{color: white; text-decoration: none;}
+  &:hover {background-color: $red}
 }
 .partial-nav {
   @extend .partial-nav-to-home;
@@ -497,6 +498,26 @@ table, th, td {
 .delete-button {
   width: 50px;
 }
+.personal-notes {
+  @extend .market-form;
+  background-color: $blue;
+  input{
+    margin-top: 20px;
+  }
+}
+.personal-note-button{
+  margin-bottom: 20px;
+}
+.personal-note-container {
+  margin-top: 20px;
+  border: white solid 1px;
+  border-radius: 8px;
+  width: 90%;
+  padding: 3vh 0;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 //  OFFICE DELIVERY PARTIAL
 .delivery-main {
@@ -514,50 +535,60 @@ table, th, td {
 
 //  CONTACT PARTIAL
 .contact-main{
-  background-color: $red;
+  background-color: white;
   // background-image: url("../../assets/photos/cherry-tree.jpeg");
   background-size: cover;
-  height: 100vh;
-  overflow: scroll;
+  height: 100%;
+  // overflow: scroll;
+  display: flex;
+  flex-direction: row;
+}
+.sub-contact-main {
+  height: 90vh;
+  width: 95vw;
+  margin: auto;
+  margin-top: 45px;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  background-image: url('../../assets/photos/strawberries-hands.jpeg');
+  background-size: cover;
 }
 .mobile-contact-main{
 
 }
-.mobile-contact-header {
-  display: flex;
-  justify-content: center;
-  // padding-bottom: 10px;
+.contact-header {
+  position: absolute;
+  right: 40%;
+  top: 7px;
 }
 #contact-title {
   font-family: $head;
-  color: $pale;
-  font-size: 80px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid $pale;
-}
-.social-media {
-  // justify-content: space-around;
-  a {
-    text-decoration: none;
-    color: $pale;
-    word-spacing: 20px;
-  }
+  color: $dark-green;
+  font-size: 30px;
+  // padding-bottom: 10px;
+  // border-bottom: 1px solid $dark-green;
 }
 .contact-container {
-  width: 100%;
+  background-color: white;
+  transition: background-color .5s linear;
+  &:hover{background-color: rgba(0, 0, 0, 0)}
+  // width: 100%;
+  // height: 40vh;
+  right: 0px;
   text-align: center;
   font-family: $body;
   font-size: 20px;
   padding-bottom: 45px;
-  color: $pale;
+  color: white;
   div {
-    margin-top: 45px;
+    margin-top: 35px;
     background-color: $dark-green;
     opacity: 0.9;
     width: 315px;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px 20px 45px 20px;
+    padding: 20px 20px 35px 20px;
     border-radius: 7px;
   }
   h2 {
@@ -571,7 +602,7 @@ table, th, td {
   }
   .fa-building {
     // color: white;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
   }
   .fa-phone {
     @extend .fa-building;
@@ -579,7 +610,25 @@ table, th, td {
   .fa-laptop {
     @extend .fa-building;
   }
+  a {
+  text-decoration: none;
+  color: white;
+  word-spacing: 20px;
+  }
 }
+//  BOX EXPERIMENT
+.box {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  right: 50px;
+  background-color: white;
+  transition: background-color .5s linear;
+  &:hover{background-color: rgba(0, 0, 0, 0)}
+}
+
 
 // ADMIN AND WHOLESALE PARTIALS
 .desktop-login-main {
@@ -680,14 +729,8 @@ table, th, td {
   background: white;
   height: 100vh;
 }
-.mobile-wholesale-header {
-  display: flex;
-  justify-content: space-around;
-  padding: 5px;
-  align-items: center;
-}
-.header-home-nav {
-  float: right;
+.wholesale-header {
+  @extend .contact-header;
 }
 #wholesale-title {
   font-family: $head;
@@ -699,10 +742,12 @@ table, th, td {
   overflow-x: scroll;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 20px;
   padding: 3vh 0;
   background-color: $red;
   font-family: $body;
-  margin-bottom: 20px;
+
   opacity: .85;
   border-radius: 8px;
   display: flex;
@@ -738,6 +783,15 @@ table, th, td {
 .submit-button-container {
   display: flex;
   justify-content: center;
+  align-items: baseline;
+}
+.customer-name {
+  height: 20px;
+  width: 200px;
+  border-radius: 4px;
+}
+.customer-phone {
+  @extend .customer-name;
 }
 .order-submit {
   background-color: $dark-green;
@@ -828,8 +882,22 @@ table, th, td {
   .desktop-admin-header-text {
     display: inline;
   }
+  .contact-header {
+    right: 47%;
+  }
+  .wholesale-header{
+    right: 47%;
+  }
+  .contact-container {
+    width: 50%;
+    height: 100%;
+    background-attachment: fixed;
+  }
   .contact-container div {
     width: 500px;
+  }
+  .contact-container div:nth-child(1){
+    margin-top: 0px;
   }
 }
 @media (min-width: 1224px){

@@ -31,24 +31,44 @@ addMarket: function(req, res, next){
     req.body.times,
     req.body.notes
   ];
-  console.log(items);
-  console.log(db);
   db.add_market(items, function (err, response){
   res.status(200).send(req.body);
   })
 },
 deleteProduct: function(req, res, next){
-  console.log(req.params);
   db.delete_product(req.params.id, function(err, response){
   res.status(200).send(response);
   })
 },
 deleteMarket: function(req, res, next){
-  console.log(req.params);
   db.delete_market(req.params.id, function(err, response){
   res.status(200).send(response);
   })
+},
+addOrder: function(req, res, next){
+  // var ord = [
+  //   req.body.name,
+  //   req.body.price,
+  //   req.body.container,
+  //   req.body.notes,
+  //   req.body.quantity,
+  //   req.body.user,
+  //   req.body.phone
+  // ];
+  // console.log(req.body);
+  db.add_order(req.body, function (err, response){
+  res.status(200).send(req.body);
+  })
+},
+getNotes: function(req, res, next){
+  db.get_all_notes(function (err, response) {
+    res.send(response);
+  })
+},
+addNote: function(req, res, next){
+  db.add_note(req.body.note, function (err, response){
+  res.status(200).send(req.body);
+  })
 }
-
 
 }

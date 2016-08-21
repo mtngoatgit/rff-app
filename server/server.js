@@ -26,7 +26,10 @@ app.get('/products', controller.getProducts);
 app.post('/products', controller.addProduct);
 app.delete('/products/:id', controller.deleteProduct);
 
+app.post('/orders', controller.addOrder);
 
+app.get('/notes', controller.getNotes);
+app.post('/notes', controller.addNote);
 
 
 app.listen(3000, function(){

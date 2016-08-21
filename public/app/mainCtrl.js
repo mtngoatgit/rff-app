@@ -27,6 +27,7 @@ angular
 
 
     $scope.postProduct = function(product) {
+      console.log(product);
       farmSrvc.postProduct(product).then(function(res){
         alert('new product created :)')
         location.reload();
@@ -45,6 +46,29 @@ angular
       console.log(market)
       farmSrvc.deleteMarket(market).then(function(res){
         alert('item deleted!');
+        location.reload();
+      })
+    }
+
+    $scope.postOrder = function(order) {
+      console.log("this is what it looks like in control", order);
+      farmSrvc.postOrder(order).then(function(res){
+        alert('new order created :)')
+        // location.reload();
+      })
+    }
+
+    $scope.getAllNotes = function(){
+      farmSrvc.getAllNotes().then(function(response){
+        $scope.notes = response;
+      })
+    }
+    $scope.getAllNotes();
+
+    $scope.postNote = function(note) {
+      console.log(note);
+      farmSrvc.postNote(note).then(function(res){
+        alert('new personal created :)')
         location.reload();
       })
     }

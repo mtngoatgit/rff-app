@@ -191,6 +191,8 @@
   .partial-nav-to-home .fa-home, .partial-nav .fa-home {
     color: white;
     text-decoration: none; }
+  .partial-nav-to-home:hover, .partial-nav:hover {
+    background-color: #BD573F; }
 
 .partial-nav {
   cursor: pointer;
@@ -373,7 +375,7 @@
     font-size: 22px;
     color: #1E211F; }
 
-.market-form, .product-form {
+.market-form, .product-form, .personal-notes {
   width: 80vw;
   margin-left: auto;
   margin-right: auto;
@@ -385,17 +387,17 @@
   opacity: .85;
   align-content: center;
   border-radius: 8px; }
-  .market-form h1, .product-form h1 {
+  .market-form h1, .product-form h1, .personal-notes h1 {
     font-family: "Lobster", cursive;
     margin-bottom: 26px;
     font-size: 20px;
     color: white; }
-  .market-form li, .product-form li {
+  .market-form li, .product-form li, .personal-notes li {
     list-style: none;
     margin-bottom: 10px; }
-  .market-form input, .product-form input {
+  .market-form input, .product-form input, .personal-notes input {
     width: 90%; }
-  .market-form .delete-button, .product-form .delete-button {
+  .market-form .delete-button, .product-form .delete-button, .personal-notes .delete-button {
     width: 22px;
     font-weight: 700; }
 
@@ -454,6 +456,24 @@ table, th, td {
 .delete-button {
   width: 50px; }
 
+.personal-notes {
+  background-color: #276998; }
+  .personal-notes input {
+    margin-top: 20px; }
+
+.personal-note-button {
+  margin-bottom: 20px; }
+
+.personal-note-container {
+  margin-top: 20px;
+  border: white solid 1px;
+  border-radius: 8px;
+  width: 90%;
+  padding: 3vh 0;
+  color: white;
+  margin-right: auto;
+  margin-left: auto; }
+
 .delivery-main {
   background-image: url("../../assets/photos/baskets.jpeg");
   background-size: cover;
@@ -464,42 +484,52 @@ table, th, td {
   height: 4vh; }
 
 .contact-main {
-  background-color: #BD573F;
+  background-color: white;
   background-size: cover;
-  height: 100vh;
-  overflow: scroll; }
-
-.mobile-contact-header {
+  height: 100%;
   display: flex;
-  justify-content: center; }
+  flex-direction: row; }
+
+.sub-contact-main {
+  height: 90vh;
+  width: 95vw;
+  margin: auto;
+  margin-top: 45px;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  background-image: url("../../assets/photos/strawberries-hands.jpeg");
+  background-size: cover; }
+
+.contact-header, .wholesale-header {
+  position: absolute;
+  right: 40%;
+  top: 7px; }
 
 #contact-title {
   font-family: "Lobster", cursive;
-  color: #FEF7DA;
-  font-size: 80px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #FEF7DA; }
-
-.social-media a {
-  text-decoration: none;
-  color: #FEF7DA;
-  word-spacing: 20px; }
+  color: #1E211F;
+  font-size: 30px; }
 
 .contact-container {
-  width: 100%;
+  background-color: white;
+  transition: background-color .5s linear;
+  right: 0px;
   text-align: center;
   font-family: "Asap", sans-serif;
   font-size: 20px;
   padding-bottom: 45px;
-  color: #FEF7DA; }
+  color: white; }
+  .contact-container:hover {
+    background-color: transparent; }
   .contact-container div {
-    margin-top: 45px;
+    margin-top: 35px;
     background-color: #1E211F;
     opacity: 0.9;
     width: 315px;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px 20px 45px 20px;
+    padding: 20px 20px 35px 20px;
     border-radius: 7px; }
   .contact-container h2 {
     line-height: 32px;
@@ -507,7 +537,23 @@ table, th, td {
   .contact-container p {
     font-family: "Raleway", sans-serif; }
   .contact-container .fa-building, .contact-container .fa-phone, .contact-container .fa-laptop {
-    margin-bottom: 45px; }
+    margin-bottom: 35px; }
+  .contact-container a {
+    text-decoration: none;
+    color: white;
+    word-spacing: 20px; }
+
+.box {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  right: 50px;
+  background-color: white;
+  transition: background-color .5s linear; }
+  .box:hover {
+    background-color: transparent; }
 
 .desktop-login-main {
   background-image: url("../../assets/photos/apples-lot-of-leaves.jpeg");
@@ -608,15 +654,6 @@ table, th, td {
   background: white;
   height: 100vh; }
 
-.mobile-wholesale-header {
-  display: flex;
-  justify-content: space-around;
-  padding: 5px;
-  align-items: center; }
-
-.header-home-nav {
-  float: right; }
-
 #wholesale-title {
   font-family: "Lobster", cursive;
   color: #BD573F;
@@ -627,10 +664,11 @@ table, th, td {
   overflow-x: scroll;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 20px;
   padding: 3vh 0;
   background-color: #BD573F;
   font-family: "Asap", sans-serif;
-  margin-bottom: 20px;
   opacity: .85;
   border-radius: 8px;
   display: flex;
@@ -663,7 +701,13 @@ table, th, td {
 
 .submit-button-container {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  align-items: baseline; }
+
+.customer-name, .customer-phone {
+  height: 20px;
+  width: 200px;
+  border-radius: 4px; }
 
 .order-submit {
   background-color: #1E211F;
@@ -720,8 +764,18 @@ table, th, td {
     display: flex; }
   .desktop-admin-header-text {
     display: inline; }
+  .contact-header, .wholesale-header {
+    right: 47%; }
+  .wholesale-header {
+    right: 47%; }
+  .contact-container {
+    width: 50%;
+    height: 100%;
+    background-attachment: fixed; }
   .contact-container div {
-    width: 500px; } }
+    width: 500px; }
+  .contact-container div:nth-child(1) {
+    margin-top: 0px; } }
 
 .typed-cursor {
   opacity: 1;

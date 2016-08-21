@@ -19,3 +19,24 @@ CREATE TABLE markets (
   times varchar(70),
   notes text
 );
+
+-- CREATE TABLE orders (
+--   id serial primary key not null,
+--   productName varchar(70),
+--   price money,
+--   container varchar(30),
+--   notes text,
+--   quantity integer,
+--   userName varchar(70),
+--   phone integer
+-- );
+
+CREATE TABLE orders (
+  id serial primary key not null,
+  object text[]
+);
+
+CREATE TABLE notes (
+  id serial primary key not null,
+  note text
+);

@@ -1,12 +1,7 @@
 <section class="wholesale-main">
 
-  <div class="mobile-wholesale-header">
-    <i class="fa fa-bars" aria-hidden="true"></i>
+  <div class="wholesale-header">
     <h1 id="wholesale-title">Place an Order</h1>
-    <div class="header-home-nav">
-      <a ui-sref="home">
-        <i class="fa fa-home" aria-hidden="true"></i>
-      <a/>
     </div>
 
   </div>
@@ -23,17 +18,20 @@
               <th>Notes</th>
               <th>Quanitity</th>
             </tr>
-            <tr ng-repeat="product in products">
+            <tr ng-repeat="(i, product) in products" ng-model="products[i]">
               <td>{{ product.name }}</td>
               <td>{{ product.price }}</td>
               <td>{{ product.container }}</td>
               <td>{{ product.notes }} </td>
-              <td><input type="text" name="name" placeholder="Qty."></td>
+              <td><input type="text" name="name" placeholder="Qty." ng-model="products[i].quantity"></td>
+
             </tr>
           </table>
         </div>
         <div class="submit-button-container">
-          <input class="order-submit" type="button" name="name" value="submit order">
+          <input class="customer-phone" type="text" name="name" placeholder="user name" ng-model="products.user">
+          <input class="customer-name" type="text" name="name" placeholder="user phone" ng-model="products.phone">
+          <input class="order-submit" type="button" name="name" value="submit order" ng-click="postOrder(products)">
         </div>
 
   </section>
