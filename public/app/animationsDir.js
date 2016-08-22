@@ -12,6 +12,10 @@ angular
           $('.mobile-partial-nav').click(function(){
             $('.partial-menu').toggle();
           })
+          $('.box').click(function () {
+            // $('.box').css("visibility", "hidden");
+            $('.box').fadeOut(800);
+          })
           //  THE FUNCTION BELOW DOESNT WORK...
           // $(".mobile-partial-nav").click(function(){
           //     $(this).css("background-color", "#BD573F");

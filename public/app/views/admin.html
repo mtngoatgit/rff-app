@@ -101,6 +101,7 @@
     <input class="personal-note-button" type="button" value="Create Note" ng-click="postNote(personal)">
     <div class="personal-note-container" ng-repeat="note in notes">
       <p>{{note.note}}</p>
+      <input class="delete-button" type="button"  ng-click="deleteNote(note.id)" value="x">
     </div>
 </section>
 

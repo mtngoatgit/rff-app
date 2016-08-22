@@ -30,6 +30,7 @@ app.post('/orders', controller.addOrder);
 
 app.get('/notes', controller.getNotes);
 app.post('/notes', controller.addNote);
+app.delete('/notes/:id', controller.deleteNote);
 
 
 app.listen(3000, function(){

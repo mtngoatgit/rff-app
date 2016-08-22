@@ -242,37 +242,45 @@
 
 .about-main {
   height: 100vh;
-  background-color: black;
-  width: 100vw; }
+  width: 100%; }
 
 .about-header {
-  height: 100vh;
+  height: 100%;
+  width: 100vw;
   background-image: url("../../assets/photos/barn-wood.jpg");
   background-size: cover; }
 
 .about-title {
-  width: 30vw;
+  width: 50vw;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 25vh;
+  padding-top: 45vh;
   padding-bottom: 3vh;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0 0 15px 15px; }
   .about-title h1 {
     font-family: "Lobster", cursive;
     color: #BD573F;
-    font-size: 120px;
-    margin-bottom: 90px; }
+    font-size: 60px;
+    margin-bottom: 30px; }
   .about-title h2 {
-    font-family: "Asap", sans-serif;
-    font-size: 50px;
-    color: #276998; }
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    color: #276998;
+    padding-bottom: 4px;
+    border-bottom: 4px solid #276998; }
+
+.solid-section {
+  height: 60vh;
+  background-color: #1E211F; }
 
 .jordan {
   background: url("../../assets/photos/opaque/jrValicoffOP.png");
-  background-size: cover;
-  height: 80vh;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
   font-family: "Asap", sans-serif; }
 
 #jordan-text {
@@ -281,11 +289,8 @@
   margin-right: 2vw;
   float: right; }
 
-.solid-section {
-  height: 60vh;
-  background-color: #1E211F; }
-
 .green-house-video {
+  display: none;
   background-color: black;
   margin-right: auto;
   margin-left: auto;
@@ -296,30 +301,52 @@
   background-size: cover;
   height: 80vh; }
 
+.locations-header {
+  font-family: "Lobster", cursive;
+  text-align: center;
+  font-size: 26px;
+  line-height: 30px; }
+
 .locations-main {
-  height: 100%;
-  background-image: url("../../assets/photos/market.jpeg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-top: 100px; }
+  height: 92vh;
+  background-color: white;
+  padding: 4vh 3vw;
+  overflow: scroll; }
+
+.locations-sub-one {
+  height: 92vh;
+  width: 50%;
+  visibility: hidden;
+  position: fixed;
+  right: 3vh;
+  top: 3vh;
+  background-image: url("../../assets/photos/green-beans.jpeg");
+  background-size: cover; }
 
 .markets-container {
-  width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   padding: 3vh 0;
-  background-color: #FEF7DA;
-  font-family: "Asap", sans-serif;
+  background-color: #1E211F;
+  font-family: "Raleway", sans-serif;
+  color: white;
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
   opacity: .85;
   align-content: center;
   border-radius: 8px; }
   .markets-container h1 {
     font-family: "Lobster", cursive;
     margin-bottom: 10px; }
+
+.locations-main::-webkit-scrollbar {
+  width: 3px; }
+
+.locations-main::-webkit-scrollbar-track {
+  background: white; }
+
+.lcoations-main::-webkit-scrollbar-thumb {
+  outline: none;
+  background-color: #2a3132; }
 
 .admin-main {
   padding-top: 20px;
@@ -462,7 +489,10 @@ table, th, td {
     margin-top: 20px; }
 
 .personal-note-button {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  background-color: #BD573F;
+  color: white;
+  border: none; }
 
 .personal-note-container {
   margin-top: 20px;
@@ -472,16 +502,48 @@ table, th, td {
   padding: 3vh 0;
   color: white;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  position: relative; }
+  .personal-note-container .delete-button {
+    position: absolute;
+    right: 5px;
+    top: -19px;
+    background-color: #1E211F;
+    color: white;
+    border: none; }
 
 .delivery-main {
   background-image: url("../../assets/photos/baskets.jpeg");
   background-size: cover;
-  height: 100vh; }
+  height: 100vh;
+  z-index: 1; }
 
 .delivery-header {
   background-color: black;
   height: 4vh; }
+
+.box {
+  height: 10%;
+  width: 10%;
+  float: right;
+  right: 50px;
+  background-color: black;
+  transition: background-color .5s linear;
+  z-index: 2;
+  font-family: "Lobster", cursive;
+  opacity: .9;
+  text-align: center;
+  align-self: center;
+  font-size: 22px;
+  color: #BD573F; }
+  .box:hover {
+    background-color: transparent; }
+
+.dummy {
+  padding-top: 100px;
+  z-index: 1;
+  position: absolute;
+  top: 50vh; }
 
 .contact-main {
   background-color: white;
@@ -491,13 +553,12 @@ table, th, td {
   flex-direction: row; }
 
 .sub-contact-main {
-  height: 90vh;
+  height: 0vh;
   width: 95vw;
   margin: auto;
   margin-top: 45px;
   background-attachment: fixed;
   background-position: center;
-  display: flex;
   background-image: url("../../assets/photos/strawberries-hands.jpeg");
   background-size: cover; }
 
@@ -512,7 +573,11 @@ table, th, td {
   font-size: 30px; }
 
 .contact-container {
-  background-color: white;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url("../../assets/photos/strawberries-hands.jpeg");
+  background-size: cover;
+  overflow: scroll;
   transition: background-color .5s linear;
   right: 0px;
   text-align: center;
@@ -542,18 +607,6 @@ table, th, td {
     text-decoration: none;
     color: white;
     word-spacing: 20px; }
-
-.box {
-  height: 100px;
-  width: 100px;
-  display: flex;
-  flex-direction: column;
-  float: right;
-  right: 50px;
-  background-color: white;
-  transition: background-color .5s linear; }
-  .box:hover {
-    background-color: transparent; }
 
 .desktop-login-main {
   background-image: url("../../assets/photos/apples-lot-of-leaves.jpeg");
@@ -756,6 +809,54 @@ table, th, td {
     margin-top: 19%; }
   .cherry h1 {
     visibility: visible; }
+  .about-main {
+    height: auto;
+    background-color: black;
+    width: 100%; }
+  .about-header {
+    background-image: url("../../assets/photos/barn-wood.jpg");
+    background-size: cover; }
+  .about-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25vh;
+    padding-bottom: 3vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0 0 15px 15px; }
+    .about-title h1 {
+      font-family: "Lobster", cursive;
+      color: #BD573F;
+      font-size: 130px;
+      margin-bottom: 90px; }
+    .about-title h2 {
+      font-family: "Asap", sans-serif;
+      font-size: 50px;
+      color: #276998; }
+  .jordan {
+    background: url("../../assets/photos/opaque/jrValicoffOP.png");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    font-family: "Asap", sans-serif; }
+  #jordan-text {
+    width: 40vw;
+    margin-top: 5vh;
+    margin-right: 2vw;
+    float: right; }
+  .solid-section {
+    height: 60vh;
+    background-color: #1E211F; }
+  .green-house-video {
+    display: block;
+    background-color: black;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100vw; }
+  .alan {
+    background: url("../../assets/photos/conference.jpg");
+    background-size: cover;
+    height: 80vh; }
   .mobile-admin-header {
     display: none; }
   .mobile-admin-header-text {
@@ -771,11 +872,17 @@ table, th, td {
   .contact-container {
     width: 50%;
     height: 100%;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    background-image: none;
+    background-color: white; }
+  .sub-contact-main {
+    height: 90vh; }
   .contact-container div {
-    width: 500px; }
-  .contact-container div:nth-child(1) {
-    margin-top: 0px; } }
+    width: 89%; }
+  .locations-sub-one {
+    visibility: visible; }
+  .markets-container {
+    width: 45%; } }
 
 .typed-cursor {
   opacity: 1;

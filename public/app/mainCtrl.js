@@ -51,7 +51,7 @@ angular
     }
 
     $scope.postOrder = function(order) {
-      console.log("this is what it looks like in control", order);
+      console.log(order);
       farmSrvc.postOrder(order).then(function(res){
         alert('new order created :)')
         // location.reload();
@@ -69,6 +69,13 @@ angular
       console.log(note);
       farmSrvc.postNote(note).then(function(res){
         alert('new personal created :)')
+        // location.reload();
+      })
+    }
+    $scope.deleteNote = function(note){
+      console.log(note)
+      farmSrvc.deleteNote(note).then(function(res){
+        alert('item deleted!');
         location.reload();
       })
     }

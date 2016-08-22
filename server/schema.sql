@@ -20,23 +20,28 @@ CREATE TABLE markets (
   notes text
 );
 
--- CREATE TABLE orders (
---   id serial primary key not null,
---   productName varchar(70),
---   price money,
---   container varchar(30),
---   notes text,
---   quantity integer,
---   userName varchar(70),
---   phone integer
--- );
+CREATE TABLE users (
+  userId serial primary key not null,
+  userName varchar(30),
+  userPhone text
+);
 
 CREATE TABLE orders (
-  id serial primary key not null,
-  object text[]
+  userId int REFERENCES users (userId),
+  orderId serial primary key not null
+);
+
+CREATE TABLE invoice (
+  orderId int REFERENCES orders (orderId),
+  productName varchar(70),
+  productMeasure varchar(70),
+  productNotes text,
+  productPrice int,
+  productQuantity int
 );
 
 CREATE TABLE notes (
   id serial primary key not null,
   note text
+  text
 );

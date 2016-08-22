@@ -54,6 +54,12 @@ angular
         return response.data
       })
     }
+    this.deleteNote = function(note){
+      console.log(note);
+      return $http.delete('/notes/' + note).then(function(response){
+        return response.data
+      })
+    }
 
     this.postOrder = function(order) {
       console.log(order);

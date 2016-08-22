@@ -246,41 +246,49 @@
 //  ABOUT PARTIAL
 .about-main {
   height: 100vh;
-  background-color: black;
-  width: 100vw;
+  // background-color: black;
+  width: 100%;
 }
 .about-header {
-  height: 100vh;
+  height: 100%;
+  width: 100vw;
   background-image: url("../../assets/photos/barn-wood.jpg");
   background-size: cover;
+  // overflow: hidden;
 }
 .about-title {
-  width: 30vw;
+  width: 50vw;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 25vh;
+  padding-top: 45vh;
   padding-bottom: 3vh;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0 0 15px 15px;
   h1 {
     font-family: $head;
     color: $red;
-    font-size: 120px;
-    margin-bottom: 90px;
+    font-size: 60px;
+    margin-bottom: 30px;
   }
   h2 {
-    font-family: $body;
-    font-size: 50px;
+    font-family: $thin;
+    font-size: 25px;
+    font-weight: 300;
     color: $blue;
+    padding-bottom: 4px;
+    border-bottom: 4px solid $blue;
   }
 }
-
+.solid-section {
+  height: 60vh;
+  background-color: $dark-green;
+}
 .jordan {
   background: url("../../assets/photos/opaque/jrValicoffOP.png");
-  background-size: cover;
-  height: 80vh;
-  // margin-left: 15px;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
   font-family: $body;
 }
 #jordan-text {
@@ -289,11 +297,9 @@
   margin-right: 2vw;
   float: right;
 }
-.solid-section {
-  height: 60vh;
-  background-color: $dark-green;
-}
+
 .green-house-video {
+  display: none;
   background-color: black;
   margin-right: auto;
   margin-left: auto;
@@ -306,24 +312,43 @@
 }
 
 //  LOCATIONS PARTIAL
+.locations-header {
+  font-family: $head;
+  text-align: center;
+  font-size: 26px;
+  line-height: 30px;
+}
 .locations-main {
-  height: 100%;
-  background-image: url("../../assets/photos/market.jpeg");
+  height: 92vh;
+  background-color: white;
+  padding: 4vh 3vw;
+  overflow: scroll;
+}
+.locations-sub-one {
+  height: 92vh;
+  width: 50%;
+  visibility: hidden;
+  position: fixed;
+  right: 3vh;
+  top: 3vh;
+  background-image: url("../../assets/photos/green-beans.jpeg");
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-top: 100px;
+  // background-attachment: fixed;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // overflow: scroll;
+  // padding-top: 100px;
 }
 .markets-container {
-  width:90vw;
-  margin-left: auto;
-  margin-right: auto;
+  width:100%;
+  // margin-left: auto;
+  // margin-right: auto;
   padding: 3vh 0;
-  background-color: $pale;
-  font-family: $body;
+  background-color: $dark-green;
+  font-family: $thin;
+  color: white;
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
   opacity: .85;
   align-content: center;
   border-radius: 8px;
@@ -331,6 +356,18 @@
     font-family: $head;
     margin-bottom: 10px;
   }
+}
+
+.locations-main::-webkit-scrollbar {
+    width: 3px;
+
+}
+.locations-main::-webkit-scrollbar-track {
+    background: white;
+}
+.lcoations-main::-webkit-scrollbar-thumb {
+    outline: none;
+    background-color: #2a3132;
 }
 
 //  ADMINISTRATOR PARTIAL
@@ -507,6 +544,9 @@ table, th, td {
 }
 .personal-note-button{
   margin-bottom: 20px;
+  background-color: $red;
+  color: white;
+  border: none;
 }
 .personal-note-container {
   margin-top: 20px;
@@ -517,6 +557,15 @@ table, th, td {
   color: white;
   margin-right: auto;
   margin-left: auto;
+  position: relative;
+  .delete-button {
+    position: absolute;
+    right: 5px;
+    top: -19px;
+    background-color: $dark-green;
+    color: white;
+    border: none;
+  }
 }
 
 //  OFFICE DELIVERY PARTIAL
@@ -524,6 +573,8 @@ table, th, td {
   background-image: url("../../assets/photos/baskets.jpeg");
   background-size: cover;
   height: 100vh;
+  // position: absolute;
+  z-index: 1;
 }
 .delivery-header {
   background-color: black;
@@ -531,6 +582,32 @@ table, th, td {
 }
 .delivery-content {
 
+}
+//  BOX EXPERIMENT
+.box {
+  height: 10%;
+  width: 10%;
+  // display: flex;
+  // flex-direction: column;
+  float: right;
+  right: 50px;
+  background-color: black;
+  transition: background-color .5s linear;
+  z-index: 2;
+  font-family: $head;
+  opacity: .9;
+  text-align: center;
+  align-self: center;
+  font-size: 22px;
+  color: $red;
+  &:hover{background-color: rgba(0, 0, 0, 0)}
+}
+.dummy{
+  // opacity: 0;
+  padding-top: 100px;
+  z-index: 1;
+  position: absolute;
+  top: 50vh;
 }
 
 //  CONTACT PARTIAL
@@ -544,13 +621,13 @@ table, th, td {
   flex-direction: row;
 }
 .sub-contact-main {
-  height: 90vh;
+  height: 0vh;
   width: 95vw;
   margin: auto;
   margin-top: 45px;
   background-attachment: fixed;
   background-position: center;
-  display: flex;
+  // display: none;
   background-image: url('../../assets/photos/strawberries-hands.jpeg');
   background-size: cover;
 }
@@ -570,7 +647,12 @@ table, th, td {
   // border-bottom: 1px solid $dark-green;
 }
 .contact-container {
-  background-color: white;
+  background-attachment: fixed;
+  background-position: center;
+  // display: none;
+  background-image: url('../../assets/photos/strawberries-hands.jpeg');
+  background-size: cover;
+  overflow: scroll;
   transition: background-color .5s linear;
   &:hover{background-color: rgba(0, 0, 0, 0)}
   // width: 100%;
@@ -616,18 +698,7 @@ table, th, td {
   word-spacing: 20px;
   }
 }
-//  BOX EXPERIMENT
-.box {
-  height: 100px;
-  width: 100px;
-  display: flex;
-  flex-direction: column;
-  float: right;
-  right: 50px;
-  background-color: white;
-  transition: background-color .5s linear;
-  &:hover{background-color: rgba(0, 0, 0, 0)}
-}
+
 
 
 // ADMIN AND WHOLESALE PARTIALS
@@ -870,6 +941,68 @@ table, th, td {
   .cherry h1{
     visibility: visible;
   }
+  .about-main {
+    height: auto;
+    background-color: black;
+    width: 100%;
+  }
+  .about-header {
+    // height: 100%;
+    // width: 100vw;
+    background-image: url("../../assets/photos/barn-wood.jpg");
+    background-size: cover;
+    // overflow: hidden;
+  }
+  .about-title {
+    // width: 30vw;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25vh;
+    padding-bottom: 3vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0 0 15px 15px;
+    h1 {
+      font-family: $head;
+      color: $red;
+      font-size: 130px;
+      margin-bottom: 90px;
+    }
+    h2 {
+      font-family: $body;
+      font-size: 50px;
+      color: $blue;
+    }
+  }
+  .jordan {
+    background: url("../../assets/photos/opaque/jrValicoffOP.png");
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    font-family: $body;
+  }
+  #jordan-text {
+    width: 40vw;
+    margin-top: 5vh;
+    margin-right: 2vw;
+    float: right;
+  }
+  .solid-section {
+    height: 60vh;
+    background-color: $dark-green;
+  }
+  .green-house-video {
+    display: block;
+    background-color: black;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100vw;
+  }
+  .alan {
+    background: url("../../assets/photos/conference.jpg");
+    background-size: cover;
+    height: 80vh;
+  }
   .mobile-admin-header {
     display: none;
   }
@@ -892,12 +1025,20 @@ table, th, td {
     width: 50%;
     height: 100%;
     background-attachment: fixed;
+    background-image: none;
+    background-color: white;
+  }
+  .sub-contact-main {
+    height: 90vh;
   }
   .contact-container div {
-    width: 500px;
+    width: 89%;
   }
-  .contact-container div:nth-child(1){
-    margin-top: 0px;
+  .locations-sub-one {
+    visibility: visible;
+  }
+  .markets-container {
+    width: 45%;
   }
 }
 @media (min-width: 1224px){

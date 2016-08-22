@@ -1,17 +1,26 @@
+<h1 class="locations-header">Locations</h1>
 <section class="locations-main">
 
-  <!-- this div will be hardcoded -->
-  <div class="location-container">
 
-  </div>
+    <!-- this div will be hardcoded -->
+    <div class="location-container">
 
-  <!-- this div will update with administrator input -->
-  <div class="markets-container" ng-repeat="market in markets">
-    <h1> {{ market.name }} </h1>
-    <h2> {{ market.address }} </h2>
-    <h2> {{ market.times }} </h2>
-    <h3> {{ market.notes }} </h3>
-  </div>
+    </div>
+
+    <!-- this div will update with administrator input -->
+    <div class="markets-container" ng-repeat="market in markets">
+      <div class="">
+        <h1> {{ market.name }} </h1>
+        <h2> {{ market.address }} </h2>
+        <h2> {{ market.times }} </h2>
+        <h3> {{ market.notes }} </h3>
+      </div>
+
+    </div>
+<section class="locations-sub-one">
+
+
+</section>
 
   <div class="partial-nav-to-home">
     <a ui-sref="home"

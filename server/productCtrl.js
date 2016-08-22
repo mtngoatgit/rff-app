@@ -45,18 +45,13 @@ deleteMarket: function(req, res, next){
   res.status(200).send(response);
   })
 },
-addOrder: function(req, res, next){
-  // var ord = [
-  //   req.body.name,
-  //   req.body.price,
-  //   req.body.container,
-  //   req.body.notes,
-  //   req.body.quantity,
-  //   req.body.user,
-  //   req.body.phone
-  // ];
-  // console.log(req.body);
-  db.add_order(req.body, function (err, response){
+deleteNote: function(req, res, next){
+  db.delete_note(req.params.id, function(err, response){
+  res.status(200).send(response);
+  })
+},
+addInvoice: function(req, res, next){
+  db.add_order(invoice, function (err, response){
   res.status(200).send(req.body);
   })
 },
