@@ -85,13 +85,28 @@
 
 <section class="admin-orders-watch">
     <h1>Open Wholesale Orders</h1>
-    <div class="admin-orders" ng-repeat="order in orders">
-        <li> {{ }} </li>
-        <li> {{ }} </li>
-        <li> {{ }} </li>
-        <li> {{ }} </li>
-        <li> {{ }} </li>
-        <input class="delete-button" type="button"  ng-click="deleteOrder(order.id)" value="x">
+    <div class="admin-orders" >
+        <div class="order-holder"  ng-repeat="(i, invoice) in invoices">
+          <h1>{{invoice.id}}</h1>
+          <div ng-repeat="id in invoices">
+            <!-- <ul>Order Number: {{id.id}}</ul> -->
+            <!-- <ul>Client: {{ id.client }}</ul> -->
+            <ul>Quantity: {{ id[i].quantity }}</ul>
+            <ul>Product: {{ id[i].product }}</ul>
+            <ul>Unit: {{ id[i].unit }}</ul>
+            <ul>Price: {{ id[i].price }}</ul>
+            <ul>Notes: {{ id[i].notes }}</ul>
+          </div>
+
+          <!-- Order Number: {{invoice.id}}
+          Client: {{ invoice.client }}
+          Quantity: {{ invoice.quantity }}
+          Product: {{ invoice.product }}
+          Unit: {{ invoice.unit }}
+          Price: {{ invoice.price }}
+          Notes: {{ invoice.notes }}   -->
+        </div>
+        <input class="delete-button" type="button"  ng-click="deleteInvoice(invoice.id)" value="x">
     </div>
 </section>
 

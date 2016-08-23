@@ -4,6 +4,13 @@ angular
 
     $scope.getAllProducts = function(){
       farmSrvc.getAllProducts().then(function(response){
+        $scope.order = {products: response}
+      })
+    }
+    $scope.getAllProducts();
+
+    $scope.getAllProducts = function(){
+      farmSrvc.getAllProducts().then(function(response){
         $scope.products = response;
       })
     }
@@ -27,7 +34,6 @@ angular
 
 
     $scope.postProduct = function(product) {
-      console.log(product);
       farmSrvc.postProduct(product).then(function(res){
         alert('new product created :)')
         location.reload();
@@ -35,7 +41,6 @@ angular
     }
 
     $scope.deleteProduct = function(product){
-      console.log(product)
       farmSrvc.deleteProduct(product).then(function(res){
         alert('item deleted!');
         location.reload();
@@ -50,13 +55,60 @@ angular
       })
     }
 
+// BEGIN INVOICE FUNCTIONALITY
+    $scope.postUser = function(user) {
+      console.log(user);
+      farmSrvc.postOrder(user).then(function(res){
+        alert('new user created :)')
+        // location.reload();
+      })
+    }
     $scope.postOrder = function(order) {
-      console.log(order);
       farmSrvc.postOrder(order).then(function(res){
         alert('new order created :)')
         // location.reload();
       })
     }
+    // $scope.getAllInvoices = function(){
+    //   farmSrvc.getAllInvoices().then(function(response){
+    //     console.log(response);
+    //     $scope.invoices = response;
+    //   })
+    // }
+    // $scope.getAllInvoices();
+    $scope.getAllInvoices = function(){
+      farmSrvc.getAllInvoices().then(function(response){
+        console.log(response);
+        $scope.allInvoices = response;
+
+        $scope.invoices = {};
+        for(var i = 0; i < response.length; i++){
+          if(!$scope.invoices.hasOwnProperty(response[i].id)){
+            $scope.invoices[response[i].id] = [{
+              // client:
+              quantity: response[i].quantity,
+              product: response[i].product,
+              unit: response[i].unit,
+              price: response[i].price,
+              notes: response[i].notes
+            }];
+          }
+          else {
+            $scope.invoices[response[i].id].push({
+              quantity: response[i].quantity,
+              product: response[i].product,
+              unit: response[i].unit,
+              price: response[i].price,
+              notes: response[i].notes
+            })
+          }
+        }
+        console.log($scope.invoices);
+      })
+    }
+    $scope.getAllInvoices();
+
+//  END INVOICE FUNCTIONALITY
 
     $scope.getAllNotes = function(){
       farmSrvc.getAllNotes().then(function(response){
@@ -66,14 +118,12 @@ angular
     $scope.getAllNotes();
 
     $scope.postNote = function(note) {
-      console.log(note);
       farmSrvc.postNote(note).then(function(res){
         alert('new personal created :)')
-        // location.reload();
+        location.reload();
       })
     }
     $scope.deleteNote = function(note){
-      console.log(note)
       farmSrvc.deleteNote(note).then(function(res){
         alert('item deleted!');
         location.reload();

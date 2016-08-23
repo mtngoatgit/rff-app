@@ -2,9 +2,11 @@
 
   <div class="wholesale-header">
     <h1 id="wholesale-title">Place an Order</h1>
-    </div>
 
   </div>
+<section id="trailer">
+  <i id="truck" class="fa fa-truck fa-flip-horizontal fa-5x" aria-hidden="true"></i>
+</section>
 
   <section class="order-form-parent">
       <h1>Current Product Offerings</h1>
@@ -18,23 +20,22 @@
               <th>Notes</th>
               <th>Quanitity</th>
             </tr>
-            <tr ng-repeat="(i, product) in products" ng-model="products[i]">
+            <tr ng-repeat="(i, product) in order.products" ng-model="order.products[i]">
               <td>{{ product.name }}</td>
               <td>{{ product.price }}</td>
               <td>{{ product.container }}</td>
               <td>{{ product.notes }} </td>
-              <td><input type="text" name="name" placeholder="Qty." ng-model="products[i].quantity"></td>
-
+              <td><input type="text" name="name" placeholder="Qty." ng-model="order.products[i].quantity"></td>
             </tr>
           </table>
         </div>
         <div class="submit-button-container">
-          <input class="customer-phone" type="text" name="name" placeholder="user name" ng-model="products.user">
-          <input class="customer-name" type="text" name="name" placeholder="user phone" ng-model="products.phone">
-          <input class="order-submit" type="button" name="name" value="submit order" ng-click="postOrder(products)">
+          <input class="customer-phone" type="text" name="name" placeholder="user name" ng-model="order.user">
+          <input class="customer-name" type="text" name="name" placeholder="user email" ng-model="order.email">
+          <input class="order-submit" type="button" name="name" value="submit order" ng-click="postOrder(order)">
         </div>
-
   </section>
+
 
   <div class="partial-nav-to-home">
     <a ui-sref="home"

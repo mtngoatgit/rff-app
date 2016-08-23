@@ -8,6 +8,7 @@
   height: 100vh;
   width: 100vw;
   display: inline-block;
+
 }
 .ham {
   width: 80vw;
@@ -206,6 +207,7 @@
   .fa-bars{-webkit-filter: invert(1); text-decoration: none;}
 }
 .partial-menu {
+  // z-index: -1;
   position: fixed;
   left: 69px;
   top: 50vh;
@@ -280,15 +282,29 @@
     border-bottom: 4px solid $blue;
   }
 }
-.solid-section {
-  height: 60vh;
+.overview-container{
+  height: 55vh;
   background-color: $dark-green;
+  text-align: center;
+  padding: 40px 15px;
+  p {
+    color: $off-white;
+    font-family: $thin;
+    font-weight: 200;
+    line-height: 30px;
+  }
+  h1 {
+    margin-top: 25px;
+    font-family: $head;
+    font-size: 26px;
+    color: $blue;
+  }
 }
 .jordan {
-  background: url("../../assets/photos/opaque/jrValicoffOP.png");
-  background-size: contain;
-  height: 100%;
-  width: 100%;
+  background: url("../../assets/photos/jrValicof.jpg");
+  background-size: cover;
+  height: 35vh;
+
   font-family: $body;
 }
 #jordan-text {
@@ -297,18 +313,47 @@
   margin-right: 2vw;
   float: right;
 }
-
+.farms-container {
+  @extend .overview-container;
+  background-color: $red;
+  p{
+    color: $dark-green;
+  }
+}
 .green-house-video {
   display: none;
   background-color: black;
   margin-right: auto;
   margin-left: auto;
+  height: 30vh;
   width: 100vw;
 }
 .alan {
   background: url("../../assets/photos/conference.jpg");
   background-size: cover;
-  height: 80vh;
+  height: 35vh;
+}
+.wares-container {
+  @extend .overview-container;
+  background-color: $blue;
+  p {
+    color: white;
+  }
+}
+.instagram-container {
+  display: flex;
+  flex-direction: column;
+  img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+    margin-bottom: -3px;
+  }
+
+}
+.about-footer {
+  height: 25vh;
+  background-color: $dark-green;
 }
 
 //  LOCATIONS PARTIAL
@@ -317,20 +362,33 @@
   text-align: center;
   font-size: 26px;
   line-height: 30px;
+  width: 100%;
+  padding-bottom: 1vh;
+}
+.location-container {
+  @extend .markets-container;
+  h1 {
+    font-family: $head;
+    margin-bottom: 10px;
+  }
+  p {
+    font-family: $thin;
+    color: white;
+  }
 }
 .locations-main {
   height: 92vh;
   background-color: white;
-  padding: 4vh 3vw;
+  padding-left: 3vw;
   overflow: scroll;
 }
 .locations-sub-one {
   height: 92vh;
-  width: 50%;
+  width: 48%;
   visibility: hidden;
   position: fixed;
-  right: 3vh;
-  top: 3vh;
+  right: 3vw;
+  top: 4vh;
   background-image: url("../../assets/photos/green-beans.jpeg");
   background-size: cover;
   // background-attachment: fixed;
@@ -340,9 +398,7 @@
   // padding-top: 100px;
 }
 .markets-container {
-  width:100%;
-  // margin-left: auto;
-  // margin-right: auto;
+  width: 95%;
   padding: 3vh 0;
   background-color: $dark-green;
   font-family: $thin;
@@ -355,6 +411,7 @@
   h1 {
     font-family: $head;
     margin-bottom: 10px;
+    font-size: 21px;
   }
 }
 
@@ -531,6 +588,16 @@ table, th, td {
 }
 .admin-orders {
   @extend .admin-markets;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: $thin;
+
+}
+.order-holder {
+  margin-bottom: 20px;
+  border-bottom: 5px solid $blue;
 }
 .delete-button {
   width: 50px;
@@ -574,41 +641,99 @@ table, th, td {
   background-size: cover;
   height: 100vh;
   // position: absolute;
-  z-index: 1;
+  z-index: 0;
 }
 .delivery-header {
   background-color: black;
   height: 4vh;
 }
 .delivery-content {
-
+}
+.information-container {
+  display: none;
+  z-index: 1;
+  width: 50vh;
+  height: 95vh;
+  overflow: scroll;
+  border-radius: 0 0 8px 8px;
+  padding-top: 25vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(30, 33, 31, 0.8);
+  h1 {
+    font-family: $head;
+    font-size: 40px;
+    color: $blue;
+    margin-bottom: 30px;
+  }
+  #deliver-one {
+    padding-left: 10px;
+    border-left: 5px solid $blue;
+    color: white;
+    font-family: $thin;
+    line-height: 30px;
+    span a {
+      color: $blue;
+      text-decoration: none;
+      &:hover {background-color: white}
+    }
+  }
+  .text-spacer {
+    height: 60px;
+  }
+  #deliver-two {
+    @extend #deliver-one;
+    border-left: none;
+    padding-right: 10px;
+    text-align: right;
+    border-right: 5px solid $blue;
+  }
+  #deliver-three {
+    @extend #deliver-one;
+  }
+  #deliver-four {
+    @extend #deliver-one;
+    border: none;
+    text-align: center;
+  }
+}
+.chubby-header {
+  position: absolute;
+  font-family: $head;
+  color: white;
+  font-size: 120px;
+  top: 45vh;
+  right: 20vw;
+}
+.dummy{
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 45vw;
+  font-family: $head;
+  color: white;
+  font-size: 30px;
 }
 //  BOX EXPERIMENT
 .box {
   height: 10%;
-  width: 10%;
+  width: 5%;
   // display: flex;
   // flex-direction: column;
   float: right;
   right: 50px;
   background-color: black;
   transition: background-color .5s linear;
-  z-index: 2;
+  z-index: 3;
   font-family: $head;
-  opacity: .9;
+  opacity: .7;
   text-align: center;
   align-self: center;
   font-size: 22px;
-  color: $red;
-  &:hover{background-color: rgba(0, 0, 0, 0)}
+  color: rgba(0, 0, 0, 0);
+  &:hover{background-color: rgba(0, 0, 0, 0); color: red}
 }
-.dummy{
-  // opacity: 0;
-  padding-top: 100px;
-  z-index: 1;
-  position: absolute;
-  top: 50vh;
-}
+
 
 //  CONTACT PARTIAL
 .contact-main{
@@ -801,19 +926,36 @@ table, th, td {
   height: 100vh;
 }
 .wholesale-header {
-  @extend .contact-header;
+  width: 100%;
+  text-align: center;
+  padding-top: 5px;
+  #wholesale-title {
+    font-family: $head;
+    color: $dark-green;
+    font-size: 25px;
+  }
 }
 #wholesale-title {
   font-family: $head;
   color: $red;
   font-size: 27px;
 }
+#trailer {
+  height: 10vh;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  padding-top: 5vh;
+}
+#truck {
+  color: $dark-green;
+}
 .order-form-parent {
   width:80vw;
   overflow-x: scroll;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  margin-top: 15vh;
   margin-bottom: 20px;
   padding: 3vh 0;
   background-color: $red;
@@ -1003,6 +1145,16 @@ table, th, td {
     background-size: cover;
     height: 80vh;
   }
+  .instagram-container {
+    flex-direction: row;
+    max-width: 100vw;
+    overflow: scroll;
+    img {
+      max-width: none;
+      height: 35vh;
+      margin-bottom: -3px;
+    }
+  }
   .mobile-admin-header {
     display: none;
   }
@@ -1039,6 +1191,10 @@ table, th, td {
   }
   .markets-container {
     width: 45%;
+  }
+  .information-container {
+    width: 50vw;
+    height: 75vh;
   }
 }
 @media (min-width: 1224px){

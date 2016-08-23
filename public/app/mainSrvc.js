@@ -29,6 +29,16 @@ angular
       })
     }
 
+    this.getAllInvoices = function(){
+      return $http({
+        method: 'GET',
+        url: '/invoices'
+      }).then(function(response){
+        console.log(response.data);
+        return response.data;
+      })
+    }
+
     this.postMarket = function(market) {
       return $http.post('/markets', market).then(function(response){
         return response.data
@@ -36,14 +46,12 @@ angular
     }
 
     this.postProduct = function(product) {
-      console.log(product);
       return $http.post('/products', product).then(function(response){
         return response.data
       })
     }
 
     this.deleteProduct = function(product){
-      console.log(product);
       return $http.delete('/products/' + product).then(function(response){
         return response.data
       })
@@ -54,23 +62,32 @@ angular
         return response.data
       })
     }
-    this.deleteNote = function(note){
-      console.log(note);
-      return $http.delete('/notes/' + note).then(function(response){
+
+//  BEGIN INVOICE FUNCTIONALITY
+    this.postUser = function(user) {
+      console.log(user);
+      return $http.post('/users', order).then(function(response){
         return response.data
       })
     }
-
     this.postOrder = function(order) {
       console.log(order);
       return $http.post('/orders', order).then(function(response){
         return response.data
       })
     }
+  // END INVOICE FUNCTIONALITY
 
+// NOTES
     this.postNote = function(note) {
       console.log(note);
       return $http.post('/notes', note).then(function(response){
+        return response.data
+      })
+    }
+    this.deleteNote = function(note){
+      console.log(note);
+      return $http.delete('/notes/' + note).then(function(response){
         return response.data
       })
     }

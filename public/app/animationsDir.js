@@ -14,7 +14,11 @@ angular
           })
           $('.box').click(function () {
             // $('.box').css("visibility", "hidden");
-            $('.box').fadeOut(800);
+            $('.box').fadeOut(800),
+            // $('.information-container').css("display", "block")
+            $('.information-container').fadeIn(800),
+            $('.dummy').fadeIn(800),
+            $('.chubby-header').fadeOut(800)
           })
           //  THE FUNCTION BELOW DOESNT WORK...
           // $(".mobile-partial-nav").click(function(){
@@ -25,7 +29,7 @@ angular
           $(function(){
             $('.email-string').typed({
               strings: ['contact@rileysFarmFresh.com'],
-              typeSpeed: 1,
+              typeSpeed: 3,
               showCursor: false
             })
           })

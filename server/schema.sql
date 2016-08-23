@@ -23,6 +23,7 @@ CREATE TABLE markets (
 CREATE TABLE users (
   userId serial primary key not null,
   userName varchar(30),
+  userEmail varchar(320) unique,
   userPhone text
 );
 
@@ -36,12 +37,11 @@ CREATE TABLE invoice (
   productName varchar(70),
   productMeasure varchar(70),
   productNotes text,
-  productPrice int,
+  productPrice money,
   productQuantity int
 );
 
 CREATE TABLE notes (
   id serial primary key not null,
   note text
-  text
 );
