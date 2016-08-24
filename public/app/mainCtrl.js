@@ -55,9 +55,17 @@ angular
       })
     }
 
+    $scope.deleteInvoice = function(invoice){
+      console.log("delete in controller", invoice)
+      farmSrvc.deleteInvoice(invoice).then(function(res){
+        alert('item deleted!');
+        location.reload();
+      })
+    }
+
 // BEGIN INVOICE FUNCTIONALITY
     $scope.postUser = function(user) {
-      console.log(user);
+      // console.log(user);
       farmSrvc.postOrder(user).then(function(res){
         alert('new user created :)')
         // location.reload();
@@ -65,45 +73,45 @@ angular
     }
     $scope.postOrder = function(order) {
       farmSrvc.postOrder(order).then(function(res){
-        alert('new order created :)')
-        // location.reload();
+        alert('new order created!!!!!!');
+        location.reload();
       })
     }
-    // $scope.getAllInvoices = function(){
-    //   farmSrvc.getAllInvoices().then(function(response){
-    //     console.log(response);
-    //     $scope.invoices = response;
-    //   })
-    // }
-    // $scope.getAllInvoices();
     $scope.getAllInvoices = function(){
       farmSrvc.getAllInvoices().then(function(response){
-        console.log(response);
+        // console.log("invoice post", response);
         $scope.allInvoices = response;
 
-        $scope.invoices = {};
-        for(var i = 0; i < response.length; i++){
-          if(!$scope.invoices.hasOwnProperty(response[i].id)){
-            $scope.invoices[response[i].id] = [{
-              // client:
-              quantity: response[i].quantity,
-              product: response[i].product,
-              unit: response[i].unit,
-              price: response[i].price,
-              notes: response[i].notes
-            }];
-          }
-          else {
-            $scope.invoices[response[i].id].push({
-              quantity: response[i].quantity,
-              product: response[i].product,
-              unit: response[i].unit,
-              price: response[i].price,
-              notes: response[i].notes
-            })
-          }
+        var arr = [];
+        var obj = {};
+        for (var i = 0; i < response.length; i++) {
+        	if (response[i].id === obj.id) {
+        		obj.lineItem.push({
+        			quantity: response[i].quantity,
+              		product: response[i].product,
+              		unit: response[i].unit,
+              		price: response[i].price,
+              		notes: response[i].notes
+        		});
+        	}
+        	else {
+        		if (obj.id) { arr.push(obj); }
+        		obj = {
+        			id: response[i].id,
+        			client: response[i].client,
+        			lineItem: [{
+        				quantity: response[i].quantity,
+              			product: response[i].product,
+              			unit: response[i].unit,
+              			price: response[i].price,
+              			notes: response[i].notes
+        			}]
+        		}
+        	}
         }
-        console.log($scope.invoices);
+        arr.push(obj);
+        $scope.invoices = arr;
+        // console.log("my controller for invoice", $scope.invoices);
       })
     }
     $scope.getAllInvoices();

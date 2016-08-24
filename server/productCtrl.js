@@ -45,6 +45,12 @@ deleteMarket: function(req, res, next){
   res.status(200).send(response);
   })
 },
+deleteInvoice: function(req, res, next){
+  console.log(req.params.id);
+  db.delete_invoice(req.params.id, function(err, response){
+  res.status(200).send(response);
+  })
+},
 deleteNote: function(req, res, next){
   db.delete_note(req.params.id, function(err, response){
   res.status(200).send(response);
@@ -59,6 +65,7 @@ deleteNote: function(req, res, next){
 // },
 getInvoices: function(req, res, next){
   db.get_all_invoices(function(err, response){
+    // console.log(response);
     res.send(response);
   })
 },
@@ -69,6 +76,7 @@ addUser: function(req, res, next){
 },
 addOrder: function(req, res, next){
   db.get_user_id(req.body.email, function(err, userId){
+    // console.log(userId);
     db.add_order(userId[0].userid, function(err, orderId){
       for(var i= 0; i < req.body.products.length; i++) {
         var product = [
@@ -80,7 +88,7 @@ addOrder: function(req, res, next){
           req.body.products[i].quantity
         ]
         db.add_invoice(product, function(err, response){
-          console.log(err, response);
+          // console.log(err, response);
         });
       }
     })

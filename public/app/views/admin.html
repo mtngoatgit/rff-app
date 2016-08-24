@@ -86,27 +86,30 @@
 <section class="admin-orders-watch">
     <h1>Open Wholesale Orders</h1>
     <div class="admin-orders" >
-        <div class="order-holder"  ng-repeat="(i, invoice) in invoices">
-          <h1>{{invoice.id}}</h1>
-          <div ng-repeat="id in invoices">
-            <!-- <ul>Order Number: {{id.id}}</ul> -->
-            <!-- <ul>Client: {{ id.client }}</ul> -->
-            <ul>Quantity: {{ id[i].quantity }}</ul>
-            <ul>Product: {{ id[i].product }}</ul>
-            <ul>Unit: {{ id[i].unit }}</ul>
-            <ul>Price: {{ id[i].price }}</ul>
-            <ul>Notes: {{ id[i].notes }}</ul>
-          </div>
+        <div class="order-holder" >
+          <table ng-repeat="invoice in invoices">
+          <th id="invoice-title" colspan="5">Order Number: <span>{{invoice.id}}</span> Client: <span>{{invoice.client}}</span></th>
+          <tr>
+            <th>Quantity</th>
+            <th>Product</th>
+            <th>Unit</th>
+            <th>Price</th>
+            <th>Notes</th>
+          </tr>
+          <tr ng-repeat="lineItem in invoice.lineItem">
+            <td>{{ lineItem.quantity }}</td>
+            <td>{{ lineItem.product }}</td>
+            <td>{{ lineItem.unit }}</td>
+            <td>{{ lineItem.price }}</td>
+            <td>{{ lineItem.notes }}</td>
+          </tr>
+          <th id="invoice-table-delete" colspan="5">
+            <input class="delete-button" type="button"  ng-click="deleteInvoice(invoice.id)" value="x">
+          </th>
+          
+          </table>
 
-          <!-- Order Number: {{invoice.id}}
-          Client: {{ invoice.client }}
-          Quantity: {{ invoice.quantity }}
-          Product: {{ invoice.product }}
-          Unit: {{ invoice.unit }}
-          Price: {{ invoice.price }}
-          Notes: {{ invoice.notes }}   -->
         </div>
-        <input class="delete-button" type="button"  ng-click="deleteInvoice(invoice.id)" value="x">
     </div>
 </section>
 

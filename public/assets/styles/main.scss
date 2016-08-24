@@ -179,11 +179,18 @@
   right: 3vw;
   top: 1vh;
   opacity: 0;
+  button {
+    background: none;
+    border: none;
+    &:hover {color: $red};
+  }
+
 }
 .desktop-go-login-button > a {
   color: $blue;
   text-decoration: none;
   &:hover {color: $red};
+
 }
 
 //  PARTIAL NAVIGATION
@@ -283,10 +290,10 @@
   }
 }
 .overview-container{
-  height: 55vh;
+  height: auto;
+  padding: 10vh 10vw;
   background-color: $dark-green;
   text-align: center;
-  padding: 40px 15px;
   p {
     color: $off-white;
     font-family: $thin;
@@ -304,8 +311,9 @@
   background: url("../../assets/photos/jrValicof.jpg");
   background-size: cover;
   height: 35vh;
-
   font-family: $body;
+  // filter: grayscale(100%);
+  // -webkit-filter: grayscale(80%);
 }
 #jordan-text {
   width: 40vw;
@@ -332,6 +340,8 @@
   background: url("../../assets/photos/conference.jpg");
   background-size: cover;
   height: 35vh;
+  // filter: grayscale(100%);
+  // -webkit-filter: grayscale(100%);
 }
 .wares-container {
   @extend .overview-container;
@@ -339,12 +349,27 @@
   p {
     color: white;
   }
+  .wares-links {
+    height: auto;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    font-family: $head;
+    text-decoration: none;
+    font-size: 20px;
+    color: $dark-green;
+    margin-bottom: 5vh;
+    &:hover{color: $red}
+  }
 }
 .instagram-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border: none;
     margin-bottom: -3px;
@@ -575,6 +600,7 @@ table, th, td {
     color: white;
     th {
       text-align: center;
+      color: $dark-green;
     }
 }
 .admin-product-watch{
@@ -596,8 +622,31 @@ table, th, td {
 
 }
 .order-holder {
-  margin-bottom: 20px;
-  border-bottom: 5px solid $blue;
+  table {
+    margin-bottom: 4vh;
+  }
+  #invoice-title {
+    height: 40px;
+    vertical-align: middle;
+    background-color: $dark-green;
+    color: white;
+  }
+  span {
+    color: $red;
+    margin-right: 2vw;
+    margin-left: 1vh;
+    font-size: 22px;
+  }
+  th {
+    text-align: center;
+    font-weight: 300;
+  }
+  td {
+    font-weight: 100;
+  }
+  #invoice-table-delete {
+    text-align: center;
+  }
 }
 .delete-button {
   width: 50px;
@@ -616,8 +665,7 @@ table, th, td {
   border: none;
 }
 .personal-note-container {
-  margin-top: 20px;
-  border: white solid 1px;
+  margin-top: 20px;;
   border-radius: 8px;
   width: 90%;
   padding: 3vh 0;
@@ -626,12 +674,14 @@ table, th, td {
   margin-left: auto;
   position: relative;
   .delete-button {
-    position: absolute;
-    right: 5px;
-    top: -19px;
-    background-color: $dark-green;
-    color: white;
+    // position: absolute;
+    // right: 5px;
+    // top: -19px;
+    // background-color: $dark-green;
+    color: $dark-green;
     border: none;
+    border-radius: 50%;
+    background-color: rgba(30, 33, 31, .2);
   }
 }
 
@@ -1089,8 +1139,8 @@ table, th, td {
     width: 100%;
   }
   .about-header {
-    // height: 100%;
-    // width: 100vw;
+    height: 100vh;
+    width: 100vw;
     background-image: url("../../assets/photos/barn-wood.jpg");
     background-size: cover;
     // overflow: hidden;
@@ -1105,8 +1155,6 @@ table, th, td {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 0 0 15px 15px;
     h1 {
-      font-family: $head;
-      color: $red;
       font-size: 130px;
       margin-bottom: 90px;
     }
@@ -1116,13 +1164,25 @@ table, th, td {
       color: $blue;
     }
   }
-  .jordan {
-    background: url("../../assets/photos/opaque/jrValicoffOP.png");
-    background-size: contain;
-    height: 100%;
-    width: 100%;
-    font-family: $body;
+  .overview-container {
+    p {
+      font-size: 20px;
+    }
   }
+  .jordan {
+    height: 85vh;
+    // opacity: 0;
+    // visibility: hidden;
+  }
+  // .fadeIn {
+  //     -webkit-animation: animat_show 2s;
+  //     animation: animat_show 2s;
+  //     visibility: visible !important;
+  // }
+  // @-webkit-keyframes animat_show{
+  //     0%{opacity:0}
+  //     100%{opacity:1}
+  // }
   #jordan-text {
     width: 40vw;
     margin-top: 5vh;
@@ -1134,7 +1194,7 @@ table, th, td {
     background-color: $dark-green;
   }
   .green-house-video {
-    display: block;
+    display: none;
     background-color: black;
     margin-right: auto;
     margin-left: auto;
@@ -1144,15 +1204,28 @@ table, th, td {
     background: url("../../assets/photos/conference.jpg");
     background-size: cover;
     height: 80vh;
+    // opacity: 0;
+  }
+  .wares-container {
+    .wares-links {
+    flex-direction: row;
+    justify-content: space-between;
+    }
+    a {
+      font-size: 25px;
+    }
   }
   .instagram-container {
     flex-direction: row;
     max-width: 100vw;
     overflow: scroll;
     img {
-      max-width: none;
+      width: auto;
       height: 35vh;
       margin-bottom: -3px;
+      transition: opacity .5s linear;
+      opacity: .4;
+      &:hover{opacity: 1};
     }
   }
   .mobile-admin-header {

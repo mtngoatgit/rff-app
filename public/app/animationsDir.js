@@ -33,6 +33,10 @@ angular
               showCursor: false
             })
           })
+            // $(window).scroll(function(){
+            // $('.jordan').css("filter: grayscale", 100 - $(window).scrollTop() / 1100);
+            // $('.alan').css("opacity", -1 + $(window).scrollTop() / 1200)
+            // });
       }
   }
   })

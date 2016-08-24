@@ -34,7 +34,7 @@ angular
         method: 'GET',
         url: '/invoices'
       }).then(function(response){
-        console.log(response.data);
+        // console.log("my invoice data in the service", response.data);
         return response.data;
       })
     }
@@ -63,15 +63,21 @@ angular
       })
     }
 
+    this.deleteInvoice = function(invoice){
+      // console.log(invoice);
+      return $http.delete('/invoices/' + invoice).then(function(response){
+        return response.data
+      })
+    }
+
 //  BEGIN INVOICE FUNCTIONALITY
     this.postUser = function(user) {
-      console.log(user);
-      return $http.post('/users', order).then(function(response){
+      // console.log(user);
+      return $http.post('/users', user).then(function(response){
         return response.data
       })
     }
     this.postOrder = function(order) {
-      console.log(order);
       return $http.post('/orders', order).then(function(response){
         return response.data
       })
@@ -80,13 +86,13 @@ angular
 
 // NOTES
     this.postNote = function(note) {
-      console.log(note);
+      // console.log(note);
       return $http.post('/notes', note).then(function(response){
         return response.data
       })
     }
     this.deleteNote = function(note){
-      console.log(note);
+      // console.log(note);
       return $http.delete('/notes/' + note).then(function(response){
         return response.data
       })
