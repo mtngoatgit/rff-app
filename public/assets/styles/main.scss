@@ -520,7 +520,7 @@
   background-color: $dark-green;
   font-family: $body;
   text-align: center;
-  margin-bottom: 7vh;
+  margin-bottom: 30px;
   opacity: .85;
   align-content: center;
   border-radius: 8px;
@@ -569,7 +569,7 @@
   padding: 3vh 0;
   background-color: $red;
   font-family: $body;
-  margin-bottom: 7vh;
+  margin-bottom: 20px;
   opacity: .85;
   border-radius: 8px;
   display: flex;
@@ -1048,11 +1048,6 @@ table, th, td {
   justify-content: center;
   align-items: baseline;
 }
-.customer-information {
-  display: flex;
-
-}
-
 .customer-name {
   height: 20px;
   width: 200px;
