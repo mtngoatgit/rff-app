@@ -3,6 +3,16 @@ var db = app.get('db');
 
 module.exports = {
 
+// checkAuth: function(req, res, next) {
+//           console.log(req.user);
+//           if (req.user) {
+//               res.status(200).json(req.user);
+//           }
+//           if (!req.user) {
+//               res.status(200).json('unauthorized');
+//           }
+//       },
+
 getProducts: function(req, res, next){
   db.get_all_products(function (err, response) {
     res.send(response);

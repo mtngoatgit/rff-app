@@ -8,7 +8,6 @@
   height: 100vh;
   width: 100vw;
   display: inline-block;
-
 }
 .ham {
   width: 80vw;
@@ -90,7 +89,7 @@
   color: $red;
 }
 .mobile-go-login-button > a {
-  color: $blue;
+  color: $dark-green;
   text-decoration: none;
   &:hover {color: $blue}
 }
@@ -122,19 +121,6 @@
 .cherry h1{
   visibility: hidden;
 }
-#delivery-link {
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
-  font-family: $head;
-  position: absolute;
-  left: -1.4em;
-  align-self: center;
-  font-size: 19px;
-  a {
-    text-decoration: none;
-    color: $yellow;
-  }
-}
 #family-farm {
   opacity: 0;
   -webkit-transform: rotate(90deg);
@@ -147,6 +133,23 @@
   top: 50%;
   font-size: 12px;
 }
+#place-order {
+  opacity: 0;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  font-family: $thin;
+  font-weight: 300;
+  color: $dark-green;
+  position: absolute;
+  left: -2em;
+  top: 50%;
+  font-size: 15px;
+  a {
+    text-decoration: none;
+    color: $red;
+  }
+}
+
 #about-link {
   font-family: $head;
   color: $yellow;
@@ -214,7 +217,7 @@
   .fa-bars{-webkit-filter: invert(1); text-decoration: none;}
 }
 .partial-menu {
-  // z-index: -1;
+  // z-index: 100;
   position: fixed;
   left: 69px;
   top: 50vh;
@@ -779,7 +782,7 @@ table, th, td {
   color: white;
   font-size: 30px;
 }
-//  BOX EXPERIMENT
+//   EXPERIMENT
 .box {
   height: 10%;
   width: 5%;
@@ -1112,6 +1115,9 @@ table, th, td {
     height: 93%;
   }
   #family-farm {
+    opacity: 1;
+  }
+  #place-order {
     opacity: 1;
   }
   .desktop-nav-container {

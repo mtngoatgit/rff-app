@@ -1,0 +1,39 @@
+/*.fade.ng-enter {
+    opacity: 0 !important;
+    transition-duration: 2s;
+    -webkit-transition-duration: 2s;
+}
+
+.fade.ng-enter-active {
+    opacity: 1 !important;
+}
+
+.fade.ng-leave {
+    opacity: 1 !important;
+    transition-duration: 1.5s;
+    -webkit-transition-duration: 1.5s;
+}
+
+.fade.ng-leave-active {
+    opacity: 0 !important;
+}*/
+
+.fade.ng-enter {
+  position: relative;
+  height: auto;
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s;
+  bottom: -100vh;
+}
+
+.fade.ng-enter-active {
+    bottom: 0;
+}
+
+.fade.ng-leave {
+    bottom: 0;
+}
+
+.fade.ng-leave-active {
+    bottom: -100vh;
+}

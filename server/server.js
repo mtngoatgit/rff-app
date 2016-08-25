@@ -37,18 +37,23 @@ app.get('/callback',
     }
     res.redirect("/user");
   });
-app.get('/user', function (req, res) {
-  res.render('user', {
-    user: req.user
-  });
-});
+
+  var requiresLogin = require('./requiresLogin');
+
+    app.get('/user',
+      requiresLogin,
+      function (req, res) {
+        res.render('user', {
+          user: req.user
+        });
+      });
+
 
 var jwtCheck = jwt({
   secret: new Buffer(config.jxtSecret, 'base64'),
   audience: config.jxtAudience
 });
 //  FINISH CODING THIS BELOW
-app.use('/wholesale', jwtCheck);
 app.use('/admin', jwtCheck);
 var request = require("request");
 
@@ -63,9 +68,12 @@ request(options, function (error, response, body) {
   console.log(body);
 });
 
+// POLICIES //
+
 
 var controller = require('./productCtrl.js');
 
+// app.get('/checkAuth', controller.checkAuth);
 app.get('/markets', controller.getMarkets);
 app.post('/markets', controller.addMarket);
 app.delete('/markets/:id', controller.deleteMarket);

@@ -2,6 +2,15 @@ angular
   .module('farmApp')
   .service('farmSrvc', function($http){
 
+    // this.checkAuth = function() {
+    //   return $http({
+    //     method: 'GET',
+    //     url: '/checkAuth'
+    //   }).then(function(response){
+    //     return response.data;
+    //   })
+    // }
+
     this.getAllProducts = function(){
       return $http({
         method: 'GET',

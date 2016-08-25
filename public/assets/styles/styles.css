@@ -82,7 +82,7 @@
   color: #BD573F; }
 
 .mobile-go-login-button > a {
-  color: #276998;
+  color: #1E211F;
   text-decoration: none; }
   .mobile-go-login-button > a:hover {
     color: #276998; }
@@ -117,18 +117,6 @@
 .cherry h1 {
   visibility: hidden; }
 
-#delivery-link {
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
-  font-family: "Lobster", cursive;
-  position: absolute;
-  left: -1.4em;
-  align-self: center;
-  font-size: 19px; }
-  #delivery-link a {
-    text-decoration: none;
-    color: #E4BD3A; }
-
 #family-farm {
   opacity: 0;
   -webkit-transform: rotate(90deg);
@@ -140,6 +128,21 @@
   right: -2em;
   top: 50%;
   font-size: 12px; }
+
+#place-order {
+  opacity: 0;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  color: #1E211F;
+  position: absolute;
+  left: -2em;
+  top: 50%;
+  font-size: 15px; }
+  #place-order a {
+    text-decoration: none;
+    color: #BD573F; }
 
 #about-link {
   font-family: "Lobster", cursive;
@@ -963,6 +966,8 @@ table, th, td {
     height: 93%; }
   #family-farm {
     opacity: 1; }
+  #place-order {
+    opacity: 1; }
   .desktop-nav-container {
     position: absolute; }
   .desktop-nav {
@@ -1127,3 +1132,38 @@ table, th, td {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+/*.fade.ng-enter {
+    opacity: 0 !important;
+    transition-duration: 2s;
+    -webkit-transition-duration: 2s;
+}
+
+.fade.ng-enter-active {
+    opacity: 1 !important;
+}
+
+.fade.ng-leave {
+    opacity: 1 !important;
+    transition-duration: 1.5s;
+    -webkit-transition-duration: 1.5s;
+}
+
+.fade.ng-leave-active {
+    opacity: 0 !important;
+}*/
+.fade.ng-enter {
+  position: relative;
+  height: auto;
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s;
+  bottom: -100vh; }
+
+.fade.ng-enter-active {
+  bottom: 0; }
+
+.fade.ng-leave {
+  bottom: 0; }
+
+.fade.ng-leave-active {
+  bottom: -100vh; }

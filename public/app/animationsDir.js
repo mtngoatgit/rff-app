@@ -7,6 +7,7 @@ angular
           $('.mobile-nav').toggle();
           })
           $('.partial-nav').click(function(){
+            console.log('hit');
             $('.partial-menu').toggle();
           })
           $('.mobile-partial-nav').click(function(){
@@ -20,12 +21,7 @@ angular
             $('.dummy').fadeIn(800),
             $('.chubby-header').fadeOut(800)
           })
-          //  THE FUNCTION BELOW DOESNT WORK...
-          // $(".mobile-partial-nav").click(function(){
-          //     $(this).css("background-color", "#BD573F");
-          // }, function(){
-          //     $(this).css("background-color", "#276998")
-          // })
+
           $(function(){
             $('.email-string').typed({
               strings: ['contact@rileysFarmFresh.com'],

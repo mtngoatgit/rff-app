@@ -3,6 +3,7 @@ angular.module('farmApp', ['ui.router', 'ngAnimate'])
 
         $urlRouterProvider.otherwise("/");
 
+
         $stateProvider
             .state('home', {
                 url:'/',
@@ -39,7 +40,22 @@ angular.module('farmApp', ['ui.router', 'ngAnimate'])
             .state('admin', {
                 url:"/admin",
                 controller: "farmCtrl",
-                templateUrl: "app/views/admin.html"
+                templateUrl: "app/views/admin.html",
+                // resolve: {
+                //   user: function($state, farmSrvc) {
+                //       return farmSrvc.checkAuth()
+                //       .then(function (response) {
+                //         console.log(response);
+                //         if (response === 'unauthorized') {
+                //           $state.go('home');
+                //           alert('Sign in');
+                //         }
+                //         else {
+                //           return response;
+                //         }
+                //       });
+                //     }
+                // }
             })
             .state('orders', {
               url:"/orders",
