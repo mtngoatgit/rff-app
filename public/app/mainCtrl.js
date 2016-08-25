@@ -28,7 +28,7 @@ angular
     $scope.postMarket = function(market) {
       farmSrvc.postMarket(market).then(function(res){
         alert('new market created :)')
-        location.reload();
+        $state.reload();
       })
     }
 
@@ -36,31 +36,31 @@ angular
     $scope.postProduct = function(product) {
       farmSrvc.postProduct(product).then(function(res){
         alert('new product created :)')
-        location.reload();
+        $state.reload();
       })
     }
 
     $scope.deleteProduct = function(product){
       farmSrvc.deleteProduct(product).then(function(res){
-        alert('item deleted!');
-        location.reload();
+        // alert('item deleted!');
+        $state.reload();
       })
     }
 
     $scope.deleteMarket = function(market){
       console.log(market)
       farmSrvc.deleteMarket(market).then(function(res){
-        alert('item deleted!');
-        location.reload();
+        // alert('item deleted!');
+        $state.reload();
       })
     }
 
     $scope.deleteInvoice = function(invoice){
       console.log("delete in controller", invoice)
       farmSrvc.deleteInvoice(invoice).then(function(res){
-        alert('item deleted!');
-        location.reload();
-      })
+        // alert('item deleted!');
+        $state.reload();
+        });
     }
 
 // BEGIN INVOICE FUNCTIONALITY
@@ -74,7 +74,7 @@ angular
     $scope.postOrder = function(order) {
       farmSrvc.postOrder(order).then(function(res){
         alert('new order created!!!!!!');
-        location.reload();
+        $state.reload();
       })
     }
     $scope.getAllInvoices = function(){
@@ -128,13 +128,13 @@ angular
     $scope.postNote = function(note) {
       farmSrvc.postNote(note).then(function(res){
         alert('new personal created :)')
-        location.reload();
+        $state.reload();
       })
     }
     $scope.deleteNote = function(note){
       farmSrvc.deleteNote(note).then(function(res){
         alert('item deleted!');
-        location.reload();
+        $state.reload();
       })
     }
 

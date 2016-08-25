@@ -19,7 +19,7 @@
   <section class="product-form">
     <h1> Product Form </h1>
     <li class="product-form-item"><input id="prd-name" placeholder="Product Name" ng-model="product.name" required></li>
-    <li class="product-form-item"><input id="prd-price" placeholder="Price" ng-model="product.price" required></li>
+    <li class="product-form-item"><input name="price" id="prd-price" placeholder="Price" ng-model="product.price" required></li>
     <li class="product-form-item"><input id="prd-container" placeholder="Measure (e.g. 'bushel')" ng-model="product.container" required></li>
     <li class="product-form-item"><input id="prd-notes" placeholder="Additional Notes (e.g. 'slightly blemished, fault of hail')" ng-model="product.notes"></li>
     <input class="product-form-button" type="button" value="Create Product" ng-click="postProduct(product)">
@@ -105,8 +105,9 @@
           </tr>
           <th id="invoice-table-delete" colspan="5">
             <input class="delete-button" type="button"  ng-click="deleteInvoice(invoice.id)" value="x">
+            <!-- <input class="delete-button" type="button"  ng-click="invoices.reload()" value="xxx"> -->
           </th>
-          
+
           </table>
 
         </div>

@@ -8,14 +8,16 @@ var jwt = require('express-jwt');
 
 var session = require('express-session');
 var massive = require('massive');
-var connectionString = "postgres://postgres@localhost/farmbase";
+var config = require('./config')
+var connectionString = config.connectionString;
+
 
 var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(__dirname + './../public'));
 app.use(cookieParser());
-app.use(session({ secret: 'qTYOBPb1VK8tmDswcbUOp2H4CkTHm84pm1VGRGuMlrbOFVEL43i1EoNFSOuZecBq', resave: false,  saveUninitialized: false }));
+app.use(session({ secret: config.sessionSecret, resave: false,  saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -42,8 +44,8 @@ app.get('/user', function (req, res) {
 });
 
 var jwtCheck = jwt({
-  secret: new Buffer('DuWaKZjHpPPnh9qPWUKMPq0LYujFTGDLqLSNAmtOkozI7rxBC3ytf-FUPxPwc420', 'base64'),
-  audience: '1BKYMF7l1E4h36AC6vcd4HHTlAEzZbOV'
+  secret: new Buffer(config.jxtSecret, 'base64'),
+  audience: config.jxtAudience
 });
 //  FINISH CODING THIS BELOW
 app.use('/wholesale', jwtCheck);
@@ -52,16 +54,14 @@ var request = require("request");
 
 var options = { method: 'GET',
   url: 'http://localhost:3000/#/admin',
-  headers: { authorization: 'Bearer lbQWuzyjwASNOK8l47WoN49Ds2wRye9X' } };
+  // headers: { authorization: 'Bearer YOUR_ID_TOKEN_HERE' } };
+  headers: { authorization: 'Bearer config.clientID' } };
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
   console.log(body);
 });
-
-
-
 
 
 var controller = require('./productCtrl.js');
@@ -85,6 +85,6 @@ app.post('/notes', controller.addNote);
 app.delete('/notes/:id', controller.deleteNote);
 
 
-app.listen(3000, function(){
+app.listen(config.port, function(){
   console.log('listening on port 3000')
 })

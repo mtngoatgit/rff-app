@@ -34,7 +34,7 @@ angular
         method: 'GET',
         url: '/invoices'
       }).then(function(response){
-        // console.log("my invoice data in the service", response.data);
+        console.log("my invoice data in the service", response.data);
         return response.data;
       })
     }

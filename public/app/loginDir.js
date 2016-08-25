@@ -6,7 +6,7 @@ angular
           var huh = "huh?"
           var lock = new Auth0Lock('lbQWuzyjwASNOK8l47WoN49Ds2wRye9X', 'buzzard.auth0.com', {
             auth: {
-              redirectUrl: 'http://localhost:3000/#/wholesale',
+              redirectUrl: 'http://localhost:3000/#/admin',
               responseType: 'code',
               params: {
                 scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
@@ -17,5 +17,6 @@ angular
           $('#auth-login').click(function(){lock.show()});
           $('#something').click(function(){console.log('hi')});
     }
+
   }
   })

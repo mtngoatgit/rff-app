@@ -30,8 +30,12 @@
           </table>
         </div>
         <div class="submit-button-container">
-          <input class="customer-phone" type="text" name="name" placeholder="user name" ng-model="order.user">
-          <input class="customer-name" type="text" name="name" placeholder="user email" ng-model="order.email">
+          <div class="customer-information">
+            <input class="customer-name" type="text" name="name" placeholder="Name" ng-model="order.name">
+            <input class="customer-phone" type="text" name="name" placeholder="Phone" ng-model="order.phone">
+            <input class="customer-email" type="text" name="name" placeholder="Email" ng-model="order.email">
+          </div>
+
           <input class="order-submit" type="button" name="name" value="submit order" ng-click="postOrder(order)">
         </div>
   </section>
