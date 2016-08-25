@@ -199,8 +199,8 @@
   position: fixed;
   right: -15px;
   top: 50vh;
-  height: 93px;
-  width: 93px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   background-color: $blue;
   text-align: center;
@@ -324,8 +324,19 @@
 .farms-container {
   @extend .overview-container;
   background-color: $red;
+  // height: 40vh;
   p{
     color: $dark-green;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #farm-icons {
+    margin-bottom: 3vh;
+  }
+  #farms-hipsum {
+    display: none;
   }
 }
 .green-house-video {
@@ -394,7 +405,11 @@
   @extend .markets-container;
   h1 {
     font-family: $head;
-    margin-bottom: 10px;
+    margin-bottom: 2vh;
+  }
+  img {
+    width: 37vw;
+    margin-bottom: 2vh;
   }
   p {
     font-family: $thin;
@@ -1044,16 +1059,26 @@ table, th, td {
     }
 }
 .submit-button-container {
+  height: auto;
+  margin-top: 3vh;
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-content: center;
+}
+.customer-information {
+  display: flex;
+  flex-direction: column;
 }
 .customer-name {
   height: 20px;
-  width: 200px;
-  border-radius: 4px;
+  width: 300px;
+  margin-bottom: 5px;
+  margin-right: 3vw;
 }
 .customer-phone {
+  @extend .customer-name;
+}
+.customer-email {
   @extend .customer-name;
 }
 .order-submit {
@@ -1062,7 +1087,7 @@ table, th, td {
   width: 180px;
   border: none;
   padding: 4px;
-  margin-top: 20px;
+  // margin-top: 20px;
   border-radius: 5px;
   &:hover {background-color: white; color: $dark-green}
 }
@@ -1199,6 +1224,24 @@ table, th, td {
     margin-right: auto;
     margin-left: auto;
     width: 100vw;
+  }
+  .farms-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p {
+      width: 25vw;
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #farm-icons {
+      margin-bottom: 3vh;
+    }
+    #farms-hipsum {
+      display: flex;
+    }
   }
   .alan {
     background: url("../../assets/photos/conference.jpg");

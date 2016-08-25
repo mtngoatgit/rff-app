@@ -1,4 +1,4 @@
-angular.module('farmApp', ['ui.router'])
+angular.module('farmApp', ['ui.router', 'ngAnimate'])
     .config(function($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise("/");

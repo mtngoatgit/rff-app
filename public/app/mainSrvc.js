@@ -78,6 +78,7 @@ angular
       })
     }
     this.postOrder = function(order) {
+      console.log("what order looks like in service", order);
       return $http.post('/orders', order).then(function(response){
         return response.data
       })
