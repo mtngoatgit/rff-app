@@ -1038,7 +1038,7 @@
   margin-top: 15vh;
   margin-bottom: 20px;
   padding: 3vh 0;
-  background-color: $red;
+  background-color: $dark-green;
   font-family: $body;
 
   opacity: .85;
@@ -1048,8 +1048,8 @@
   flex-direction: column;
   h1 {
     font-family: $head;
-    margin-bottom: 26px;
-    font-size: 20px;
+    margin-bottom: 7vh;
+    font-size: 26px;
     color: white;
   }
 }
@@ -1062,20 +1062,25 @@ table {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  font-family: $thin;
 }
 table, th, td {
-    border: .5px solid white;
+    border: .5px solid rgba(255, 255, 255, .1);
     border-collapse: collapse;
     padding: 5px;
     font-size: 15px;
     color: white;
     th {
       text-align: center;
+      font-size: 20px;
+      line-height: 25px;
+      color: $red;
+      // text-decoration: underline;
     }
 }
 .submit-button-container {
   height: auto;
-  margin-top: 3vh;
+  margin-top: 6vh;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -1086,7 +1091,7 @@ table, th, td {
 }
 .customer-name {
   height: 20px;
-  width: 300px;
+  width: 150px;
   margin-bottom: 5px;
   margin-right: 3vw;
 }
@@ -1097,7 +1102,7 @@ table, th, td {
   @extend .customer-name;
 }
 .order-submit {
-  background-color: $dark-green;
+  background-color: $red;
   color: white;
   width: 180px;
   border: none;
@@ -1129,6 +1134,9 @@ table, th, td {
 
 }
 @media (min-width: 780px){
+  .customer-name {
+    width: 300px;
+  }
   .hero-image {
     width: 93%;
     height: 93%;

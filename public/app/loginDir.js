@@ -6,7 +6,7 @@ angular
           var huh = "huh?"
           var lock = new Auth0Lock('lbQWuzyjwASNOK8l47WoN49Ds2wRye9X', 'buzzard.auth0.com', {
             auth: {
-              redirectUrl: 'http://localhost:3000/#/admin',
+              redirectUrl: 'http://localhost:3000/#/a890d763124masdcxcivsdfsdkjn',
               responseType: 'code',
               params: {
                 scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes

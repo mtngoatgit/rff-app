@@ -38,7 +38,7 @@ angular.module('farmApp', ['ui.router', 'ngAnimate', 'ngDialog'])
                 templateUrl: "app/views/wholesale.html"
             })
             .state('admin', {
-                url:"/admin",
+                url:"/a890d763124masdcxcivsdfsdkjn",
                 controller: "farmCtrl",
                 templateUrl: "app/views/admin.html",
                 // resolve: {

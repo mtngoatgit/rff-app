@@ -909,7 +909,7 @@
   margin-top: 15vh;
   margin-bottom: 20px;
   padding: 3vh 0;
-  background-color: #BD573F;
+  background-color: #1E211F;
   font-family: "Asap", sans-serif;
   opacity: .85;
   border-radius: 8px;
@@ -918,8 +918,8 @@
   flex-direction: column; }
   .order-form-parent h1 {
     font-family: "Lobster", cursive;
-    margin-bottom: 26px;
-    font-size: 20px;
+    margin-bottom: 7vh;
+    font-size: 26px;
     color: white; }
 
 .order-form {
@@ -930,20 +930,24 @@
 table {
   width: 90%;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  font-family: "Raleway", sans-serif; }
 
 table, th, td {
-  border: .5px solid white;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
   border-collapse: collapse;
   padding: 5px;
   font-size: 15px;
   color: white; }
   table th, th th, td th {
-    text-align: center; }
+    text-align: center;
+    font-size: 20px;
+    line-height: 25px;
+    color: #BD573F; }
 
 .submit-button-container {
   height: auto;
-  margin-top: 3vh;
+  margin-top: 6vh;
   display: flex;
   justify-content: center;
   align-content: center; }
@@ -954,12 +958,12 @@ table, th, td {
 
 .customer-name, .customer-phone, .customer-email {
   height: 20px;
-  width: 300px;
+  width: 150px;
   margin-bottom: 5px;
   margin-right: 3vw; }
 
 .order-submit {
-  background-color: #1E211F;
+  background-color: #BD573F;
   color: white;
   width: 180px;
   border: none;
@@ -977,6 +981,8 @@ table, th, td {
 
 /*media queries*/
 @media (min-width: 780px) {
+  .customer-name, .customer-phone, .customer-email {
+    width: 300px; }
   .hero-image {
     width: 93%;
     height: 93%; }
@@ -1171,10 +1177,7 @@ table, th, td {
   position: relative;
   height: auto;
   opacity: -1 !important;
-  transition-duration: 1.5s;
-  -webkit-transition-duration: 1.5s;
-  -webkit-transition: bottom 1s;
-  transition: bottom 1s;
+  -webkit-transition: bottom 2s cubic-bezier(0.34, 0.45, 0.1, 0.96);
   bottom: -100vh; }
 
 .fade.ng-enter-active {
