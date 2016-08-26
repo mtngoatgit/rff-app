@@ -31,12 +31,15 @@
         </div>
         <div class="submit-button-container">
           <div class="customer-information">
-            <input class="customer-name" type="text" name="name" placeholder="Name" ng-model="order.name">
-            <input class="customer-phone" type="text" name="phone" placeholder="Phone" ng-model="order.phone">
-            <input class="customer-email" type="text" name="email" placeholder="Email" ng-model="order.email">
+            <input class="customer-name" type="text" name="name" placeholder="Name" ng-model="order.user.name">
+            <input class="customer-phone" type="text" name="phone" placeholder="Phone" ng-model="order.user.phone">
+            <input class="customer-email" type="text" name="email" placeholder="Email" ng-model="order.user.email">
           </div>
-
           <input class="order-submit" type="button" name="name" value="submit order" ng-click="postOrder(order)">
+        </div>
+
+        <div class="phone-alert">
+          <h1>* someone will call you to confirm and fulfill your order</h1>
         </div>
   </section>
 

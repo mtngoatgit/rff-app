@@ -81,7 +81,7 @@ angular
 
 //  BEGIN INVOICE FUNCTIONALITY
     this.postUser = function(user) {
-      // console.log(user);
+      console.log("service, user with postUser", user);
       return $http.post('/users', user).then(function(response){
         return response.data
       })

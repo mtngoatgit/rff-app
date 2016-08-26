@@ -644,10 +644,11 @@ table, th, td {
     margin-bottom: 4vh;
   }
   #invoice-title {
-    height: 40px;
+    // height: 40px;
     vertical-align: middle;
     background-color: $dark-green;
     color: white;
+    line-height: 30px;
   }
   span {
     color: $red;
@@ -1093,6 +1094,13 @@ table, th, td {
   // margin-top: 20px;
   border-radius: 5px;
   &:hover {background-color: white; color: $dark-green}
+}
+.phone-alert{
+  margin-top: 4vh;
+  h1 {
+    font-family: $thin;
+    font-size: 13px;
+  }
 }
 
 

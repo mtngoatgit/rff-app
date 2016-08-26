@@ -572,10 +572,10 @@ table, th, td {
   margin-bottom: 4vh; }
 
 .order-holder #invoice-title {
-  height: 40px;
   vertical-align: middle;
   background-color: #1E211F;
-  color: white; }
+  color: white;
+  line-height: 30px; }
 
 .order-holder span {
   color: #BD573F;
@@ -958,6 +958,12 @@ table, th, td {
   .order-submit:hover {
     background-color: white;
     color: #1E211F; }
+
+.phone-alert {
+  margin-top: 4vh; }
+  .phone-alert h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 13px; }
 
 /*media queries*/
 @media (min-width: 780px) {

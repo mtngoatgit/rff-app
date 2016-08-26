@@ -16,7 +16,6 @@ angular
     }
     $scope.getAllProducts();
 
-
     $scope.getAllMarkets = function() {
       farmSrvc.getAllMarkets().then(function(response){
         $scope.markets = response;
@@ -104,8 +103,8 @@ angular
 
 // BEGIN INVOICE FUNCTIONALITY
     $scope.postUser = function(user) {
-      // console.log(user);
-      farmSrvc.postOrder(user).then(function(res){
+      console.log("does user come through?", user);
+      farmSrvc.postUser(user).then(function(res){
         alert('new user created :)')
         // location.reload();
       })
@@ -116,6 +115,18 @@ angular
         $state.reload();
       })
     }
+    // $scope.postUser = function(user) {
+    //   console.log("does user come through?", user);
+    //   farmSrvc.postUser(user).then(function(res){
+    //     $scope.postOrder = function(order) {
+    //       farmSrvc.postOrder(order).then(function(res){
+    //         alert('new order created!!!!!!');
+    //         $state.reload();
+    //       })
+    //     }
+    //   })
+    // }
+
     $scope.getAllInvoices = function(){
       farmSrvc.getAllInvoices().then(function(response){
         // console.log("invoice post", response);
@@ -138,6 +149,8 @@ angular
         		obj = {
         			id: response[i].id,
         			client: response[i].client,
+              email: response[i].email,
+              phone: response[i].phone,
         			lineItem: [{
         				quantity: response[i].quantity,
               			product: response[i].product,

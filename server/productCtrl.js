@@ -66,44 +66,60 @@ deleteNote: function(req, res, next){
   res.status(200).send(response);
   })
 },
-
-//  INVOICE FUNCTIONALITY
-// getUserId: function(req, res, next){
-//   db.get_user_id(function(err, response){
-//     res.send(response);
-//   })
-// },
 getInvoices: function(req, res, next){
   db.get_all_invoices(function(err, response){
     // console.log(response);
     res.send(response);
   })
 },
-addUser: function(req, res, next){
-  db.add_user(req.body, function (err, response){
-  res.status(200).send(req.body);
-  })
-},
 addOrder: function(req, res, next){
-  db.get_user_id(req.body.email, function(err, userId){
-    // console.log(userId);
-    db.add_order(userId[0].userid, function(err, orderId){
-      for(var i= 0; i < req.body.products.length; i++) {
-        var product = [
-          orderId[0].orderid,
-          req.body.products[i].name,
-          req.body.products[i].container,
-          req.body.products[i].notes,
-          req.body.products[i].price,
-          req.body.products[i].quantity
-        ]
-        db.add_invoice(product, function(err, response){
-          // console.log(err, response);
-        });
-      }
+    var userInfo = [
+      req.body.user.name,
+      req.body.user.email,
+      req.body.user.phone
+    ]
+    db.add_user(userInfo, function(err, response){
+      db.get_user_id(req.body.user.email, function(err, userId){
+      db.add_order(userId[0].userid, function(err, orderId){
+        for(var i= 0; i < req.body.products.length; i++) {
+          var product = [
+            orderId[0].orderid,
+            req.body.products[i].name,
+            req.body.products[i].container,
+            req.body.products[i].notes,
+            req.body.products[i].price,
+            req.body.products[i].quantity
+          ]
+          db.add_invoice(product, function(err, response){
+            // console.log(err, response);
+          });
+        }
+      })
     })
+    res.status(200).send(req.body)
   })
 },
+
+// addOrder: function(req, res, next){
+//   db.get_user_id(req.body.user.email, function(err, userId){
+//     // console.log("req.body in prodCtrl", req.body);
+//     db.add_order(userId[0].userid, function(err, orderId){
+//       for(var i= 0; i < req.body.products.length; i++) {
+//         var product = [
+//           orderId[0].orderid,
+//           req.body.products[i].name,
+//           req.body.products[i].container,
+//           req.body.products[i].notes,
+//           req.body.products[i].price,
+//           req.body.products[i].quantity
+//         ]
+//         db.add_invoice(product, function(err, response){
+//           // console.log(err, response);
+//         });
+//       }
+//     })
+//   })
+// },
 
 //  END INVOICE FUNCTIONALITY
 
