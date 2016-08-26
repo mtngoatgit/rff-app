@@ -26,7 +26,8 @@ angular
             $('.email-string').typed({
               strings: ['contact@rileysFarmFresh.com'],
               typeSpeed: 3,
-              showCursor: false
+              showCursor: false,
+              startDelay: 900
             })
           })
             // $(window).scroll(function(){
