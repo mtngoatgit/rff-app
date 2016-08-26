@@ -497,7 +497,7 @@
   .market-form h1, .product-form h1, .personal-notes h1 {
     font-family: "Lobster", cursive;
     margin-bottom: 26px;
-    font-size: 20px;
+    font-size: 26px;
     color: white; }
   .market-form li, .product-form li, .personal-notes li {
     list-style: none;
@@ -527,9 +527,10 @@
   margin-left: auto;
   margin-right: auto;
   padding: 3vh 0;
-  background-color: #BD573F;
-  font-family: "Asap", sans-serif;
-  margin-bottom: 20px;
+  background-color: #1E211F;
+  font-family: "Raleway", sans-serif;
+  margin-top: 3vh;
+  margin-bottom: 6vh;
   opacity: .85;
   border-radius: 8px;
   display: flex;
@@ -538,28 +539,35 @@
   .admin-market-watch h1, .admin-product-watch h1, .admin-orders-watch h1 {
     font-family: "Lobster", cursive;
     margin-bottom: 26px;
-    font-size: 20px;
+    font-size: 26px;
     color: white; }
 
 .admin-markets, .admin-products, .admin-orders {
   width: 100%;
   display: flex;
   justify-content: center; }
-
-table {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto; }
-
-table, th, td {
-  border: .5px solid white;
-  border-collapse: collapse;
-  padding: 5px;
-  font-size: 15px;
-  color: white; }
-  table th, th th, td th {
-    text-align: center;
-    color: #1E211F; }
+  .admin-markets table, .admin-products table, .admin-orders table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; }
+  .admin-markets table, .admin-products table, .admin-orders table, .admin-markets th, .admin-products th, .admin-orders th, .admin-markets td, .admin-products td, .admin-orders td {
+    border: 1px solid #31332E;
+    border-collapse: collapse;
+    padding: 5px;
+    font-size: 15px;
+    color: white; }
+    .admin-markets table th, .admin-products table th, .admin-orders table th, .admin-markets th th, .admin-products th th, .admin-orders th th, .admin-markets td th, .admin-products td th, .admin-orders td th {
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      text-decoration: underline; }
+    .admin-markets table .delete-button, .admin-products table .delete-button, .admin-orders table .delete-button, .admin-markets th .delete-button, .admin-products th .delete-button, .admin-orders th .delete-button, .admin-markets td .delete-button, .admin-products td .delete-button, .admin-orders td .delete-button {
+      color: white;
+      border: none;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3); }
 
 .admin-orders {
   overflow: scroll;
@@ -575,7 +583,8 @@ table, th, td {
   vertical-align: middle;
   background-color: #1E211F;
   color: white;
-  line-height: 30px; }
+  line-height: 30px;
+  text-decoration: none; }
 
 .order-holder span {
   color: #BD573F;
@@ -591,7 +600,8 @@ table, th, td {
   font-weight: 100; }
 
 .order-holder #invoice-table-delete {
-  text-align: center; }
+  text-align: center;
+  background-color: transparent; }
 
 .delete-button {
   width: 50px; }
@@ -1160,12 +1170,16 @@ table, th, td {
 .fade.ng-enter {
   position: relative;
   height: auto;
+  opacity: -1 !important;
+  transition-duration: 1.5s;
+  -webkit-transition-duration: 1.5s;
   -webkit-transition: bottom 1s;
   transition: bottom 1s;
   bottom: -100vh; }
 
 .fade.ng-enter-active {
-  bottom: 0; }
+  bottom: 0;
+  opacity: 1 !important; }
 
 .fade.ng-leave {
   bottom: 0; }

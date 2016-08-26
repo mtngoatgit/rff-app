@@ -1,8 +1,7 @@
-angular.module('farmApp', ['ui.router', 'ngAnimate'])
+angular.module('farmApp', ['ui.router', 'ngAnimate', 'ngDialog'])
     .config(function($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise("/");
-
 
         $stateProvider
             .state('home', {
@@ -12,6 +11,7 @@ angular.module('farmApp', ['ui.router', 'ngAnimate'])
                 })
             .state('login', {
                 url:"/login",
+                // controller: "dialogCtrl",
                 templateUrl: "app/views/login.html"
             })
             .state('about', {

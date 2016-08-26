@@ -68,7 +68,9 @@ request(options, function (error, response, body) {
   // console.log(body);
 });
 
-// POLICIES //
+app.get('/auth/me', function(req, res, next){
+  res.status(200).send(req.user)
+})
 
 
 var controller = require('./productCtrl.js');

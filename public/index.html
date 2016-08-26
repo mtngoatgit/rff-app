@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html ng-app='farmApp'>
   <head>
+    <link rel="icon" href="/favicon.ico" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rileys Farm Fresh</title>
     <base target="_blank">
+
     <link href="https://fonts.googleapis.com/css?family=Asap:400,400i,700|Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles/normalize.css">
     <link rel="stylesheet" href="/assets/styles/reset.css">
     <link rel="stylesheet" href="/assets/styles/styles.css">
-    <!-- <link rel="stylesheet" href="/assets/styles/views.css"> -->
+    <link rel="stylesheet" href="/assets/styles/ngDialog.min.css">
+    <link rel="stylesheet" href="/assets/styles/ngdialog-theme-default.min.css">
+
+    <!-- <link rel="stylesheet" href="/assets/styles/.css"> -->
     <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
     <script src="https://use.fontawesome.com/dc011d5e38.js"></script>
   </head>
@@ -43,11 +48,15 @@
 
   <!-- <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script> -->
   <!-- local scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.2/js/ngDialog.min.js"></script>
+  <!-- <script src=""></script>
+  <script src=""></script> -->
   <script src="app/app.js"></script>
   <script src="app/mainCtrl.js"></script>
   <script src="app/mainSrvc.js"></script>
   <script src="app/animationsDir.js"></script>
   <script src="app/loginDir.js"></script>
+  <script src="app/dialogCtrl.js"></script>
   <script src="assets/typed.js"></script>
   <!-- <script src="app/"></script> -->
   </body>

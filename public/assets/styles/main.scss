@@ -545,7 +545,7 @@
   h1 {
     font-family: $head;
     margin-bottom: 26px;
-    font-size: 20px;
+    font-size: 26px;
     color: white;
   }
   li {
@@ -558,6 +558,7 @@
   .delete-button {
     width: 22px;
     font-weight: 700;
+
   }
 }
 .market-form-button {
@@ -585,9 +586,10 @@
   margin-left: auto;
   margin-right: auto;
   padding: 3vh 0;
-  background-color: $red;
-  font-family: $body;
-  margin-bottom: 20px;
+  background-color: $dark-green;
+  font-family: $thin;
+  margin-top: 3vh;
+  margin-bottom: 6vh;
   opacity: .85;
   border-radius: 8px;
   display: flex;
@@ -596,7 +598,7 @@
   h1 {
     font-family: $head;
     margin-bottom: 26px;
-    font-size: 20px;
+    font-size: 26px;
     color: white;
   }
 }
@@ -604,22 +606,33 @@
   width: 100%;
   display: flex;
   justify-content: center;
-}
-table {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-table, th, td {
-    border: .5px solid white;
+  table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  table, th, td {
+    border: 1px solid #31332E;
     border-collapse: collapse;
     padding: 5px;
     font-size: 15px;
     color: white;
     th {
       text-align: center;
-      color: $dark-green;
+      color: white;
+      font-size: 18px;
+      text-decoration: underline;
+      // background-color: $red;
     }
+    .delete-button {
+      color: white;
+      border: none;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, .3);
+    }
+  }
 }
 .admin-product-watch{
     @extend .admin-market-watch;
@@ -649,6 +662,7 @@ table, th, td {
     background-color: $dark-green;
     color: white;
     line-height: 30px;
+    text-decoration: none;
   }
   span {
     color: $red;
@@ -665,6 +679,7 @@ table, th, td {
   }
   #invoice-table-delete {
     text-align: center;
+    background-color: transparent;
   }
 }
 .delete-button {
@@ -693,10 +708,6 @@ table, th, td {
   margin-left: auto;
   position: relative;
   .delete-button {
-    // position: absolute;
-    // right: 5px;
-    // top: -19px;
-    // background-color: $dark-green;
     color: $dark-green;
     border: none;
     border-radius: 50%;
