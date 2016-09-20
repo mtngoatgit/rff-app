@@ -4,7 +4,7 @@ angular
       return{
       link:function(scope, element, attrs){
           $('.ham').click(function(){
-          $('.mobile-nav').toggle();
+          $('.mobile-nav').slideToggle();
           })
           $('.partial-nav').click(function(){
             console.log('hit');

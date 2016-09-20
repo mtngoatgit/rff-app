@@ -1,8 +1,4 @@
 @import "fonts-and-colors";
-
-.route-container {
-
-}
 .landing {
   background-color: white;
   height: 100vh;
@@ -58,7 +54,6 @@
   color: white;
   font-size: 15px
 }
-
 .mobile-nav {
   background-color:$dark-green;
   opacity: 0.8;
@@ -149,32 +144,6 @@
     color: $red;
   }
 }
-
-#about-link {
-  font-family: $head;
-  color: $yellow;
-  position: absolute;
-  bottom: 10px;
-  margin-left: 45%;
-  font-size: 19px;
-  a {
-    text-decoration: none;
-    color: $yellow;
-  }
-}
-#locations-link {
-  font-family: $head;
-  color: $yellow;
-  position: absolute;
-  top: 8px;
-  margin-left: 43%;
-  justify-content: center;
-  font-size: 19px;
-  a {
-    text-decoration: none;
-    color: $yellow;
-  }
-}
 .desktop-go-login-button{
   text-align: right;
   font-size: 20px;
@@ -187,13 +156,11 @@
     border: none;
     &:hover {color: $red};
   }
-
 }
 .desktop-go-login-button > a {
   color: $blue;
   text-decoration: none;
   &:hover {color: $red};
-
 }
 
 //  PARTIAL NAVIGATION
@@ -205,7 +172,8 @@
   height: 70px;
   width: 70px;
   border-radius: 50%;
-  background-color: $blue;
+  background-color: $dark-green;
+  opacity: .85;
   text-align: center;
   .fa-home{color: white; text-decoration: none;}
   &:hover {background-color: $red}
@@ -221,9 +189,10 @@
   position: fixed;
   left: 69px;
   top: 50vh;
-  background-color:$blue;
+  background-color:$dark-green;
   opacity: 0.9;
   border-radius: 15px;
+  border: 2px solid white;
   width: 250px;
   height: auto;
   text-align: center;
@@ -233,7 +202,7 @@
   padding-bottom: 1vh;
   a {
     text-decoration: none;
-    font-family: $body;
+    font-family: $thin;
     color: white;
   }
 }
@@ -245,7 +214,8 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: $blue;
+  background-color: $dark-green;
+  opacity: .85;
   text-align: center;
   .fa-home{color: white; text-decoration: none;}
 }
@@ -258,7 +228,6 @@
 //  ABOUT PARTIAL
 .about-main {
   height: 100vh;
-  // background-color: black;
   width: 100%;
 }
 .about-header {
@@ -266,7 +235,6 @@
   width: 100vw;
   background-image: url("../../assets/photos/barn-wood-min.jpg");
   background-size: cover;
-  // overflow: hidden;
 }
 .about-title {
   width: 50vw;
@@ -315,8 +283,6 @@
   background-size: cover;
   height: 35vh;
   font-family: $body;
-  // filter: grayscale(100%);
-  // -webkit-filter: grayscale(80%);
 }
 #jordan-text {
   width: 40vw;
@@ -327,7 +293,6 @@
 .farms-container {
   @extend .overview-container;
   background-color: $red;
-  // height: 40vh;
   p{
     color: $dark-green;
     text-align: justify;
@@ -354,8 +319,6 @@
   background: url("../../assets/photos/conference.jpg");
   background-size: cover;
   height: 35vh;
-  // filter: grayscale(100%);
-  // -webkit-filter: grayscale(100%);
 }
 .wares-container {
   @extend .overview-container;
@@ -396,16 +359,32 @@
 }
 
 //  LOCATIONS PARTIAL
+.locations-main {
+ @extend .contact-main;
+}
+.sub-location-main {
+  height: 0vh;
+  width: 95vw;
+  margin: auto;
+  margin-top: 45px;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url("../../assets/photos/green-beans.jpeg");
+  background-size: cover;
+}
 .locations-header {
-  font-family: $head;
-  text-align: center;
-  font-size: 26px;
-  line-height: 30px;
-  width: 100%;
-  padding-bottom: 1vh;
+  @extend .contact-header;
+}
+#location-title {
+  @extend #contact-title;
+}
+.location-market-container{
+  @extend .contact-container;
+  background-image: url("../../assets/photos/green-beans.jpeg");
 }
 .location-container {
   @extend .markets-container;
+  margin-top: 0;
   h1 {
     font-family: $head;
     margin-bottom: 2vh;
@@ -418,27 +397,6 @@
     font-family: $thin;
     color: white;
   }
-}
-.locations-main {
-  height: 92vh;
-  background-color: white;
-  padding-left: 3vw;
-  overflow: scroll;
-}
-.locations-sub-one {
-  height: 92vh;
-  width: 48%;
-  visibility: hidden;
-  position: fixed;
-  right: 3vw;
-  top: 4vh;
-  background-image: url("../../assets/photos/green-beans.jpeg");
-  background-size: cover;
-  // background-attachment: fixed;
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // overflow: scroll;
-  // padding-top: 100px;
 }
 .markets-container {
   width: 95%;
@@ -495,7 +453,6 @@
 .mobile-admin-header-text {
   align-self: center;
   display: inline;
-  // line-height:;
   font-family: $head;
   font-size: 30px;
   h2 {
@@ -574,7 +531,6 @@
   @extend .market-form;
 }
 .watch-container {
-  // display: flex;
   font-family: $body;
 }
 ::-webkit-scrollbar {
@@ -622,7 +578,6 @@
       color: white;
       font-size: 18px;
       text-decoration: underline;
-      // background-color: $red;
     }
     .delete-button {
       color: white;
@@ -650,7 +605,6 @@
   flex-direction: column;
   color: white;
   font-family: $thin;
-
 }
 .order-holder {
   table {
@@ -720,7 +674,6 @@
   background-image: url("../../assets/photos/baskets.jpeg");
   background-size: cover;
   height: 100vh;
-  // position: absolute;
   z-index: 0;
 }
 .delivery-header {
@@ -772,6 +725,9 @@
     @extend #deliver-one;
   }
   #deliver-four {
+    @extend #deliver-two;
+  }
+  #deliver-five {
     @extend #deliver-one;
     border: none;
     text-align: center;
@@ -798,8 +754,6 @@
 .box {
   height: 10%;
   width: 5%;
-  // display: flex;
-  // flex-direction: column;
   float: right;
   right: 50px;
   background-color: black;
@@ -818,10 +772,8 @@
 //  CONTACT PARTIAL
 .contact-main{
   background-color: white;
-  // background-image: url("../../assets/photos/cherry-tree.jpeg");
   background-size: cover;
   height: 100%;
-  // overflow: scroll;
   display: flex;
   flex-direction: row;
 }
@@ -832,12 +784,8 @@
   margin-top: 45px;
   background-attachment: fixed;
   background-position: center;
-  // display: none;
   background-image: url('../../assets/photos/strawberries-hands.jpeg');
   background-size: cover;
-}
-.mobile-contact-main{
-
 }
 .contact-header {
   position: absolute;
@@ -848,20 +796,15 @@
   font-family: $head;
   color: $dark-green;
   font-size: 30px;
-  // padding-bottom: 10px;
-  // border-bottom: 1px solid $dark-green;
 }
 .contact-container {
   background-attachment: fixed;
   background-position: center;
-  // display: none;
   background-image: url('../../assets/photos/strawberries-hands.jpeg');
   background-size: cover;
   overflow: scroll;
   transition: background-color .5s linear;
   &:hover{background-color: rgba(0, 0, 0, 0)}
-  // width: 100%;
-  // height: 40vh;
   right: 0px;
   text-align: center;
   font-family: $body;
@@ -879,16 +822,13 @@
     border-radius: 7px;
   }
   h2 {
-    // color: white;
     line-height: 32px;
     font-family: $thin;
   }
   p {
-    // color: white;
     font-family: $thin;
   }
   .fa-building {
-    // color: white;
     margin-bottom: 35px;
   }
   .fa-phone {
@@ -946,7 +886,6 @@
   margin-top: 7%;
 }
 .input-container {
-  /*background-color: black;*/
   margin-left: auto;
   margin-right: auto;
   margin-top: 12%;
@@ -955,7 +894,6 @@
   font-family: $body;
 }
 #user-name {
-  /*margin-top: 100px;*/
   margin-bottom: 8%;
   border: 1px solid $blue;
   font-size: 15px;
@@ -987,7 +925,6 @@
   background-color: $blue;
   width: 35px;
   height: 35px;
-  /*justify-content: center;*/
   text-align: center;
   border-radius: 50%;
   margin-top: -80px;
@@ -1021,26 +958,42 @@
   font-size: 27px;
 }
 #trailer {
-  height: 10vh;
-  width: 100%;
-  position: relative;
+  width:80vw;
+  margin: 8vh auto 3vh auto;
+  font-family: $thin;
+  font-weight: 400;
+  line-height: 20px;
+  color: $dark-green;
+  font-style: italic;
   text-align: center;
-  padding-top: 5vh;
+  opacity: .85;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #truck {
   color: $dark-green;
+  vertical-align: middle;
+  margin-bottom: 3vh;
+}
+.wholesale-welcome {
+  padding-left: 3vw;
+  margin-left: 6vw;
+  border-left: 1px solid $dark-green;
+  text-align: left;
+  width: 90%;
+  span {
+    color: $red;
+  }
 }
 .order-form-parent {
   width:80vw;
   overflow-x: scroll;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15vh;
-  margin-bottom: 20px;
+  margin: 15vh auto 20px auto;
   padding: 3vh 0;
   background-color: $dark-green;
-  font-family: $body;
-
+  font-family: $thin;
   opacity: .85;
   border-radius: 8px;
   display: flex;
@@ -1075,7 +1028,6 @@ table, th, td {
       font-size: 20px;
       line-height: 25px;
       color: $red;
-      // text-decoration: underline;
     }
 }
 .submit-button-container {
@@ -1120,19 +1072,7 @@ table, th, td {
 }
 
 
-
-
-
-
-
-
-
-
-
-/*media queries*/
-@media (min-width: 415px){
-
-}
+//  MEDIA QUERIES
 @media (min-width: 780px){
   .customer-name {
     width: 300px;
@@ -1203,7 +1143,6 @@ table, th, td {
     // overflow: hidden;
   }
   .about-title {
-    // width: 30vw;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -1228,18 +1167,7 @@ table, th, td {
   }
   .jordan {
     height: 85vh;
-    // opacity: 0;
-    // visibility: hidden;
   }
-  // .fadeIn {
-  //     -webkit-animation: animat_show 2s;
-  //     animation: animat_show 2s;
-  //     visibility: visible !important;
-  // }
-  // @-webkit-keyframes animat_show{
-  //     0%{opacity:0}
-  //     100%{opacity:1}
-  // }
   #jordan-text {
     width: 40vw;
     margin-top: 5vh;
@@ -1279,7 +1207,6 @@ table, th, td {
     background: url("../../assets/photos/conference.jpg");
     background-size: cover;
     height: 80vh;
-    // opacity: 0;
   }
   .wares-container {
     .wares-links {
@@ -1331,6 +1258,9 @@ table, th, td {
   .sub-contact-main {
     height: 90vh;
   }
+  .sub-location-main{
+    height: 90vh;
+  }
   .contact-container div {
     width: 89%;
   }
@@ -1344,34 +1274,11 @@ table, th, td {
     width: 50vw;
     height: 75vh;
   }
-}
-@media (min-width: 1224px){
-  // .desktop-logo {
-  //   display: block;
-  // }
-  // .mobile-logo {
-  //   display: none;
-  // }
-}
-
-.typed-cursor{
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-}
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+  #trailer {
+    flex-direction: row;
+    margin-top: 12vh;
+  }
+  .wholesale-welcome {
+    width: 50%;
+  }
 }
