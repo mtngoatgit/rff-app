@@ -1,67 +1,72 @@
-.landing {
+.home-component {
   background-color: white;
-  height: 100vh;
   width: 100vw;
-  display: inline-block; }
-
-.ham {
-  width: 80vw;
-  height: 13px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2vh;
-  text-align: center;
-  padding-top: 1vh; }
+  height: 100vh; }
 
 .hero-image {
-  background-image: url("../../assets/photos/blueberries.jpg");
+  background-image: url("../../assets/photos/rileyCrate.jpg");
   background-size: cover;
-  width: 92%;
-  height: 92%;
-  margin: auto;
+  width: 100%;
+  height: 100%;
   display: flex; }
 
-.mobile-logo {
+.desktop-logo-nav-container {
+  width: 200px; }
+
+.home-component-logo {
   align-self: center;
   margin-left: auto;
   margin-right: auto;
-  width: 200px;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column; }
 
-.light-box, .dark-box {
+.top-logo-box {
   background-color: white;
+  border-radius: 5px 5px 0 0;
   width: 100%;
-  height: 120px;
+  text-align: center;
+  padding-top: 20px;
+  line-height: 1.3;
   font-family: "Lobster", cursive;
   color: #BD573F;
-  font-size: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  font-size: 56px; }
 
 .fresh-box {
   padding-bottom: 10px;
-  border-bottom: 1px solid white; }
+  border-bottom: 1px solid #1E211F; }
 
-.dark-box {
-  background-color: #1E211F;
+.bottom-logo-box {
   font-family: "Raleway", sans-serif;
-  font-weight: 100;
-  color: white;
-  font-size: 15px; }
+  color: #1E211F;
+  background-color: white;
+  font-size: 15px;
+  line-height: 3;
+  text-align: center; }
 
-.mobile-nav {
-  background-color: #1E211F;
-  opacity: 0.8;
-  width: 100%;
-  height: auto;
-  text-align: center;
-  line-height: 39px;
+.desktop-nav {
   display: none;
-  padding-top: 1vh;
-  padding-bottom: 1vh; }
+  width: 100%;
+  background-color: #1E211F;
+  flex-direction: column;
+  border-radius: 0 0 5px 5px; }
+
+.desktop-nav-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center; }
+  .desktop-nav-item:hover {
+    background-color: #BD573F;
+    color: white; }
+
+.desktop-nav a {
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 3;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100; }
 
 .mobile-nav a {
   text-decoration: none;
@@ -86,33 +91,6 @@
   text-decoration: none; }
   .mobile-go-login-button > a:hover {
     color: #276998; }
-
-.desktop-nav-container {
-  position: relative;
-  top: 8px;
-  right: 28vw; }
-
-.desktop-nav {
-  display: none;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 45vw; }
-
-.desktop-nav a {
-  display: none;
-  text-decoration: none;
-  font-size: 17px;
-  color: #1E211F;
-  font-family: "Raleway", sans-serif; }
-  .desktop-nav a:hover {
-    background-color: #BD573F;
-    color: white; }
-
-.desktop-logo {
-  display: none;
-  align-self: center;
-  margin-left: auto;
-  margin-right: auto; }
 
 .cherry h1 {
   visibility: hidden; }
@@ -162,6 +140,23 @@
   text-decoration: none; }
   .desktop-go-login-button > a:hover {
     color: #BD573F; }
+
+@media (min-width: 780px) {
+  .customer-name {
+    width: 300px; }
+  .desktop-logo-nav-container {
+    align-self: center;
+    margin-left: 30px; }
+  #family-farm {
+    opacity: 1; }
+  #place-order {
+    opacity: 1; }
+  .desktop-nav {
+    display: flex; }
+  .mobile-go-login-button {
+    visibility: hidden; }
+  .desktop-go-login-button {
+    opacity: 1; } }
 
 .partial-nav-to-home, .partial-nav {
   visibility: hidden;
@@ -964,13 +959,6 @@ table, th, td {
 @media (min-width: 780px) {
   .customer-name, .customer-phone, .customer-email {
     width: 300px; }
-  .hero-image {
-    width: 93%;
-    height: 93%; }
-  #family-farm {
-    opacity: 1; }
-  #place-order {
-    opacity: 1; }
   .desktop-nav-container {
     position: absolute; }
   .desktop-nav {
