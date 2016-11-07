@@ -20,6 +20,15 @@ angular
       })
     }
 
+    this.getWholesaleSummary = function(){
+      return $http({
+        method: 'GET',
+        url: '/wholesale'
+      }).then(function(response){
+        return response.data;
+      })
+    }
+
     this.getAllMarkets = function(){
       return $http({
         method: 'GET',
@@ -60,6 +69,12 @@ angular
       })
     }
 
+    this.postWholesaleSummary = function(summary) {
+      return $http.post('/wholesale', product).then(function(response){
+        return response.data
+      })
+    }
+
     this.deleteProduct = function(product){
       return $http.delete('/products/' + product).then(function(response){
         return response.data
@@ -75,6 +90,11 @@ angular
     this.deleteInvoice = function(invoice){
       // console.log(invoice);
       return $http.delete('/invoices/' + invoice).then(function(response){
+        return response.data
+      })
+    }
+    this.deleteWholesaleSummary = function(summary){
+      return $http.delete('/wholesale/' + summary).then(function(response){
         return response.data
       })
     }

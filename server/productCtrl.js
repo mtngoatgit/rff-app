@@ -29,6 +29,22 @@ addProduct: function(req, res, next){
   res.status(200).send(req.body);
   })
 },
+getWholesaleSummary: function(req, res, next){
+  db.get_wholesaleSummary(function (err, response) {
+    res.send(response);
+  })
+},
+addWholesaleSummary: function(req, res, next){
+  var parameters = [
+    req.body.name,
+    req.body.price,
+    req.body.container,
+    req.body.notes
+  ];
+  db.add_wholesaleSummary(parameters, function (err, response){
+  res.status(200).send(req.body);
+  })
+},
 getMarkets: function(req, res, next){
   db.get_all_markets(function(err, response){
     res.send(response);
@@ -47,6 +63,11 @@ addMarket: function(req, res, next){
 },
 deleteProduct: function(req, res, next){
   db.delete_product(req.params.id, function(err, response){
+  res.status(200).send(response);
+  })
+},
+deleteWholesaleSummary: function(req, res, next){
+  db.delete_wholesaleSummary(req.params.id, function(err, response){
   res.status(200).send(response);
   })
 },

@@ -23,6 +23,13 @@ angular
     }
     $scope.getAllMarkets();
 
+    $scope.getWholesaleSummary = function() {
+      farmSrvc.getWholesaleSummary().then(function(response){
+        $scope.wholesaleSummary = response;
+      })
+    }
+    $scope.getWholesaleSummary();
+
 
     $scope.postMarket = function(market) {
       farmSrvc.postMarket(market).then(function(res){
@@ -43,10 +50,27 @@ angular
       })
     }
 
+    $scope.postWholesaleSummary = function(summary) {
+      farmSrvc.postProduct(summary).then(function(res){
+        alert('new wholesale summary created :)')
+        farmSrvc.getWholesaleSummary().then(function(response){
+          $scope.wholesaleSummary = response;
+        })
+      })
+    }
+
     $scope.deleteProduct = function(product){
       farmSrvc.deleteProduct(product).then(function(res){
         farmSrvc.getAllProducts().then(function(response){
           $scope.products = response;
+        })
+      })
+    }
+
+    $scope.deleteWholesaleSummary = function(summary){
+      farmSrvc.deleteWholesaleSummary(summary).then(function(res){
+        farmSrvc.getAllMarkets().then(function(response){
+          $scope.wholesaleSummary = response;
         })
       })
     }

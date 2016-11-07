@@ -3,6 +3,12 @@
 --   name varchar(70),
 --   password varchar(200),
 -- )
+-- HOW TO ADD TABLES VIA COMMAND LINE:
+
+CREATE TABLE wholesaleSummary (
+  id serial primary key not null,
+  note text
+);
 
 CREATE TABLE products (
   id serial primary key not null,

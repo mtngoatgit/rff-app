@@ -16,6 +16,26 @@
     </div>
   </div>
 
+  <section class="wholesale-summary-form">
+    <h1> Create New Wholesale Summary</h1>
+    <input type="text" name="name" placeholder="what would you like to keep track of?" ng-model="wholesaleSummary.note">
+    <input class="wholesale-summary-button" type="button" value="Create Note" ng-click="postWholesaleSummary(wholesaleSummary)">
+    <div class="wholesale-summary-container" ng-repeat="note in wholesaleSummary">
+      <p>{{wholesaleSummary.note}}</p>
+      <input class="delete-button" type="button"  ng-click="delete(note.id)" value="x">
+    </div>
+  </section>
+
+  <!-- <section class="personal-notes">
+      <h1>Jordan's Personal Notes</h1>
+      <input type="text" name="name" placeholder="what would you like to keep track of?" ng-model="personal.note">
+      <input class="personal-note-button" type="button" value="Create Note" ng-click="postNote(personal)">
+      <div class="personal-note-container" ng-repeat="note in notes">
+        <p>{{note.note}}</p>
+        <input class="delete-button" type="button"  ng-click="deleteNote(note.id)" value="x">
+      </div>
+  </section> -->
+
   <section class="product-form">
     <h1> Create New Product </h1>
     <li class="product-form-item"><input id="prd-name" placeholder="Product Name" ng-model="product.name" required></li>
