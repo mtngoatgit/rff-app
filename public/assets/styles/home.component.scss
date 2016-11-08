@@ -2,8 +2,13 @@
 
 .home-component {
   background-color: white;
-  width: 100vw;
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-image: url("../../assets/photos/rileyCrate.jpg");
+  background-size: cover;
 }
 // .ham {
 //   width: 80vw;
@@ -14,15 +19,9 @@
 //   text-align: center;
 //   padding-top: 1vh;
 //   }
-.hero-image {
-  background-image: url("../../assets/photos/rileyCrate.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
 .desktop-logo-nav-container {
-  width: 200px;
+  width: 230px;
+  padding: 30px 0 0 30px;
 }
 .home-component-logo {
   align-self: center;
@@ -63,19 +62,17 @@
   flex-direction: column;
   border-radius: 0 0 5px 5px;
 }
-.desktop-nav-item {
-  border-top: 1px solid rgba(255, 255, 255, .1);
-  display: flex;
-  justify-content: center;
-  &:hover {background-color: $red; color: white}
-}
 .desktop-nav a {
+  border-top: 1px solid rgba(255, 255, 255, .1);
   text-decoration: none;
   font-size: 17px;
   line-height: 3;
   color: white;
   font-family: $thin;
   font-weight: 100;
+  display: flex;
+  justify-content: center;
+  &:hover {background-color: $red; color: white}
 }
 // .mobile-nav {
 //   background-color:$dark-green;
@@ -173,8 +170,7 @@
     width: 300px;
   }
   .desktop-logo-nav-container {
-    align-self: center;
-    margin-left: 30px;
+
   }
   .home-component-logo {
 

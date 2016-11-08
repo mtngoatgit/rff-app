@@ -1,17 +1,16 @@
 .home-component {
   background-color: white;
-  width: 100vw;
-  height: 100vh; }
-
-.hero-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   background-image: url("../../assets/photos/rileyCrate.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  display: flex; }
+  background-size: cover; }
 
 .desktop-logo-nav-container {
-  width: 200px; }
+  width: 230px;
+  padding: 30px 0 0 30px; }
 
 .home-component-logo {
   align-self: center;
@@ -52,21 +51,19 @@
   flex-direction: column;
   border-radius: 0 0 5px 5px; }
 
-.desktop-nav-item {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center; }
-  .desktop-nav-item:hover {
-    background-color: #BD573F;
-    color: white; }
-
 .desktop-nav a {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-decoration: none;
   font-size: 17px;
   line-height: 3;
   color: white;
   font-family: "Raleway", sans-serif;
-  font-weight: 100; }
+  font-weight: 100;
+  display: flex;
+  justify-content: center; }
+  .desktop-nav a:hover {
+    background-color: #BD573F;
+    color: white; }
 
 .mobile-nav a {
   text-decoration: none;
@@ -144,9 +141,6 @@
 @media (min-width: 780px) {
   .customer-name {
     width: 300px; }
-  .desktop-logo-nav-container {
-    align-self: center;
-    margin-left: 30px; }
   #family-farm {
     opacity: 1; }
   #place-order {
