@@ -21,19 +21,39 @@
     <input type="text" name="summary" placeholder="Enter wholesale summary here 👈🏾" ng-model="summary.note">
     <input class="wholesale-summary-button" type="button" value="Create wholesale summary" ng-click="postSummary(summary)">
     <div class="wholesale-summary-container" ng-repeat="note in wholesaleSummary">
-      <p>{{note.note}}</p>
-      <input class="delete-button" type="button"  ng-click="deleteWholesale(note.id)" value="x">
+      <!-- <p>{{note.note}}</p> -->
+              <span ng-hide="editing" ng-click="editing = true">{{note.note}}</span>
+              <form ng-show="editing" ng-submit="editing = false">
+                <label>Name:</label>
+                <input type="text" ng-model="note.note" placeholder="Note" ng-required/>
+                <br/>
+                <button class="btn" type="submit" ng-click="postSummary(note)">Save with Post (bad) 😷</button>
+                <button class="btn" type="submit" ng-click="putSummary(note.id)">Save with Put (hopefully) 🙏🏼</button>
+              </form>
+      <!-- <button class="admin-edit-button"type="button" name="button">
+        <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+      </button> -->
+      <button class="admin-delete-button" type="button" name="button" ng-click="deleteWholesale(note.id)">
+        <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="">
+
     </div>
   </section>
 
-  <!-- <section class="personal-notes">
-      <h1>Jordan's Personal Notes</h1>
-      <input type="text" name="name" placeholder="what would you like to keep track of?" ng-model="personal.note">
-      <input class="personal-note-button" type="button" value="Create Note" ng-click="postNote(personal)">
-      <div class="personal-note-container" ng-repeat="note in notes">
-        <p>{{note.note}}</p>
-        <input class="delete-button" type="button"  ng-click="deleteNote(note.id)" value="x">
-      </div>
+  <!-- <section>
+    <ul ng-repeat="note in wholesaleSummary">
+         <li>
+           <span ng-hide="editing" ng-click="editing = true">{{note.note}}</span>
+           <form ng-show="editing" ng-submit="editing = false">
+             <label>Name:</label>
+             <input type="text" ng-model="note.note" placeholder="Note" ng-required/>
+             <br/>
+             <button class="btn" type="submit">Save</button>
+           </form>
+         </li>
+    </ul>
   </section> -->
 
   <section class="product-form">
@@ -74,7 +94,11 @@
         <td>{{ market.address }}</td>
         <td>{{ market.times }}</td>
         <td>{{ market.notes }} </td>
-        <td><input class="delete-button" type="button"  ng-click="deleteMarket(market.id)" value="x"></td>
+        <td>
+          <button class="admin-delete-button" type="button" name="button" ng-click="deleteMarket(market.id)">
+            <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+          </button>
+        </td>
       </tr>
     </table>
   </div>
@@ -97,7 +121,11 @@
             <td>{{ product.price }}</td>
             <td>{{ product.container }}</td>
             <td>{{ product.notes }} </td>
-            <td><input class="delete-button" type="button"  ng-click="deleteProduct(product.id)" value="x"></td>
+            <td>
+              <button class="admin-delete-button" type="button" name="button" ng-click="deleteProduct(product.id)">
+                <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+              </button>
+            </td>
           </tr>
         </table>
       </div>
@@ -130,7 +158,9 @@
             <td>{{ lineItem.notes }}</td>
           </tr>
           <th id="invoice-table-delete" colspan="5">
-            <input class="delete-button" type="button"  ng-click="deleteInvoice(invoice.id)" value="x">
+              <button class="admin-delete-button" type="button" name="button" ng-click="deleteInvoice(invoice.id)">
+                <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+              </button>
             <!-- <input class="delete-button" type="button"  ng-click="invoices.reload()" value="xxx"> -->
           </th>
 

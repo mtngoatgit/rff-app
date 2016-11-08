@@ -1,3 +1,225 @@
+.admin-main {
+  padding-top: 20px;
+  width: 100%;
+  height: 100%; }
+
+.mobile-admin-header {
+  height: 70vh;
+  width: 80vw;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 5vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  .mobile-admin-header img {
+    height: auto;
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 60px; }
+
+.mobile-admin-header-text {
+  align-self: center;
+  display: inline;
+  font-family: "Lobster", cursive;
+  font-size: 30px; }
+  .mobile-admin-header-text h2 {
+    margin-top: 30px;
+    font-size: 22px;
+    color: #1E211F; }
+
+.desktop-admin-header {
+  height: 35vh;
+  width: 50vw;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 5vh;
+  display: none;
+  text-align: center;
+  align-content: center; }
+  .desktop-admin-header img {
+    height: 35vh;
+    margin-right: 50px;
+    border-radius: 6px; }
+
+.desktop-admin-header-text {
+  align-self: center;
+  display: none;
+  line-height: 55px;
+  font-family: "Lobster", cursive;
+  font-size: 30px; }
+  .desktop-admin-header-text h2 {
+    font-size: 22px;
+    color: #1E211F; }
+
+.market-form, .product-form, .personal-notes, .wholesale-summary-form {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3vh 0;
+  background-color: #1E211F;
+  font-family: "Asap", sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+  opacity: .85;
+  align-content: center;
+  border-radius: 8px; }
+  .market-form h1, .product-form h1, .personal-notes h1, .wholesale-summary-form h1 {
+    font-family: "Lobster", cursive;
+    margin-bottom: 26px;
+    font-size: 26px;
+    color: white; }
+  .market-form li, .product-form li, .personal-notes li, .wholesale-summary-form li {
+    list-style: none;
+    margin-bottom: 10px; }
+  .market-form input, .product-form input, .personal-notes input, .wholesale-summary-form input {
+    width: 90%; }
+  .market-form .delete-button, .product-form .delete-button, .personal-notes .delete-button, .wholesale-summary-form .delete-button {
+    width: 22px;
+    font-weight: 700; }
+
+.market-form-button, .product-form-button {
+  background-color: #BD573F;
+  color: white;
+  border: none; }
+  .market-form-button:hover, .product-form-button:hover {
+    background-color: #276998; }
+
+.watch-container {
+  font-family: "Asap", sans-serif; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+.admin-market-watch, .admin-product-watch, .admin-orders-watch {
+  width: 80vw;
+  overflow-x: scroll;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3vh 0;
+  background-color: #1E211F;
+  font-family: "Raleway", sans-serif;
+  margin-top: 3vh;
+  margin-bottom: 6vh;
+  opacity: .85;
+  border-radius: 8px;
+  display: flex;
+  text-align: center;
+  flex-direction: column; }
+  .admin-market-watch h1, .admin-product-watch h1, .admin-orders-watch h1 {
+    font-family: "Lobster", cursive;
+    margin-bottom: 26px;
+    font-size: 26px;
+    color: white; }
+
+.admin-markets, .admin-products, .admin-orders {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .admin-markets table, .admin-products table, .admin-orders table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; }
+  .admin-markets table, .admin-products table, .admin-orders table, .admin-markets th, .admin-products th, .admin-orders th, .admin-markets td, .admin-products td, .admin-orders td {
+    border: 1px solid #31332E;
+    border-collapse: collapse;
+    padding: 5px;
+    font-size: 15px;
+    color: white; }
+    .admin-markets table th, .admin-products table th, .admin-orders table th, .admin-markets th th, .admin-products th th, .admin-orders th th, .admin-markets td th, .admin-products td th, .admin-orders td th {
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      text-decoration: underline; }
+    .admin-markets table .delete-button, .admin-products table .delete-button, .admin-orders table .delete-button, .admin-markets th .delete-button, .admin-products th .delete-button, .admin-orders th .delete-button, .admin-markets td .delete-button, .admin-products td .delete-button, .admin-orders td .delete-button {
+      color: white;
+      border: none;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3); }
+
+.admin-orders {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "Raleway", sans-serif; }
+
+.order-holder table {
+  margin-bottom: 4vh; }
+
+.order-holder #invoice-title {
+  vertical-align: middle;
+  background-color: #1E211F;
+  color: white;
+  line-height: 30px;
+  text-decoration: none; }
+
+.order-holder span {
+  color: #BD573F;
+  margin-right: 2vw;
+  margin-left: 1vh;
+  font-size: 22px; }
+
+.order-holder th {
+  text-align: center;
+  font-weight: 300; }
+
+.order-holder td {
+  font-weight: 100; }
+
+.order-holder #invoice-table-delete {
+  text-align: center;
+  background-color: transparent; }
+
+.delete-button {
+  width: 50px; }
+
+.personal-notes {
+  background-color: #276998; }
+  .personal-notes input {
+    margin-top: 20px; }
+
+.personal-note-button, .wholesale-summary-button {
+  margin-bottom: 20px;
+  background-color: #BD573F;
+  color: white;
+  border: none; }
+
+.personal-note-container, .wholesale-summary-container {
+  margin-top: 20px;
+  border-radius: 8px;
+  width: 90%;
+  padding: 3vh 0;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative; }
+  .personal-note-container .delete-button, .wholesale-summary-container .delete-button {
+    color: #1E211F;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(30, 33, 31, 0.2); }
+
+.wholesale-summary-form input {
+  margin-top: 20px; }
+
+.admin-delete-button, .admin-edit-button {
+  color: white;
+  border: none;
+  background: none; }
+
+@media (min-width: 780px) {
+  .mobile-admin-header {
+    display: none; }
+  .mobile-admin-header-text {
+    display: none; }
+  .desktop-admin-header {
+    display: flex; }
+  .desktop-admin-header-text {
+    display: inline; } }
+
 .landing {
   background-color: white;
   height: 100vh;
@@ -396,219 +618,6 @@
 .lcoations-main::-webkit-scrollbar-thumb {
   outline: none;
   background-color: #2a3132; }
-
-.admin-main {
-  padding-top: 20px;
-  width: 100%;
-  height: 100%; }
-
-.mobile-admin-header {
-  height: 70vh;
-  width: 80vw;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 5vh;
-  display: flex;
-  flex-direction: column;
-  text-align: center; }
-  .mobile-admin-header img {
-    height: auto;
-    width: 100%;
-    border-radius: 6px;
-    margin-bottom: 60px; }
-
-.mobile-admin-header-text {
-  align-self: center;
-  display: inline;
-  font-family: "Lobster", cursive;
-  font-size: 30px; }
-  .mobile-admin-header-text h2 {
-    margin-top: 30px;
-    font-size: 22px;
-    color: #1E211F; }
-
-.desktop-admin-header {
-  height: 35vh;
-  width: 50vw;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 5vh;
-  display: none;
-  text-align: center;
-  align-content: center; }
-  .desktop-admin-header img {
-    height: 35vh;
-    margin-right: 50px;
-    border-radius: 6px; }
-
-.desktop-admin-header-text {
-  align-self: center;
-  display: none;
-  line-height: 55px;
-  font-family: "Lobster", cursive;
-  font-size: 30px; }
-  .desktop-admin-header-text h2 {
-    font-size: 22px;
-    color: #1E211F; }
-
-.market-form, .product-form, .personal-notes, .wholesale-summary-form {
-  width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 3vh 0;
-  background-color: #1E211F;
-  font-family: "Asap", sans-serif;
-  text-align: center;
-  margin-bottom: 30px;
-  opacity: .85;
-  align-content: center;
-  border-radius: 8px; }
-  .market-form h1, .product-form h1, .personal-notes h1, .wholesale-summary-form h1 {
-    font-family: "Lobster", cursive;
-    margin-bottom: 26px;
-    font-size: 26px;
-    color: white; }
-  .market-form li, .product-form li, .personal-notes li, .wholesale-summary-form li {
-    list-style: none;
-    margin-bottom: 10px; }
-  .market-form input, .product-form input, .personal-notes input, .wholesale-summary-form input {
-    width: 90%; }
-  .market-form .delete-button, .product-form .delete-button, .personal-notes .delete-button, .wholesale-summary-form .delete-button {
-    width: 22px;
-    font-weight: 700; }
-
-.market-form-button, .product-form-button {
-  background-color: #BD573F;
-  color: white;
-  border: none; }
-  .market-form-button:hover, .product-form-button:hover {
-    background-color: #276998; }
-
-.watch-container {
-  font-family: "Asap", sans-serif; }
-
-::-webkit-scrollbar {
-  display: none; }
-
-.admin-market-watch, .admin-product-watch, .admin-orders-watch {
-  width: 80vw;
-  overflow-x: scroll;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 3vh 0;
-  background-color: #1E211F;
-  font-family: "Raleway", sans-serif;
-  margin-top: 3vh;
-  margin-bottom: 6vh;
-  opacity: .85;
-  border-radius: 8px;
-  display: flex;
-  text-align: center;
-  flex-direction: column; }
-  .admin-market-watch h1, .admin-product-watch h1, .admin-orders-watch h1 {
-    font-family: "Lobster", cursive;
-    margin-bottom: 26px;
-    font-size: 26px;
-    color: white; }
-
-.admin-markets, .admin-products, .admin-orders {
-  width: 100%;
-  display: flex;
-  justify-content: center; }
-  .admin-markets table, .admin-products table, .admin-orders table {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto; }
-  .admin-markets table, .admin-products table, .admin-orders table, .admin-markets th, .admin-products th, .admin-orders th, .admin-markets td, .admin-products td, .admin-orders td {
-    border: 1px solid #31332E;
-    border-collapse: collapse;
-    padding: 5px;
-    font-size: 15px;
-    color: white; }
-    .admin-markets table th, .admin-products table th, .admin-orders table th, .admin-markets th th, .admin-products th th, .admin-orders th th, .admin-markets td th, .admin-products td th, .admin-orders td th {
-      text-align: center;
-      color: white;
-      font-size: 18px;
-      text-decoration: underline; }
-    .admin-markets table .delete-button, .admin-products table .delete-button, .admin-orders table .delete-button, .admin-markets th .delete-button, .admin-products th .delete-button, .admin-orders th .delete-button, .admin-markets td .delete-button, .admin-products td .delete-button, .admin-orders td .delete-button {
-      color: white;
-      border: none;
-      width: 21px;
-      height: 21px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.3); }
-
-.admin-orders {
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  font-family: "Raleway", sans-serif; }
-
-.order-holder table {
-  margin-bottom: 4vh; }
-
-.order-holder #invoice-title {
-  vertical-align: middle;
-  background-color: #1E211F;
-  color: white;
-  line-height: 30px;
-  text-decoration: none; }
-
-.order-holder span {
-  color: #BD573F;
-  margin-right: 2vw;
-  margin-left: 1vh;
-  font-size: 22px; }
-
-.order-holder th {
-  text-align: center;
-  font-weight: 300; }
-
-.order-holder td {
-  font-weight: 100; }
-
-.order-holder #invoice-table-delete {
-  text-align: center;
-  background-color: transparent; }
-
-.delete-button {
-  width: 50px; }
-
-.personal-notes {
-  background-color: #276998; }
-  .personal-notes input {
-    margin-top: 20px; }
-
-.personal-note-button, .wholesale-summary-button {
-  margin-bottom: 20px;
-  background-color: #BD573F;
-  color: white;
-  border: none; }
-
-.personal-note-container, .wholesale-summary-container {
-  margin-top: 20px;
-  border-radius: 8px;
-  width: 90%;
-  padding: 3vh 0;
-  color: white;
-  margin-right: auto;
-  margin-left: auto;
-  position: relative; }
-  .personal-note-container .delete-button, .wholesale-summary-container .delete-button {
-    color: #1E211F;
-    border: none;
-    border-radius: 50%;
-    background-color: rgba(30, 33, 31, 0.2); }
-
-.wholesale-summary-form input {
-  margin-top: 20px; }
-
-.wholesale-summary-container .delete-button {
-  color: white;
-  border: none;
-  border-radius: 50%;
-  background-color: rgba(30, 33, 31, 0.2); }
 
 .delivery-main {
   background-image: url("../../assets/photos/baskets.jpeg");
@@ -1084,14 +1093,6 @@ table, th, td {
       opacity: .4; }
       .instagram-container img:hover {
         opacity: 1; }
-  .mobile-admin-header {
-    display: none; }
-  .mobile-admin-header-text {
-    display: none; }
-  .desktop-admin-header {
-    display: flex; }
-  .desktop-admin-header-text {
-    display: inline; }
   .contact-header, .locations-header {
     right: 47%; }
   .wholesale-header {
