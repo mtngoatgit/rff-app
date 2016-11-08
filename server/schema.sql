@@ -5,7 +5,7 @@
 -- )
 -- HOW TO ADD TABLES VIA COMMAND LINE:
 
-CREATE TABLE wholesaleSummary (
+CREATE TABLE wholesale_summary (
   id serial primary key not null,
   note text
 );

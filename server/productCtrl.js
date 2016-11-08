@@ -30,18 +30,14 @@ addProduct: function(req, res, next){
   })
 },
 getWholesaleSummary: function(req, res, next){
-  db.get_wholesaleSummary(function (err, response) {
+  db.get_wholesale_summary(function (err, response) {
     res.send(response);
   })
 },
 addWholesaleSummary: function(req, res, next){
-  var parameters = [
-    req.body.name,
-    req.body.price,
-    req.body.container,
-    req.body.notes
-  ];
-  db.add_wholesaleSummary(parameters, function (err, response){
+  console.log("In the server");
+  console.log("BackEnd CTRL wholesale ADD", req.body);
+  db.add_wholesale_summary(req.body.note, function (err, response){
   res.status(200).send(req.body);
   })
 },
@@ -67,7 +63,8 @@ deleteProduct: function(req, res, next){
   })
 },
 deleteWholesaleSummary: function(req, res, next){
-  db.delete_wholesaleSummary(req.params.id, function(err, response){
+  console.log(req.params.id);
+  db.delete_wholesale_summary(req.params.id, function(err, response){
   res.status(200).send(response);
   })
 },

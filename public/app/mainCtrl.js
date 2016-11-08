@@ -25,6 +25,7 @@ angular
 
     $scope.getWholesaleSummary = function() {
       farmSrvc.getWholesaleSummary().then(function(response){
+        console.log('fe ctrl wholesale', response);
         $scope.wholesaleSummary = response;
       })
     }
@@ -50,8 +51,9 @@ angular
       })
     }
 
-    $scope.postWholesaleSummary = function(summary) {
-      farmSrvc.postProduct(summary).then(function(res){
+    $scope.postSummary = function(summary) {
+      // console.log("fe ctrl wholesale post", summary);
+      farmSrvc.postWholesaleSummary(summary).then(function(res){
         alert('new wholesale summary created :)')
         farmSrvc.getWholesaleSummary().then(function(response){
           $scope.wholesaleSummary = response;
@@ -67,9 +69,10 @@ angular
       })
     }
 
-    $scope.deleteWholesaleSummary = function(summary){
+    $scope.deleteWholesale = function(summary){
+      console.log("delete Whole in FE CTRL", summary);
       farmSrvc.deleteWholesaleSummary(summary).then(function(res){
-        farmSrvc.getAllMarkets().then(function(response){
+        farmSrvc.getWholesaleSummary().then(function(response){
           $scope.wholesaleSummary = response;
         })
       })
@@ -85,7 +88,7 @@ angular
     }
 
     $scope.deleteInvoice = function(invoice){
-      console.log("delete in controller", invoice)
+      // console.log("delete in controller", invoice)
       farmSrvc.deleteInvoice(invoice).then(function(res){
         // alert('item deleted!');
 

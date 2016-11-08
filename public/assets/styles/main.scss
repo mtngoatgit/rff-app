@@ -668,6 +668,24 @@
     background-color: rgba(30, 33, 31, .2);
   }
 }
+.wholesale-summary-form {
+  @extend .market-form;
+  input{
+    margin-top: 20px;
+  }
+}
+.wholesale-summary-button {
+  @extend .personal-note-button;
+}
+.wholesale-summary-container {
+  @extend .personal-note-container;
+  .delete-button {
+    color: white;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(30, 33, 31, .2);
+  }
+}
 
 //  OFFICE DELIVERY PARTIAL
 .delivery-main {

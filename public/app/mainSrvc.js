@@ -25,6 +25,7 @@ angular
         method: 'GET',
         url: '/wholesale'
       }).then(function(response){
+        console.log("fe service whole", response);
         return response.data;
       })
     }
@@ -52,7 +53,6 @@ angular
         method: 'GET',
         url: '/invoices'
       }).then(function(response){
-        console.log("my invoice data in the service", response.data);
         return response.data;
       })
     }
@@ -70,7 +70,8 @@ angular
     }
 
     this.postWholesaleSummary = function(summary) {
-      return $http.post('/wholesale', product).then(function(response){
+      console.log('fe service wholesale post', summary);
+      return $http.post('/wholesale', summary).then(function(response){
         return response.data
       })
     }
@@ -94,6 +95,7 @@ angular
       })
     }
     this.deleteWholesaleSummary = function(summary){
+      console.log("wholesale front end service", summary);
       return $http.delete('/wholesale/' + summary).then(function(response){
         return response.data
       })
@@ -116,7 +118,7 @@ angular
 
 // NOTES
     this.postNote = function(note) {
-      // console.log(note);
+      console.log("FE service note", note);
       return $http.post('/notes', note).then(function(response){
         return response.data
       })

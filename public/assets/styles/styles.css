@@ -451,7 +451,7 @@
     font-size: 22px;
     color: #1E211F; }
 
-.market-form, .product-form, .personal-notes {
+.market-form, .product-form, .personal-notes, .wholesale-summary-form {
   width: 80vw;
   margin-left: auto;
   margin-right: auto;
@@ -463,17 +463,17 @@
   opacity: .85;
   align-content: center;
   border-radius: 8px; }
-  .market-form h1, .product-form h1, .personal-notes h1 {
+  .market-form h1, .product-form h1, .personal-notes h1, .wholesale-summary-form h1 {
     font-family: "Lobster", cursive;
     margin-bottom: 26px;
     font-size: 26px;
     color: white; }
-  .market-form li, .product-form li, .personal-notes li {
+  .market-form li, .product-form li, .personal-notes li, .wholesale-summary-form li {
     list-style: none;
     margin-bottom: 10px; }
-  .market-form input, .product-form input, .personal-notes input {
+  .market-form input, .product-form input, .personal-notes input, .wholesale-summary-form input {
     width: 90%; }
-  .market-form .delete-button, .product-form .delete-button, .personal-notes .delete-button {
+  .market-form .delete-button, .product-form .delete-button, .personal-notes .delete-button, .wholesale-summary-form .delete-button {
     width: 22px;
     font-weight: 700; }
 
@@ -580,13 +580,13 @@
   .personal-notes input {
     margin-top: 20px; }
 
-.personal-note-button {
+.personal-note-button, .wholesale-summary-button {
   margin-bottom: 20px;
   background-color: #BD573F;
   color: white;
   border: none; }
 
-.personal-note-container {
+.personal-note-container, .wholesale-summary-container {
   margin-top: 20px;
   border-radius: 8px;
   width: 90%;
@@ -595,11 +595,20 @@
   margin-right: auto;
   margin-left: auto;
   position: relative; }
-  .personal-note-container .delete-button {
+  .personal-note-container .delete-button, .wholesale-summary-container .delete-button {
     color: #1E211F;
     border: none;
     border-radius: 50%;
     background-color: rgba(30, 33, 31, 0.2); }
+
+.wholesale-summary-form input {
+  margin-top: 20px; }
+
+.wholesale-summary-container .delete-button {
+  color: white;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(30, 33, 31, 0.2); }
 
 .delivery-main {
   background-image: url("../../assets/photos/baskets.jpeg");
