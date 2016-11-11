@@ -201,70 +201,76 @@
   .desktop-admin-header-text {
     display: inline; } }
 
-.landing {
+.home-component {
   background-color: white;
-  height: 100vh;
-  width: 100vw;
-  display: inline-block; }
-
-.ham {
-  width: 80vw;
-  height: 13px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2vh;
-  text-align: center;
-  padding-top: 1vh; }
-
-.hero-image {
-  background-image: url("../../assets/photos/blueberries.jpg");
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-image: url("../../assets/photos/rileyCrate.jpg");
   background-size: cover;
-  width: 92%;
-  height: 92%;
-  margin: auto;
-  display: flex; }
+  z-index: 0; }
 
-.mobile-logo {
+.desktop-logo-nav-container {
+  width: 200px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 10; }
+
+.home-component-logo {
   align-self: center;
   margin-left: auto;
   margin-right: auto;
-  width: 200px;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column; }
 
-.light-box, .dark-box {
+.top-logo-box {
   background-color: white;
+  border-radius: 5px 5px 0 0;
   width: 100%;
-  height: 120px;
+  text-align: center;
+  padding-top: 20px;
+  line-height: 1.3;
   font-family: "Lobster", cursive;
   color: #BD573F;
-  font-size: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  font-size: 56px; }
 
 .fresh-box {
   padding-bottom: 10px;
-  border-bottom: 1px solid white; }
+  border-bottom: 1px solid #1E211F; }
 
-.dark-box {
+.bottom-logo-box {
+  font-family: "Raleway", sans-serif;
+  color: #1E211F;
+  background-color: white;
+  font-size: 15px;
+  line-height: 3;
+  text-align: center; }
+
+.desktop-nav {
+  display: none;
+  width: 100%;
   background-color: #1E211F;
+  flex-direction: column;
+  border-radius: 0 0 5px 5px; }
+
+.desktop-nav a {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 3;
+  color: white;
   font-family: "Raleway", sans-serif;
   font-weight: 100;
-  color: white;
-  font-size: 15px; }
-
-.mobile-nav {
-  background-color: #1E211F;
-  opacity: 0.8;
-  width: 100%;
-  height: auto;
-  text-align: center;
-  line-height: 39px;
-  display: none;
-  padding-top: 1vh;
-  padding-bottom: 1vh; }
+  display: flex;
+  justify-content: center; }
+  .desktop-nav a:hover {
+    background-color: #BD573F;
+    color: white; }
 
 .mobile-nav a {
   text-decoration: none;
@@ -289,33 +295,6 @@
   text-decoration: none; }
   .mobile-go-login-button > a:hover {
     color: #276998; }
-
-.desktop-nav-container {
-  position: relative;
-  top: 8px;
-  right: 28vw; }
-
-.desktop-nav {
-  display: none;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 45vw; }
-
-.desktop-nav a {
-  display: none;
-  text-decoration: none;
-  font-size: 17px;
-  color: #1E211F;
-  font-family: "Raleway", sans-serif; }
-  .desktop-nav a:hover {
-    background-color: #BD573F;
-    color: white; }
-
-.desktop-logo {
-  display: none;
-  align-self: center;
-  margin-left: auto;
-  margin-right: auto; }
 
 .cherry h1 {
   visibility: hidden; }
@@ -365,6 +344,38 @@
   text-decoration: none; }
   .desktop-go-login-button > a:hover {
     color: #BD573F; }
+
+.checkers {
+  height: 10%;
+  width: 5%;
+  float: right;
+  right: 50px;
+  background-color: black;
+  transition: background-color .5s linear;
+  z-index: 8;
+  font-family: "Lobster", cursive;
+  opacity: .1;
+  text-align: center;
+  align-self: center;
+  font-size: 22px;
+  color: transparent; }
+  .checkers:hover {
+    background-color: transparent;
+    color: red; }
+
+@media (min-width: 780px) {
+  .customer-name {
+    width: 300px; }
+  #family-farm {
+    opacity: 1; }
+  #place-order {
+    opacity: 1; }
+  .desktop-nav {
+    display: flex; }
+  .mobile-go-login-button {
+    visibility: hidden; }
+  .desktop-go-login-button {
+    opacity: 1; } }
 
 .partial-nav-to-home, .partial-nav {
   visibility: hidden;
@@ -963,13 +974,6 @@ table, th, td {
 @media (min-width: 780px) {
   .customer-name, .customer-phone, .customer-email {
     width: 300px; }
-  .hero-image {
-    width: 93%;
-    height: 93%; }
-  #family-farm {
-    opacity: 1; }
-  #place-order {
-    opacity: 1; }
   .desktop-nav-container {
     position: absolute; }
   .desktop-nav {
