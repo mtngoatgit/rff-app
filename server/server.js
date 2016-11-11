@@ -84,6 +84,11 @@ app.get('/products', controller.getProducts);
 app.post('/products', controller.addProduct);
 app.delete('/products/:id', controller.deleteProduct);
 
+app.get('/wholesale', controller.getWholesaleSummary);
+app.post('/wholesale', controller.addWholesaleSummary);
+app.put('/wholesale/:id', controller.changeWholesaleSummary);
+app.delete('/wholesale/:id', controller.deleteWholesaleSummary);
+
 // app.get('/users', controller.getUser);
 // app.post('/users', controller.addUser);
 app.get('/invoices', controller.getInvoices);

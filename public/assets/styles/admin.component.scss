@@ -1,0 +1,255 @@
+@import "fonts-and-colors";
+
+//  ADMINISTRATOR PARTIAL
+
+.admin-section-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $dark-green;
+  opacity: .85;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+.admin-section-nav a {
+  padding: 16px 0;
+  text-decoration: none;
+  color: white
+}
+.admin-section-nav div {
+  padding: 16px 0;
+  color: white;
+}
+.admin-main {
+  padding-top: 75px;
+  width: 100%;
+  font-family: $body;
+  position: relative;
+}
+.admin-header {
+  width: 80vw;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  line-height: 4;
+  font-family: $head;
+  font-size: 30px;
+  color: $dark-green;
+}
+.market-section {
+  width:80vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3vh 0;
+  background-color: $dark-green;
+  font-family: $body;
+  text-align: center;
+  margin-bottom: 30px;
+  opacity: .85;
+  align-content: center;
+  border-radius: 8px;
+  h1 {
+    font-family: $head;
+    margin-bottom: 26px;
+    font-size: 26px;
+    color: white;
+  }
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  input {
+    width: 90%;
+  }
+  .delete-button {
+    width: 22px;
+    font-weight: 700;
+
+  }
+}
+.market-form-button {
+  background-color: $red;
+  color: white;
+  border: none;
+  &:hover{background-color: $blue}
+}
+.product-form-button {
+  @extend .market-form-button;
+}
+.product-section {
+  @extend .market-section;
+}
+.watch-container {
+  font-family: $body;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.admin-market-watch{
+  width:80vw;
+  overflow-x: scroll;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3vh 0;
+  background-color: $dark-green;
+  font-family: $thin;
+  margin-top: 3vh;
+  margin-bottom: 6vh;
+  opacity: .85;
+  border-radius: 8px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  h1 {
+    font-family: $head;
+    margin-bottom: 26px;
+    font-size: 26px;
+    color: white;
+  }
+}
+.admin-markets{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  table, th, td {
+    border: 1px solid #31332E;
+    border-collapse: collapse;
+    padding: 5px;
+    font-size: 15px;
+    color: white;
+    th {
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      text-decoration: underline;
+    }
+    .delete-button {
+      color: white;
+      border: none;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, .3);
+    }
+  }
+}
+.admin-product-watch{
+    @extend .admin-market-watch;
+}
+.admin-products {
+  @extend .admin-markets;
+}
+.admin-orders-watch{
+  @extend .admin-market-watch;
+}
+.admin-orders {
+  @extend .admin-markets;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: $thin;
+}
+.order-holder {
+  table {
+    margin-bottom: 4vh;
+  }
+  #invoice-title {
+    // height: 40px;
+    vertical-align: middle;
+    background-color: $dark-green;
+    color: white;
+    line-height: 30px;
+    text-decoration: none;
+  }
+  span {
+    color: $red;
+    margin-right: 2vw;
+    margin-left: 1vh;
+    font-size: 22px;
+  }
+  th {
+    text-align: center;
+    font-weight: 300;
+  }
+  td {
+    font-weight: 100;
+  }
+  #invoice-table-delete {
+    text-align: center;
+    background-color: transparent;
+  }
+}
+.delete-button {
+  width: 50px;
+}
+.personal-notes {
+  @extend .market-section;
+  background-color: $blue;
+  input{
+    margin-top: 20px;
+  }
+}
+.personal-note-button{
+  margin-bottom: 20px;
+  background-color: $red;
+  color: white;
+  border: none;
+}
+.personal-note-container {
+  margin-top: 20px;;
+  border-radius: 8px;
+  width: 90%;
+  padding: 3vh 0;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  .delete-button {
+    color: $dark-green;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(30, 33, 31, .2);
+  }
+}
+.wholesale-summary-section {
+  @extend .market-section;
+  input{
+    margin-top: 20px;
+  }
+}
+.wholesale-summary-button {
+  @extend .personal-note-button;
+}
+.wholesale-summary-container {
+  @extend .personal-note-container;
+}
+.admin-delete-button {
+  color: white;
+  border: none;
+  background: none;
+}
+.admin-edit-button {
+  @extend .admin-delete-button;
+}
+
+@media (min-width: 780px){
+  .mobile-admin-header {
+    display: none;
+  }
+  .mobile-admin-header-text {
+    display: none;
+  }
+  .desktop-admin-header {
+    display: flex;
+  }
+  .desktop-admin-header-text {
+    display: inline;
+  }
+}

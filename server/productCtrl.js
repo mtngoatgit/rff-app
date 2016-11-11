@@ -29,6 +29,30 @@ addProduct: function(req, res, next){
   res.status(200).send(req.body);
   })
 },
+getWholesaleSummary: function(req, res, next){
+  db.get_wholesale_summary(function (err, response) {
+    res.send(response);
+  })
+},
+addWholesaleSummary: function(req, res, next){
+  console.log("In the server");
+  console.log("BackEnd CTRL wholesale ADD", req.body);
+  db.add_wholesale_summary(req.body.note, function (err, response){
+  res.status(200).send(req.body);
+  })
+},
+changeWholesaleSummary: function(req, res, next) {
+  console.log(req.params.id);
+  db.change_wholesale_summary(req.params.id, function(err, response){
+  res.status(200).send(response);
+  })
+},
+deleteWholesaleSummary: function(req, res, next){
+  console.log(req.params.id);
+  db.delete_wholesale_summary(req.params.id, function(err, response){
+  res.status(200).send(response);
+  })
+},
 getMarkets: function(req, res, next){
   db.get_all_markets(function(err, response){
     res.send(response);
@@ -50,6 +74,7 @@ deleteProduct: function(req, res, next){
   res.status(200).send(response);
   })
 },
+
 deleteMarket: function(req, res, next){
   db.delete_market(req.params.id, function(err, response){
   res.status(200).send(response);

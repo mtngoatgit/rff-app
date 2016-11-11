@@ -1,126 +1,150 @@
-<section class="admin-main">
+<!-- <section class="admin-main" id="scrollArea" ng-controller="ScrollController"> -->
+<section class="admin-main" id="scrollArea">
 
-  <div class="mobile-admin-header">
-    <img src="http://test-nodep.s3-us-west-2.amazonaws.com/styles/xlarge/s3/images/main_image/article/neilyoungwsj.jpg"/>
-    <div class="mobile-admin-header-text">
-      <h1>Hi Jordan!</h1>
-      <h2>Welcome to your administrator page</h2>
-    </div>
+  <div class="admin-header">
+    <h1>Administrator Page</h1>
   </div>
 
-  <div class="desktop-admin-header">
-    <img src="http://test-nodep.s3-us-west-2.amazonaws.com/styles/xlarge/s3/images/main_image/article/neilyoungwsj.jpg"/>
-    <div class="desktop-admin-header-text">
-      <h1>Hi Jordan!</h1>
-      <h2>Welcome to your administrator page</h2>
+  <a id="wholesale">
+  <section class="wholesale-summary-section">
+    <h1> Create New Wholesale Summary</h1>
+    <input type="text" name="summary" placeholder="Enter wholesale summary here 👈🏾" ng-model="summary.note">
+    <input class="wholesale-summary-button" type="button" value="Create wholesale summary" ng-click="postSummary(summary)">
+    <div class="wholesale-summary-container" ng-repeat="note in wholesaleSummary">
+      <!-- <p>{{note.note}}</p> -->
+              <span ng-hide="editing" ng-click="editing = true">{{note.note}}</span>
+              <form ng-show="editing" ng-submit="editing = false">
+                <label>Name:</label>
+                <input type="text" ng-model="note.note" placeholder="Note" ng-required/>
+                <br/>
+                <button class="btn" type="submit" ng-click="postSummary(note)">Save with Post (bad) 😷</button>
+                <button class="btn" type="submit" ng-click="putSummary(note.id)">Save with Put (hopefully) 🙏🏼</button>
+              </form>
+      <!-- <button class="admin-edit-button"type="button" name="button">
+        <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+      </button> -->
+      <button class="admin-delete-button" type="button" name="button" ng-click="deleteWholesale(note.id)">
+        <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+      </button>
     </div>
-  </div>
+    <div class="">
 
-  <section class="product-form">
+    </div>
+  </section>
+  </a>
+
+
+  <section class="product-section" id="product">
     <h1> Create New Product </h1>
     <li class="product-form-item"><input id="prd-name" placeholder="Product Name" ng-model="product.name" required></li>
     <li class="product-form-item"><input name="price" id="prd-price" placeholder="Price" ng-model="product.price" required></li>
     <li class="product-form-item"><input id="prd-container" placeholder="Measure (e.g. 'bushel')" ng-model="product.container" required></li>
     <li class="product-form-item"><input id="prd-notes" placeholder="Additional Notes (e.g. 'slightly blemished, fault of hail')" ng-model="product.notes"></li>
     <input class="product-form-button" type="button" value="Create Product" ng-click="postProduct(product)">
+
+    <section class="admin-product-watch">
+        <h1>Current Product Offerings</h1>
+        <div class="admin-products">
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Unit</th>
+                <th>Notes</th>
+                <th>Remove</th>
+              </tr>
+              <tr ng-repeat="product in products">
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.container }}</td>
+                <td>{{ product.notes }} </td>
+                <td>
+                  <button class="admin-delete-button" type="button" name="button" ng-click="deleteProduct(product.id)">
+                    <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+    </section>
   </section>
 
-  <section class="market-form">
+
+  <section class="market-section" id="markets">
     <h1> Create New Market </h1>
     <li class="market-form-item"><input id="mkt-name" placeholder="Market Name:" ng-model="market.name" required></li>
     <li class="market-form-item"><input id="mkt-address" placeholder="Address" ng-model="market.address" required></li>
     <li class="market-form-item"><input id="mkt-times" placeholder="Dates and Times" ng-model="market.times" required></li>
     <li class="market-form-item"><input id="mkt-notes" placeholder="Additional Notes (e.g. 'We/'ll have cider!')" ng-model="market.notes"></li>
     <input class="market-form-button" type="button" value="Create Market" ng-click="postMarket(market)">
-  </section>
-</section>
 
-<section class="watch-container">
-
-<section class="admin-market-watch">
-  <h1>Current Markets</h1>
-
-  <div class="admin-markets">
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Dates and Times</th>
-        <th>Notes</th>
-        <th>Remove</th>
-      </tr>
-      <tr ng-repeat="market in markets">
-        <td>{{ market.name }}</td>
-        <td>{{ market.address }}</td>
-        <td>{{ market.times }}</td>
-        <td>{{ market.notes }} </td>
-        <td><input class="delete-button" type="button"  ng-click="deleteMarket(market.id)" value="x"></td>
-      </tr>
-    </table>
-  </div>
-
-</section>
-
-<section class="admin-product-watch">
-    <h1>Current Product Offerings</h1>
-    <div class="admin-products">
+    <section class="admin-market-watch">
+      <h1>Current Markets</h1>
+      <div class="admin-markets">
         <table>
           <tr>
             <th>Name</th>
-            <th>Price</th>
-            <th>Unit</th>
+            <th>Address</th>
+            <th>Dates and Times</th>
             <th>Notes</th>
             <th>Remove</th>
           </tr>
-          <tr ng-repeat="product in products">
-            <td>{{ product.name }}</td>
-            <td>{{ product.price }}</td>
-            <td>{{ product.container }}</td>
-            <td>{{ product.notes }} </td>
-            <td><input class="delete-button" type="button"  ng-click="deleteProduct(product.id)" value="x"></td>
+          <tr ng-repeat="market in markets">
+            <td>{{ market.name }}</td>
+            <td>{{ market.address }}</td>
+            <td>{{ market.times }}</td>
+            <td>{{ market.notes }} </td>
+            <td>
+              <button class="admin-delete-button" type="button" name="button" ng-click="deleteMarket(market.id)">
+                <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+              </button>
+            </td>
           </tr>
         </table>
       </div>
-</section>
+    </section>
+  </section>
 
-<section class="admin-orders-watch">
-    <h1>Open Wholesale Orders</h1>
-    <div class="admin-orders" >
-        <div class="order-holder" >
-          <table ng-repeat="invoice in invoices">
-          <th id="invoice-title" colspan="5">
-            Order Number <span>{{invoice.id}}</span>
-          </br>
-            Client <span>{{invoice.client}}</span>
-            Email <span>{{invoice.email}}</span>
-            Phone# <span>{{invoice.phone}}</span>
-          </th>
-          <tr>
-            <th>Quantity</th>
-            <th>Product</th>
-            <th>Unit</th>
-            <th>Price</th>
-            <th>Notes</th>
-          </tr>
-          <tr ng-repeat="lineItem in invoice.lineItem">
-            <td>{{ lineItem.quantity }}</td>
-            <td>{{ lineItem.product }}</td>
-            <td>{{ lineItem.unit }}</td>
-            <td>{{ lineItem.price }}</td>
-            <td>{{ lineItem.notes }}</td>
-          </tr>
-          <th id="invoice-table-delete" colspan="5">
-            <input class="delete-button" type="button"  ng-click="deleteInvoice(invoice.id)" value="x">
-            <!-- <input class="delete-button" type="button"  ng-click="invoices.reload()" value="xxx"> -->
-          </th>
+  <section class="admin-orders-watch">
+      <h1>Open Wholesale Orders</h1>
+      <div class="admin-orders" >
+          <div class="order-holder" >
+            <table ng-repeat="invoice in invoices">
+            <th id="invoice-title" colspan="5">
+              Order Number <span>{{invoice.id}}</span>
+            </br>
+              Client <span>{{invoice.client}}</span>
+              Email <span>{{invoice.email}}</span>
+              Phone# <span>{{invoice.phone}}</span>
+            </th>
+            <tr>
+              <th>Quantity</th>
+              <th>Product</th>
+              <th>Unit</th>
+              <th>Price</th>
+              <th>Notes</th>
+            </tr>
+            <tr ng-repeat="lineItem in invoice.lineItem">
+              <td>{{ lineItem.quantity }}</td>
+              <td>{{ lineItem.product }}</td>
+              <td>{{ lineItem.unit }}</td>
+              <td>{{ lineItem.price }}</td>
+              <td>{{ lineItem.notes }}</td>
+            </tr>
+            <th id="invoice-table-delete" colspan="5">
+                <button class="admin-delete-button" type="button" name="button" ng-click="deleteInvoice(invoice.id)">
+                  <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+                </button>
+              <!-- <input class="delete-button" type="button"  ng-click="invoices.reload()" value="xxx"> -->
+            </th>
 
-          </table>
+            </table>
 
-        </div>
-    </div>
-</section>
+          </div>
+      </div>
+  </section>
 
-<section class="personal-notes">
+<!-- <section class="personal-notes">
     <h1>Jordan's Personal Notes</h1>
     <input type="text" name="name" placeholder="what would you like to keep track of?" ng-model="personal.note">
     <input class="personal-note-button" type="button" value="Create Note" ng-click="postNote(personal)">
@@ -128,15 +152,31 @@
       <p>{{note.note}}</p>
       <input class="delete-button" type="button"  ng-click="deleteNote(note.id)" value="x">
     </div>
+</section> -->
+
+<div class="admin-section-nav">
+  <a ui-sref="home">Main Home</a>
+  <a ui-sref="wholesale">Wholesale Order Page</a>
+  <a ng-click="gotoSection()">Wholesale Summary</a>
+  <div class="">
+    Product Offerings
+  </div>
+  <div class="">
+    Current Orders
+  </div>
+</div>
+
 </section>
+<!--end of admin-main  -->
+
 
 <div class="partial-nav-to-home">
-  <a ui-sref="home"
+  <a ui-sref="home">
   <i class="fa fa-home fa-4x" aria-hidden="true"></i>
   </a>
 </div>
 
-<div animations-dir class="partial-nav">
+<!-- <div animations-dir class="partial-nav">
   <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
 </div>
 
@@ -145,10 +185,10 @@
   <div><a ui-sref="office-delivery">office delivery</a></div>
   <div><a ui-sref="locations">markets and locations</a></div>
   <div><a ui-sref="contact">contact</a></div>
-</div>
+</div> -->
 
 <div class="mobile-partial-nav-to-home">
-  <a ui-sref="home"
+  <a ui-sref="home">
   <i class="fa fa-home fa-2x" aria-hidden="true"></i>
   </a>
 </div>
@@ -157,6 +197,4 @@
   <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 </div>
 
-
 </div>
-</section>

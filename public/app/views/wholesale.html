@@ -6,16 +6,8 @@
   </div>
 <section id="trailer">
   <i id="truck" class="fa fa-truck fa-flip-horizontal fa-5x" aria-hidden="true"></i>
-  <div class="wholesale-welcome">
-    <p>
-      Welcome to Riley's Farm Fresh <span>wholesale</span>. It's the end of August and our inventory is
-      at it's peak. We are currently harvesting peaches and apples and we have a great
-      collection of fruits and vegtables coming from other Utah farms and from our
-      friends in the Wapata valley. Browse the items list below and let us know what you'd like!
-      We will fill your order and ship it, or you can pick it up at one of our locations.
-      <h3>Thanks!</h3>
-      <h4>Jordan Riley</h4>
-    </p>
+  <div class="wholesale-welcome" ng-repeat="note in wholesaleSummary">
+    <p> {{ note.note }}</p>
   </div>
 </section>
 
