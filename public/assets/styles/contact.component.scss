@@ -1,0 +1,87 @@
+@import "fonts-and-colors";
+
+//  CONTACT PARTIAL
+.contact-main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  // background-attachment: fixed;
+  background-position: center;
+  background-image: url('../../assets/photos/strawberries-hands.jpeg');
+  background-size: cover;
+  overflow: scroll;
+}
+.contact-header {
+  width: 100%;
+  text-align: center;
+  line-height: 2.5;
+}
+#contact-title {
+  font-family: $head;
+  color: white;
+  font-size: 30px;
+}
+.contact-container {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  transition: background-color .5s linear;
+  &:hover{background-color: rgba(0, 0, 0, 0)}
+  right: 0px;
+  text-align: center;
+  font-family: $body;
+  font-size: 20px;
+  padding-bottom: 45px;
+  color: white;
+  div {
+    margin-top: 35px;
+    background-color: $dark-green;
+    opacity: 0.9;
+    width: 315px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px 35px 20px;
+    border-radius: 7px;
+  }
+  h2 {
+    line-height: 32px;
+    font-family: $thin;
+  }
+  p {
+    font-family: $thin;
+  }
+  .fa-building {
+    margin-bottom: 35px;
+  }
+  .fa-phone {
+    @extend .fa-building;
+  }
+  .fa-laptop {
+    @extend .fa-building;
+  }
+  a {
+  text-decoration: none;
+  color: white;
+  word-spacing: 20px;
+  }
+}
+
+
+@media (min-width: 780px){
+  .contact-header {
+    right: 47%;
+  }
+  .contact-container {
+    width: 50%;
+    height: 100%;
+    background-attachment: fixed;
+  }
+  .sub-contact-main {
+    height: 90vh;
+  }
+  .contact-container div {
+    width: 89%;
+  }
+}
