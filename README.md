@@ -10,3 +10,11 @@ The application is built to be fast, visually appealing, and to increase the eff
 The database for Riley's Farm Fresh is built using PostgreSQL. To facilitate communication between the front-end and back-end, I used Node.JS, Express.JS, and Massive.JS.
 
 Future work on the application includes using ngDialog for my alert messages, providing error-handling, and using authentication to direct traffic and to provide information on wholesale order forms.
+
+# Initializing the App:
+
+npm install
+
+gulp -w
+
+nodemon server/server.js

@@ -1,0 +1,49 @@
+//  LOCATIONS PARTIAL
+.locations-main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  // background-attachment: fixed;
+  background-position: center;
+  background-image: url('../../assets/photos/strawberries-hands.jpeg');
+  background-size: cover;
+  overflow: scroll;
+}
+.sub-location-main {
+  height: 0vh;
+  width: 95vw;
+  margin: auto;
+  margin-top: 45px;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url("../../assets/photos/green-beans.jpeg");
+  background-size: cover;
+}
+// .locations-header {
+//   @extend .contact-header;
+// }
+// #location-title {
+//   @extend #contact-title;
+// }
+// .location-market-container{
+//   @extend .contact-container;
+//   background-image: url("../../assets/photos/green-beans.jpeg");
+// }
+// .location-container {
+//   @extend .markets-container;
+//   margin-top: 0;
+//   h1 {
+//     font-family: $head;
+//     margin-bottom: 2vh;
+//   }
+//   img {
+//     width: 37vw;
+//     margin-bottom: 2vh;
+//   }
+//   p {
+//     font-family: $thin;
+//     color: white;
+//   }
+// }
