@@ -1,3 +1,4 @@
+@import "fonts-and-colors";
 //  LOCATIONS PARTIAL
 .locations-main {
   position: absolute;
@@ -11,39 +12,74 @@
   background-size: cover;
   overflow: scroll;
 }
-.sub-location-main {
-  height: 0vh;
-  width: 95vw;
-  margin: auto;
-  margin-top: 45px;
-  background-attachment: fixed;
-  background-position: center;
-  background-image: url("../../assets/photos/green-beans.jpeg");
-  background-size: cover;
+.locations-header {
+  width: 30%;
+  text-align: center;
+  line-height: 2.5;
 }
-// .locations-header {
-//   @extend .contact-header;
-// }
-// #location-title {
-//   @extend #contact-title;
-// }
-// .location-market-container{
-//   @extend .contact-container;
-//   background-image: url("../../assets/photos/green-beans.jpeg");
-// }
+#locations-title {
+  font-family: $head;
+  color: white;
+  font-size: 90px;
+  width: 25%;
+}
 // .location-container {
-//   @extend .markets-container;
-//   margin-top: 0;
-//   h1 {
-//     font-family: $head;
-//     margin-bottom: 2vh;
-//   }
-//   img {
-//     width: 37vw;
-//     margin-bottom: 2vh;
-//   }
-//   p {
-//     font-family: $thin;
-//     color: white;
-//   }
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   width: 100%;
+//   height: 90%;
+//   margin-left: auto;
+//   transition: background-color .5s linear;
+//   &:hover{background-color: rgba(0, 0, 0, 0)}
+//   right: 0px;
+//   // text-align: center;
+//   font-family: $body;
+//   font-size: 20px;
+//   padding-bottom: 45px;
+//   color: white;
 // }
+.markets-container {
+  width: 95%;
+  padding: 3vh 0;
+  background-color: $dark-green;
+  font-family: $thin;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  opacity: .85;
+  align-content: center;
+  border-radius: 8px;
+  h1 {
+    font-family: $head;
+    margin-bottom: 10px;
+    font-size: 21px;
+  }
+}
+
+.locations-main::-webkit-scrollbar {
+    width: 3px;
+}
+.locations-main::-webkit-scrollbar-track {
+    background: white;
+}
+.locations-main::-webkit-scrollbar-thumb {
+    outline: none;
+    background-color: #2a3132;
+}
+.location-container {
+  @extend .markets-container;
+  margin-top: 0;
+  h1 {
+    font-family: $head;
+    margin-bottom: 2vh;
+  }
+  img {
+    width: 37vw;
+    margin-bottom: 2vh;
+  }
+  p {
+    font-family: $thin;
+    color: white;
+  }
+}

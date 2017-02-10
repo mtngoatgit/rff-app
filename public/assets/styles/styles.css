@@ -438,6 +438,65 @@
   .desktop-go-login-button {
     opacity: 1; } }
 
+.locations-main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-position: center;
+  background-image: url("../../assets/photos/strawberries-hands.jpeg");
+  background-size: cover;
+  overflow: scroll; }
+
+.locations-header {
+  width: 30%;
+  text-align: center;
+  line-height: 2.5; }
+
+#locations-title {
+  font-family: "Lobster", cursive;
+  color: white;
+  font-size: 90px;
+  width: 25%; }
+
+.markets-container, .location-container {
+  width: 95%;
+  padding: 3vh 0;
+  background-color: #1E211F;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  opacity: .85;
+  align-content: center;
+  border-radius: 8px; }
+  .markets-container h1, .location-container h1 {
+    font-family: "Lobster", cursive;
+    margin-bottom: 10px;
+    font-size: 21px; }
+
+.locations-main::-webkit-scrollbar {
+  width: 3px; }
+
+.locations-main::-webkit-scrollbar-track {
+  background: white; }
+
+.locations-main::-webkit-scrollbar-thumb {
+  outline: none;
+  background-color: #2a3132; }
+
+.location-container {
+  margin-top: 0; }
+  .location-container h1 {
+    font-family: "Lobster", cursive;
+    margin-bottom: 2vh; }
+  .location-container img {
+    width: 37vw;
+    margin-bottom: 2vh; }
+  .location-container p {
+    font-family: "Raleway", sans-serif;
+    color: white; }
 
 .partial-nav-to-home, .partial-nav {
   visibility: hidden;
@@ -621,32 +680,6 @@
 .about-footer {
   height: 25vh;
   background-color: #1E211F; }
-
-.markets-container {
-  width: 95%;
-  padding: 3vh 0;
-  background-color: #1E211F;
-  font-family: "Raleway", sans-serif;
-  color: white;
-  text-align: center;
-  margin-top: 20px;
-  opacity: .85;
-  align-content: center;
-  border-radius: 8px; }
-  .markets-container h1 {
-    font-family: "Lobster", cursive;
-    margin-bottom: 10px;
-    font-size: 21px; }
-
-.locations-main::-webkit-scrollbar {
-  width: 3px; }
-
-.locations-main::-webkit-scrollbar-track {
-  background: white; }
-
-.lcoations-main::-webkit-scrollbar-thumb {
-  outline: none;
-  background-color: #2a3132; }
 
 .delivery-main {
   background-image: url("../../assets/photos/baskets.jpeg");

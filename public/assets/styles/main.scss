@@ -195,35 +195,6 @@
   background-color: $dark-green;
 }
 
-.markets-container {
-  width: 95%;
-  padding: 3vh 0;
-  background-color: $dark-green;
-  font-family: $thin;
-  color: white;
-  text-align: center;
-  margin-top: 20px;
-  opacity: .85;
-  align-content: center;
-  border-radius: 8px;
-  h1 {
-    font-family: $head;
-    margin-bottom: 10px;
-    font-size: 21px;
-  }
-}
-
-.locations-main::-webkit-scrollbar {
-    width: 3px;
-
-}
-.locations-main::-webkit-scrollbar-track {
-    background: white;
-}
-.lcoations-main::-webkit-scrollbar-thumb {
-    outline: none;
-    background-color: #2a3132;
-}
 
 
 //  OFFICE DELIVERY PARTIAL
